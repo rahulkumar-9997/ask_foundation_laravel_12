@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Mac Capital">
+    <meta name="author" content="Ask Foundation">
     <meta name="robots" content="index, follow">
-    <title>Hetero :: Login</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('backend/assets/back-img/logo.png')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('backend/assets/back-img/logo.png')}}">
+    <title>ASK Foundation :: Login</title>  
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('backend/assets/back-img/fav.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('backend/assets/back-img/fav.png')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/plugins/fontawesome/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/plugins/fontawesome/css/all.min.css')}}">
@@ -96,7 +96,7 @@
                             </form>
                         </div>
                         <div class="my-4 d-flex justify-content-center align-items-center copyright-text">
-                            <p>Copyright &copy; {{ date('Y') }} Mac Capital</p>
+                            <p>Copyright &copy; {{ date('Y') }} ASK Foundation</p>
                         </div>
                     </div>
                 </div>

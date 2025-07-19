@@ -6052,7 +6052,7 @@ hr.text-danger {
 }
 
 .form-control[type=file] {
-  padding: 0.3rem 0.5rem;
+  padding: 0.45rem 0.85rem;
 }
 .form-control[type=file].form-control-sm {
   padding: 0.25rem 0.5rem !important;
@@ -17043,12 +17043,12 @@ body.mini-sidebar.expand-menu .sidebar .sidebar-menu > ul > li.submenu-open ul l
   align-items: center;
   padding: 0 24px;
   height: 65px;
-  background: #ED343C;
+  background: #262d34;
   justify-content: center;
-  /* border-bottom: 1px solid #E6EAED; */
+  border-bottom: 2px solid #ffffff;
 }
 .sidebar .sidebar-logo .logo img {
-  width: 60px;
+  width: 130px;
 }
 .sidebar .sidebar-logo .logo-small {
   display: none;
@@ -34663,7 +34663,7 @@ a.link-hover:hover {
 }
 .login-wrapper .login-content .login-logo {
   display: block;
-  max-width: 70px;
+  max-width: 160px;
   margin: auto;
 }
 .login-wrapper .login-content .login-logo img {
@@ -35059,6 +35059,7 @@ a.link-hover:hover {
   margin: auto;
 }
 
+
 .login-wrapper.login-new {
   overflow: auto;
   height: 100vh;
@@ -35071,12 +35072,16 @@ a.link-hover:hover {
   justify-content: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  background: linear-gradient(2deg, #f0859b 3.03%, #e7383c 27.62%, #ffffff 76.39%, #f5d5bc 95.44% 95.44%);
+  background: linear-gradient(2deg, #662d91 3.03%, #f15d5f 27.62%, #ffffff 76.39%, #4bbd92 95.44% 95.44%);
   /* background-image: url(../img/authentication/login-bg.png);
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100% 500px; */
 }
+.copyright-text p{
+  color: #ffff;
+}
+
 .login-wrapper.login-new .login-content.user-login .login-userset form .otp-box {
   margin-bottom: 34px;
 }

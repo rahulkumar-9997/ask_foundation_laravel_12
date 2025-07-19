@@ -8,8 +8,8 @@
 <meta name="robots" content="index, follow">
 @yield('meta')
 <title>@yield('title')</title>
-<link rel="shortcut icon" type="image/x-icon" href="{{asset('backend/assets/back-img/logo.png')}}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{asset('backend/assets/back-img/logo.png')}}">
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('backend/assets/back-img/fav.png')}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{asset('backend/assets/back-img/fav.png')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/css/bootstrap-datetimepicker.min.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/css/animate.css')}}">

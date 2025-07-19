@@ -3,13 +3,13 @@
    <!-- Logo -->
    <div class="sidebar-logo active">
       <a href="{{ route('dashboard') }}" class="logo logo-normal">
-         <img src="{{asset('backend/assets/back-img/white-logo.png')}}" alt="Img">
+         <img src="{{asset('backend/assets/back-img/logo.png')}}" alt="Img">
       </a>
       <a href="{{ route('dashboard') }}" class="logo logo-white">
-         <img src="{{asset('backend/assets/back-img/white-logo.png')}}" alt="Img">
+         <img src="{{asset('backend/assets/back-img/logo.png')}}" alt="Img">
       </a>
       <a href="{{ route('dashboard')}}" class="logo-small">
-         <img src="{{asset('backend/assets/back-img/white-logo.png')}}" alt="Img">
+         <img src="{{asset('backend/assets/back-img/fav.png')}}" alt="Img">
       </a>
    </div>
    <div class="sidebar-inner slimscroll">
@@ -26,44 +26,14 @@
                   <li class="submenu">
                      <a href="javascript:void(0);">
                         <i class="ti ti-file fs-16 me-2"></i>
-                        <span>Manage Banner</span>
+                        <span>Manage Banner/Video</span>
                         <span class="menu-arrow"></span>
                      </a>
                      <ul>
                         <li><a href="{{ route('manage-banner.index') }}">Banner</a></li>
                      </ul>
                   </li>
-                  <li class="submenu">
-                     <a href="javascript:void(0);">
-                        <i class="ti ti-award-filled fs-16 me-2"></i>
-                        <span>Manage Milestones & Awards</span>
-                        <span class="menu-arrow"></span>
-                     </a>
-                     <ul>
-                        <li><a href="{{ route('manage-year.index') }}">Year</a></li>
-                        <li><a href="{{ route('manage-award-category.index') }}">Category</a></li>
-                        <li><a href="{{ route('manage-awards.index') }}">Add Milestones & Awards</a></li>
-                     </ul>
-                  </li>
-                  <li class="submenu">
-                     <a href="javascript:void(0);">
-                        <i class="ti ti-news fs-16 me-2"></i>
-                        <span>Manage News & Media</span>
-                        <span class="menu-arrow"></span>
-                     </a>
-                     <ul>
-                        <li>
-                        <a href="{{ route('manage-news-media-category.index') }}">
-                           Add News and Media Category
-                        </a>
-                        </li>
-                        <li>
-                           <a href="{{ route('manage-news-media.index') }}">
-                              Add News and Media
-                           </a>
-                        </li>
-                     </ul>
-                  </li>
+                  
                   <li class="submenu">
                      <a href="javascript:void(0);">
                         <i class="ti ti-brand-apple-arcade fs-16 me-2"></i>

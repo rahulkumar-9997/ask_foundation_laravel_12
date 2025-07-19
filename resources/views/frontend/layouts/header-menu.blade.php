@@ -5,7 +5,7 @@
             <div class="container">
                 <!-- Logo Start -->
                 <div class="logo-area">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="{{asset('fronted/assets/ask-img/logo-horizantal.png')}}" alt="Logo" class="for_desktop_logo">
                         <img src="{{asset('fronted/assets/ask-img/logo-vertical.png')}}" alt="Logo" class="for_mobile_logo">
                     </a>
