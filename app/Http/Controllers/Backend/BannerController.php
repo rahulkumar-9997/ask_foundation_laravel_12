@@ -143,92 +143,123 @@ class BannerController extends Controller
     
     public function edit($id)
     {
-        $banner = Banner::findOrFail($id);
-        return view('backend.pages.banner.edit', compact('banner'));
+        $banner = BannerVideos::findOrFail($id);
+        return view('backend.pages.banner.edit', [
+            'banner' => $banner,
+            'video_features' => $banner->features ?? []
+        ]);
     }
 
     public function update(Request $request, $id)
     {
-        $banner = Banner::findOrFail($id);
-        $request->validate([
-            'banner_heading_name' => 'nullable|string',
-            'banner_content' => 'nullable|string',
-            'banner_link' => 'nullable|url',
-            'banner_desktop_img' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'banner_mobile_img' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+        $validator = Validator::make($request->all(), [
+            'desktop_video_file' => 'nullable|file|mimes:mp4,avi,mov,wmv,flv|max:51200',
+            'mobile_video_file' => 'nullable|file|mimes:mp4,avi,mov,wmv,flv|max:51200',
+            'banner_video_title' => 'nullable|string|max:255',
+            'banner_video_subtitle' => 'nullable|string|max:255',
+            'banner_description' => 'nullable|string|max:1000',
+            'banner_button_link' => 'nullable|url|max:255',
+            'button_popup_url' => 'nullable|url|max:255',
+            'video_features' => 'nullable|array',
+            'video_features.*' => 'nullable|string|max:255',
         ]);
-        DB::beginTransaction();
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $banner = BannerVideos::findOrFail($id);
+        DB::beginTransaction();        
         try {
-            $data = [
-                'banner_heading_name' => $request->banner_heading_name,
-                'banner_content' => $request->banner_content,
-                'banner_link' => $request->banner_link,
-            ];
             $destinationPath = public_path('upload/banner');
-            if ($request->hasFile('banner_desktop_img')) {
-                if ($banner->banner_desktop_img && file_exists($destinationPath . '/' . $banner->banner_desktop_img)) {
-                    unlink($destinationPath . '/' . $banner->banner_desktop_img);
+            $data = [
+                'title' => $request->banner_video_title,
+                'subtitle' => $request->banner_video_subtitle,
+                'description' => $request->banner_description,
+                'button_link' => $request->banner_button_link,
+                'video_popup_url' => $request->button_popup_url,
+            ];
+            if ($request->hasFile('desktop_video_file')) {
+                if ($banner->desktop_video_url && file_exists($destinationPath . '/' . basename($banner->desktop_video_url))) {
+                    unlink($destinationPath . '/' . basename($banner->desktop_video_url));
                 }
-
-                $uniqueTimestampDesktop = round(microtime(true) * 1000);
-                $desktopImage = $request->file('banner_desktop_img');
-                $desktopImageName = 'desktop-' . $uniqueTimestampDesktop . '.webp';
-
-                $img = Image::make($desktopImage->getRealPath());
-                $img->resize(1920, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                })->encode('webp', 75)->save($destinationPath . '/' . $desktopImageName);
-
-                $data['banner_desktop_img'] = $desktopImageName;
+                $desktopVideoPath = $this->uploadVideo($request->file('desktop_video_file'), 'desktop');
+                $data['desktop_video_url'] = $desktopVideoPath;
             }
 
-            if ($request->hasFile('banner_mobile_img')) {
-                if ($banner->banner_mobile_img && file_exists($destinationPath . '/' . $banner->banner_mobile_img)) {
-                    unlink($destinationPath . '/' . $banner->banner_mobile_img);
+            if ($request->hasFile('mobile_video_file')) {
+                if ($banner->mobile_video_url && file_exists($destinationPath . '/' . basename($banner->mobile_video_url))) {
+                    unlink($destinationPath . '/' . basename($banner->mobile_video_url));
                 }
+                $mobileVideoPath = $this->uploadVideo($request->file('mobile_video_file'), 'mobile');
+                $data['mobile_video_url'] = $mobileVideoPath;
+            }
 
-                $uniqueTimestampMobile = round(microtime(true) * 1000);
-                $mobileImage = $request->file('banner_mobile_img');
-                $mobileImageName = 'mobile-' . $uniqueTimestampMobile . '.webp';
-
-                $img = Image::make($mobileImage->getRealPath());
-                $img->resize(768, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                })->encode('webp', 75)->save($destinationPath . '/' . $mobileImageName);
-
-                $data['banner_mobile_img'] = $mobileImageName;
+            if ($request->video_features) {
+                $features = array_filter($request->video_features, function($feature) {
+                    return !empty(trim($feature));
+                });
+                $data['features'] = $features;
             }
             $banner->update($data);
             DB::commit();
-            return redirect()->route('manage-banner.index')->with('success', 'Banner updated successfully.');
+            if ($request->ajax()) {
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Banner video updated successfully!'
+                ]);
+            }
+            return redirect()->route('manage-banner.index')->with('success', 'Banner video updated successfully!');
+
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Banner update failed: ' . $e->getMessage());
-            return redirect()->back()->withInput()->with('error', 'Failed to update banner. Please try again.');
+            if ($request->ajax()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Error updating banner video: ' . $e->getMessage()
+                ], 500);
+            }
+            return redirect()->back()
+                ->with('error', 'Error updating banner video: ' . $e->getMessage())
+                ->withInput();
         }
     }
 
+
     public function destroy($id)
     {
+        $banner = BannerVideos::findOrFail($id);
+        $destinationPath = public_path('upload/banner');
         DB::beginTransaction();
         try {
-            $banner = Banner::findOrFail($id);
-            $destinationPath = public_path('upload/banner');
-            if ($banner->banner_desktop_img && File::exists($destinationPath . '/' . $banner->banner_desktop_img)) {
-                File::delete($destinationPath . '/' . $banner->banner_desktop_img);
+            if ($banner->desktop_video_url) {
+                $desktopPath = $destinationPath . '/' . basename($banner->desktop_video_url);
+                if (file_exists($desktopPath) && is_file($desktopPath)) {
+                    @unlink($desktopPath); 
+                }
             }
-            if ($banner->banner_mobile_img && File::exists($destinationPath . '/' . $banner->banner_mobile_img)) {
-                File::delete($destinationPath . '/' . $banner->banner_mobile_img);
+            if ($banner->mobile_video_url) {
+                $mobilePath = $destinationPath . '/' . basename($banner->mobile_video_url);
+                if (file_exists($mobilePath) && is_file($mobilePath)) {
+                    @unlink($mobilePath);
+                }
             }
             $banner->delete();
             DB::commit();
-            return redirect()->route('manage-banner.index')->with('success', 'Banner deleted successfully.');
+            return redirect()
+                ->route('manage-banner.index')
+                ->with('success', 'Banner and associated files deleted successfully!');
+
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Banner deletion failed: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Failed to delete banner. Please try again.');
+            return redirect()
+                ->back()
+                ->with('error', 'Failed to delete banner: ' . $e->getMessage());
         }
     }
+   
 }

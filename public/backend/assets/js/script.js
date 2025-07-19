@@ -368,7 +368,7 @@ $(document).ready(function(){
 	});
 	if($('#summernote').length > 0) {
 		$('#summernote').summernote({
-		height: 500,  
+		height: 400,  
 		minHeight: null, 
 		maxHeight: null,
 		focus: false,
@@ -410,6 +410,51 @@ $(document).ready(function(){
 			
 		});
 	}
+	/**For multiple add more  */
+	if($('.summernoteclass').length > 0) {
+		$('.summernoteclass').summernote({
+		height: 50,  
+		minHeight: null, 
+		maxHeight: null,
+		focus: false,		
+		toolbar: [
+			['style', ['style']],
+			['font', ['bold', 'italic', 'underline', 'clear']],
+			['fontname', ['fontname']],
+			['para', ['ul', 'ol', 'paragraph']],
+			['height', ['height']],
+			['table', ['table']],
+			['insert', ['link', 'picture', 'video', 'hr']],
+			['view', ['fullscreen', 'codeview', 'help']]
+		],
+		 prettifyHtml: false,
+        codeviewFilter: true,
+        codeviewIframeFilter: true,
+        styleTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+        callbacks: {
+            onPaste: function(e) {
+                var clipboardData = e.originalEvent.clipboardData || window.clipboardData;
+                var pastedData = clipboardData.getData('Text/html');
+                if (pastedData) {
+                    e.preventDefault();
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = pastedData;
+                    var elementsWithStyle = tempDiv.querySelectorAll('[style]');
+                    elementsWithStyle.forEach(function(el) {
+                        el.removeAttribute('style');
+                    });
+                    var elementsWithClass = tempDiv.querySelectorAll('[class]');
+                    elementsWithClass.forEach(function(el) {
+                        el.removeAttribute('class');
+                    });
+                    document.execCommand('insertHTML', false, tempDiv.innerHTML);
+                }
+            }
+        }
+			
+		});
+	}
+	/**For multiple add more  */
 	
 	// Summernote
 

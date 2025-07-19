@@ -25,29 +25,6 @@
                   </li>
                   <li class="submenu">
                      <a href="javascript:void(0);">
-                        <i class="ti ti-file fs-16 me-2"></i>
-                        <span>Manage Banner/Video</span>
-                        <span class="menu-arrow"></span>
-                     </a>
-                     <ul>
-                        <li><a href="{{ route('manage-banner.index') }}">Banner</a></li>
-                     </ul>
-                  </li>
-                  
-                  <li class="submenu">
-                     <a href="javascript:void(0);">
-                        <i class="ti ti-brand-apple-arcade fs-16 me-2"></i>
-                        <span>Manage Pages</span>
-                        <span class="menu-arrow"></span>
-                     </a>
-                     <ul>
-                        <li><a href="{{ route('pages.index') }}">All Pages</a></li>
-                        <li><a href="{{ route('pages.create') }}">Create Page</a></li>
-                     </ul>
-                  </li>
-
-                  <li class="submenu">
-                     <a href="javascript:void(0);">
                         <i class="ti ti-layout-grid-add fs-16 me-2"></i>
                         <span>Manage Menus</span>
                         <span class="menu-arrow"></span>
@@ -57,6 +34,41 @@
                         <li><a href="{{ route('menus.create') }}">Create Menu</a></li>
                      </ul>
                   </li>
+                  <!-- <li class="submenu">
+                     <a href="javascript:void(0);">
+                        <i class="ti ti-brand-apple-arcade fs-16 me-2"></i>
+                        <span>Manage Pages</span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <ul>
+                        <li><a href="{{ route('pages.index') }}">All Pages</a></li>
+                        <li><a href="{{ route('pages.create') }}">Create Page</a></li>
+                     </ul>
+                  </li> -->
+                  <li class="submenu">
+                     <a href="javascript:void(0);">
+                        <i class="ti ti-file fs-16 me-2"></i>
+                        <span>Manage Banner/Video</span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <ul>
+                        <li><a href="{{ route('manage-banner.index') }}">Banner</a></li>
+                     </ul>
+                  </li>
+                  <li class="submenu">
+                     <a href="javascript:void(0);">
+                        <i class="ti ti-brand-blogger fs-16 me-2"></i>
+                        <span>Manage Blog</span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <ul>
+                        <li><a href="{{ route('manage-blog.index') }}">Blog</a></li>
+                     </ul>
+                  </li>
+                  
+                  
+
+                  
 
                </ul>
             </li>

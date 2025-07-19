@@ -1,9 +1,6 @@
 @extends('backend.layouts.master')
 @section('title','Add new banner')
 @push('styles')
-<link rel="stylesheet" href="{{asset('backend/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
-<link rel="stylesheet" href="{{asset('backend/assets/plugins/tabler-icons/tabler-icons.css')}}">
-<link rel="stylesheet" href="{{asset('backend/assets/css/dataTables.bootstrap5.min.css')}}">
 @endpush
 @section('main-content')
 <div class="content">

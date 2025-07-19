@@ -36,11 +36,11 @@
                 <table class="table datatable">
                     <thead class="thead-light">
                         <tr>
-                            <th>Heading</th>
-                            <th>Content</th>
-                            <th>Link</th>
-                            <th>Desktop Image</th>
-                            <th>Mobile Image</th>
+                            <th>Title</th>
+                            <th>Subtitle</th>
+                            <th>Status</th>
+                            <th>Desktop Video</th>
+                            <th>Mobile Video</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -48,21 +48,29 @@
                         @if($banners->count() > 0)
                         @foreach($banners as $banner)
                         <tr>
-                            <td>{!! $banner->banner_heading_name !!}</td>
-                            <td>{!! $banner->banner_content !!}</td>
-                            <td>{{ $banner->banner_link ?? '-' }}</td>
+                            <td>{{ $banner->title }}</td>
+                            <td>{{ $banner->subtitle }}</td>
                             <td>
-                                @if($banner->banner_desktop_img)
-                                <img src="{{ asset('upload/banner/' . $banner->banner_desktop_img) }}" width="100">
+                                @if($banner->is_active==1)
+                                    <span class="badge bg-success">Active</span>
                                 @else
-                                -
+                                    <span class="badge bg-danger">Inactive</span>
                                 @endif
                             </td>
                             <td>
-                                @if($banner->banner_mobile_img)
-                                    <img src="{{ asset('upload/banner/' . $banner->banner_mobile_img) }}" width="100">
-                                @else
-                                -
+                                @if($banner->desktop_video_url)
+                                <video width="200" controls>
+                                    <source src="{{ asset('upload/banner/' . $banner->desktop_video_url) }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                @endif
+                            </td>
+                            <td>
+                                @if($banner->mobile_video_url)
+                                <video width="200" controls>
+                                    <source src="{{ asset('upload/banner/' . $banner->mobile_banner_url) }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                                 @endif
                             </td>
                             <td class="action-table-data">

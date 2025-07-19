@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\ForgotPasswordController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\CacheController;
@@ -30,6 +31,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/get-daily-visitors', [DashboardController::class, 'getDailyVisitors'])->name('get-daily-visitors');
     
     Route::resource('manage-banner', BannerController::class)->names('manage-banner');
+    Route::resource('manage-blog', BlogController::class)->names('manage-blog');
     Route::get('/clear-cache', [CacheController::class, 'clearCache'])->name('clear-cache');
     Route::resource('pages', PageController::class);
     Route::resource('menus', MenuController::class);
