@@ -32,7 +32,7 @@
                 </ul>
             </div>
             @endif
-            <form action="{{ route('manage-banner.store') }}" method="POST" enctype="multipart/form-data" id="bannerUploadForm">
+            <form action="{{ route('manage-blog.store') }}" method="POST" enctype="multipart/form-data" id="blogFormAdd">
                 @csrf
                 <div class="row">
                     <div class="col-sm-4 col-12">
@@ -104,8 +104,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="summer-description-box mb-3">
-                            <label class="form-label">Content</label>
+                            <label class="form-label">Content <span class="text-danger">*</span></label>
                             <textarea id="summernote" name="content" hidden>{{ old('content') }}</textarea>
+                            @error('content')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>

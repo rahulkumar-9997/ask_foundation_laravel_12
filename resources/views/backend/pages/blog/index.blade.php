@@ -33,7 +33,7 @@
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
-                @include('backend.pages.blog.partials.blog-list', ['banners' => $banners])
+                @include('backend.pages.blog.partials.blog-list', ['blogs' => $blogs])
             </div>
         </div>
     </div>

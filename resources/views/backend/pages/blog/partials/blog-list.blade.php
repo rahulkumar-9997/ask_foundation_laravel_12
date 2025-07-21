@@ -4,49 +4,48 @@
             <th>Title</th>
             <th>Subtitle</th>
             <th>Status</th>
-            <th>Desktop Video</th>
-            <th>Mobile Video</th>
+            <th>Image</th>
+            <th>Paragraphs</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @if($banners->count() > 0)
-        @foreach($banners as $banner)
+        @if($blogs->count() > 0)
+        @foreach($blogs as $blog)
         <tr>
-            <td>{{ $banner->title }}</td>
-            <td>{{ $banner->subtitle }}</td>
+            <td>{{ $blog->title }}</td>
+            <td>{{ $blog->short_desc }}</td>
             <td>
-                @if($banner->is_active==1)
-                <span class="badge bg-success">Active</span>
+                @if($blog->status === 'published')
+                <span class="badge bg-success">Published</span>
+                @elseif($blog->status === 'draft')
+                <span class="badge bg-warning">Draft</span>
                 @else
-                <span class="badge bg-danger">Inactive</span>
+                <span class="badge bg-danger">Archived</span>
                 @endif
             </td>
             <td>
-                @if($banner->desktop_video_url)
-                <video width="200" controls>
-                    <source src="{{ asset('upload/banner/' . $banner->desktop_video_url) }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                @if($blog->featured_image)
+                    <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" alt="Banner Image" width="100">
                 @endif
             </td>
             <td>
-                @if($banner->mobile_video_url)
-                <video width="200" controls>
-                    <source src="{{ asset('upload/banner/' . $banner->mobile_banner_url) }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                @if($blog->paragraphs->count() > 0)
+                    <span class="badge bg-info">{{ $blog->paragraphs->count() }} Paragraphs</span>
+                @else
+                    <span class="badge bg-secondary">No Paragraphs</span>   
                 @endif
             </td>
+            
             <td class="action-table-data">
                 <div class="edit-delete-action">
-                    <a class="btn btn-sm btn-primary me-2 p-2" href="{{ route('manage-banner.edit', $banner->id) }}">
+                    <a class="btn btn-sm btn-primary me-2 p-2" href="{{ route('manage-blog.edit', $blog->id) }}">
                         <i data-feather="edit" class="feather-edit"></i>
                     </a>
-                    <form action="{{ route('manage-banner.destroy', $banner->id) }}" method="POST" class="d-inline">
+                    <form action="{{ route('manage-blog.destroy', $blog->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger show_confirm" data-name="Delete Banner">
+                        <button type="submit" class="btn btn-sm btn-danger show_confirm" data-name="Delete Blog">
                             <i data-feather="trash-2" class="feather-trash-2"></i>
                         </button>
                     </form>
