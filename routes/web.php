@@ -32,6 +32,12 @@ Route::group(['middleware' => ['auth']], function() {
     
     Route::resource('manage-banner', BannerController::class)->names('manage-banner');
     Route::resource('manage-blog', BlogController::class)->names('manage-blog');
+    Route::prefix('manage-health-focus')->group(function () {
+        Route::resource('health-and-focus', BlogController::class)->names('health-and-focus');
+        Route::resource('category', BlogController::class)->names('category');
+    });
+
+    
     Route::get('/clear-cache', [CacheController::class, 'clearCache'])->name('clear-cache');
     Route::resource('pages', PageController::class);
     Route::resource('menus', MenuController::class);

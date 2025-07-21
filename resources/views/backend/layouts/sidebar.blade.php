@@ -65,6 +65,17 @@
                         <li><a href="{{ route('manage-blog.index') }}">Blog</a></li>
                      </ul>
                   </li>
+                  <li class="submenu">
+                     <a href="javascript:void(0);">
+                        <i class="ti ti-health-recognition fs-16 me-2"></i>
+                        <span>Manage Health & Focus Area</span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <ul>
+                        <li><a href="{{ route('category.index') }}">Category</a></li>
+                        <li><a href="{{ route('manage-blog.index') }}">Health & Focus</a></li>
+                     </ul>
+                  </li>
                   
                   
 
