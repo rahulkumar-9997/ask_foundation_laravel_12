@@ -104,11 +104,11 @@
         </div>
     </div>
     <!-- /Main Wrapper -->
-    <script src="{{asset('backend/assets/js/jquery-3.7.1.min.js')}}" type="0eb3a26489d0b5ca9711629f-text/javascript"></script>
-    <script src="{{asset('backend/assets/js/feather.min.js')}}" type="0eb3a26489d0b5ca9711629f-text/javascript"></script>
-    <script src="{{asset('backend/assets/js/bootstrap.bundle.min.js')}}" type="0eb3a26489d0b5ca9711629f-text/javascript"></script>
-    <script src="{{asset('backend/assets/js/script.js')}}" type="0eb3a26489d0b5ca9711629f-text/javascript"></script>
-    <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"></script> -->
+<script src="{{ asset('backend/assets/js/jquery-3.7.1.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('backend/assets/js/feather.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('backend/assets/js/script.js') }}" type="text/javascript"></script>
+
 </body>
 
 </html>

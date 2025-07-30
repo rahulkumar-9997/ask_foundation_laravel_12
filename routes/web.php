@@ -6,13 +6,16 @@ use App\Http\Middleware\TrackVisitor;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\ForgotPasswordController;
 use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\BannerController;
-use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\CacheController;
+use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\DoctorsController;
 
 Route::get('/', [FrontHomeController::class, 'home'])->name('home');
+Route::get('our-doctors', [FrontHomeController::class, 'ourDoctorsList'])->name('our-doctors');
+Route::get('our-doctors/{slug}', [FrontHomeController::class, 'ourDoctorsDetails'])->name('doctor.details');
 
 
 Route::prefix('admin')->group(function () {
@@ -32,12 +35,8 @@ Route::group(['middleware' => ['auth']], function() {
     
     Route::resource('manage-banner', BannerController::class)->names('manage-banner');
     Route::resource('manage-blog', BlogController::class)->names('manage-blog');
-    Route::prefix('manage-health-focus')->group(function () {
-        Route::resource('health-and-focus', BlogController::class)->names('health-and-focus');
-        Route::resource('category', BlogController::class)->names('category');
-    });
-
-    
+    Route::resource('manage-doctors', DoctorsController::class)->names('manage-doctors');
+       
     Route::get('/clear-cache', [CacheController::class, 'clearCache'])->name('clear-cache');
     Route::resource('pages', PageController::class);
     Route::resource('menus', MenuController::class);

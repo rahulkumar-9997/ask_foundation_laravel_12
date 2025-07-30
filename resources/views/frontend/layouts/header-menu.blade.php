@@ -10,9 +10,9 @@
                         <img src="{{asset('fronted/assets/ask-img/logo-vertical.png')}}" alt="Logo" class="for_mobile_logo">
                     </a>
                 </div>
-
+                
+                
                 <!-- Logo End -->
-
                 <!-- Main Menu Start -->
                 <div class="collapse navbar-collapse main-menu">
                     <div class="nav-menu-wrapper">
@@ -32,7 +32,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="#">Patient Support</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Our Doctors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('our-doctors') }}">Our Doctors</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
                         </ul>

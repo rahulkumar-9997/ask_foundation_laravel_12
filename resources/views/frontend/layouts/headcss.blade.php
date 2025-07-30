@@ -1,14 +1,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content="">
 <meta name="author" content="Ask Foundation">
 <meta name="description" content="@yield('description')">
 <meta name="keywords" content="@yield('keywords')">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @yield('meta')
-<title>ASK Foundation</title>
+<title>@yield('title')</title>
  <link rel="canonical" href="{{ url()->current() }}" />
 <link rel="shortcut icon" type="image/x-icon" href="{{asset('fronted/assets/ask-img/fav.png')}}">
 <link rel="preconnect" href="https://fonts.googleapis.com/">

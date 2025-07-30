@@ -366,8 +366,8 @@ $(document).ready(function(){
 			$('.note-dropdown-menu').removeClass('show');
 		}
 	});
-	if($('#summernote').length > 0) {
-		$('#summernote').summernote({
+	if ($('#summernote').length > 0 || $('.summernoteClassTwo').length > 0) {
+    	$('#summernote, .summernoteClassTwo').summernote({
 		height: 400,  
 		minHeight: null, 
 		maxHeight: null,
@@ -383,12 +383,12 @@ $(document).ready(function(){
 			['insert', ['link', 'picture', 'video', 'hr']],
 			['view', ['fullscreen', 'codeview', 'help']]
 		],
-		 prettifyHtml: false,
+		prettifyHtml: true,
         codeviewFilter: true,
         codeviewIframeFilter: true,
         styleTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
         callbacks: {
-            onPaste: function(e) {
+            /*onPaste: function(e) {
                 var clipboardData = e.originalEvent.clipboardData || window.clipboardData;
                 var pastedData = clipboardData.getData('Text/html');
                 if (pastedData) {
@@ -405,7 +405,26 @@ $(document).ready(function(){
                     });
                     document.execCommand('insertHTML', false, tempDiv.innerHTML);
                 }
-            }
+            }*/
+		   	onPaste: function(e) {
+				e.preventDefault();
+				var text = (e.originalEvent.clipboardData || window.clipboardData).getData('text/plain');
+				if (text) {
+					document.execCommand('insertText', false, text);
+				} else {
+					var html = (e.originalEvent.clipboardData || window.clipboardData).getData('text/html');
+					if (html) {
+						var temp = $('<div>').html(html);
+						temp.find('*').removeAttr('class style id');
+						temp.find('style, xml, ![if gte mso 9], meta, link').remove();
+						document.execCommand('insertHTML', false, temp.html());
+					}
+				}
+			},
+			onEnter: function() {
+				document.execCommand('insertHTML', false, '<br>');
+				return false;
+			}
         }
 			
 		});
@@ -427,12 +446,12 @@ $(document).ready(function(){
 			['insert', ['link', 'picture', 'video', 'hr']],
 			['view', ['fullscreen', 'codeview', 'help']]
 		],
-		 prettifyHtml: false,
+		prettifyHtml: true,
         codeviewFilter: true,
         codeviewIframeFilter: true,
         styleTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
         callbacks: {
-            onPaste: function(e) {
+            /*onPaste: function(e) {
                 var clipboardData = e.originalEvent.clipboardData || window.clipboardData;
                 var pastedData = clipboardData.getData('Text/html');
                 if (pastedData) {
@@ -449,7 +468,27 @@ $(document).ready(function(){
                     });
                     document.execCommand('insertHTML', false, tempDiv.innerHTML);
                 }
-            }
+            },
+			*/
+			onPaste: function(e) {
+				e.preventDefault();
+				var text = (e.originalEvent.clipboardData || window.clipboardData).getData('text/plain');
+				if (text) {
+					document.execCommand('insertText', false, text);
+				} else {
+					var html = (e.originalEvent.clipboardData || window.clipboardData).getData('text/html');
+					if (html) {
+						var temp = $('<div>').html(html);
+						temp.find('*').removeAttr('class style id');
+						temp.find('style, xml, ![if gte mso 9], meta, link').remove();
+						document.execCommand('insertHTML', false, temp.html());
+					}
+				}
+			},
+			onEnter: function() {
+				document.execCommand('insertHTML', false, '<br>');
+				return false;
+			}
         }
 			
 		});
@@ -1887,3 +1926,4 @@ $(document).ready(function(){
 	});
 
 });
+
