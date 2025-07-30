@@ -25,44 +25,30 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <!-- Page Single Sidebar Start -->
-                    <div class="page-single-sidebar">
-                        <!-- Page Sidebar Category List Start -->
-                        <div class="page-sidebar-catagery-list wow fadeInUp">
-                            <h3>services category</h3>
-                            <ul>
-                                <li><a href="#">food security initiatives</a></li>
-                                <li><a href="#">healthcare access</a></li>
-                                <li><a href="#">educational support</a></li>
-                                <li><a href="#">women empowerment</a></li>
-                                <li><a href="#">youth leadership programs</a></li>
-                            </ul>
+                    @if(isset($doctorsList) && $doctorsList->count() > 0)
+                        <div class="page-single-sidebar">
+                            <div class="page-sidebar-catagery-list wow fadeInUp">
+                                <h3>Our Doctors</h3>
+                                <ul>
+                                    @foreach($doctorsList as $doctors)
+                                        <li>
+                                            <div class="doctors-side">
+                                                <a
+                                                @if($doctors->slug === $doctor->slug) 
+                                                    class="active"
+                                                @endif
+                                                href="{{ route('doctor.details', $doctors->slug) }}"
+                                                >
+                                                {{ $doctors->doctor_name }}
+                                                
+                                                </a>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
-                        <!-- Page Sidebar Category List End -->
-
-                        <!-- Sidebar CTA Box Start -->
-                        <div class="sidebar-cta-box wow fadeInUp" data-wow-delay="0.2s">
-                            <!-- Cta Content Start -->
-                            <div class="icon-box">
-                                <img src="images/icon-cta.svg" alt="">
-                            </div>
-                            
-                            <!-- Sidebar CTA Content Start -->
-                            <div class="sidebar-cta-content">
-                                <p>small gifts, big changes</p>
-                                <h3>empowering every child through education</h3>
-                            </div>
-                            <!-- Sidebar CTA Content End -->
-                            
-                            <!-- Sidebar CTA Button Start -->
-                            <div class="sidebar-cta-btn">
-                                <a href="contact.html" class="btn-default">Get a quote</a>
-                            </div>
-                            <!-- Sidebar CTA Button End -->
-                        </div>
-                        <!-- Sidebar CTA Box End -->
-                    </div>
-                    <!-- Page Single Sidebar End -->
+                    @endif
                 </div>
                 <div class="col-lg-8">
                     <div class="service-single-contemt">
@@ -93,7 +79,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                                 </figure>
                             </div>
                         @endif
-                        <div class="service-entry">
+                        <div class="doctors-details-entry">
                             @if($doctor->short_content)
                                 <p>
                                     {{ $doctor->short_content }}

@@ -3445,14 +3445,14 @@ header.main-header .header-sticky.active {
 .page-sidebar-catagery-list ul {
 	list-style: none;
 	margin: 0;
-	padding: 30px;
+	padding: 20px;
 }
 
 .page-sidebar-catagery-list ul li {
 	line-height: 1.5em;
 	border-bottom: 1px solid var(--divider-color);
-	padding-bottom: 20px;
-	margin-bottom: 20px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -3469,6 +3469,12 @@ header.main-header .header-sticky.active {
 	color: var(--text-color);
 	padding-right: 30px;
 	transition: all 0.3s ease-in-out;
+	font-size: 18px;
+    font-weight: 500;
+}
+
+.page-sidebar-catagery-list ul li a.active {
+	color: var(--color-two);
 }
 
 .page-sidebar-catagery-list ul li a:hover {
@@ -3584,8 +3590,8 @@ header.main-header .header-sticky.active {
 	background-color: var(--secondary-color);
 	border-radius: 30px;
 	list-style: none;
-	padding: 40px;
-	margin: 40px 0;
+	padding: 20px;
+	margin: 15px 0;
 }
 
 .service-entry ul li {
@@ -7455,6 +7461,63 @@ header.main-header .header-sticky.active {
 	margin-bottom: 7px;
 	margin-bottom: 7px;
 }
-/* .doctors-details-content  */
+.doctors-details-content p{
+	text-align: justify;
+}
+.doctors-details-content h1,
+.doctors-details-content h2,
+.doctors-details-content h3
+{
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+.doctors-details-content h4,
+.doctors-details-content h5,
+.doctors-details-content h6
+{
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.doctors-details-section .doctors-details-content ul{
+	background-color: var(--secondary-color);
+    border-radius: 30px;
+    list-style: none;
+    padding: 20px;
+	position: relative;
+}
+/*child ul */
+.doctors-details-section .doctors-details-content ul ul{
+	padding: 10px;
+}
+/*child ul */
+.doctors-details-section .doctors-details-content ul li {
+    position: relative;
+    line-height: 1.7em;
+    margin-bottom: 8px;
+    padding-left: 25px;
+    text-align: justify;
+}
+.doctors-details-section .doctors-details-content ul li:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 14px;
+    display: block;
+    vertical-align: middle;
+    position: absolute;
+    content: "\f054";
+    left: 0;
+    top: -1px;
+    color: #9c7945;
+}
+
+.doctors-details-section ul li{
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: #020D19;
+    margin-bottom: 15px;
+
+}
 
 /*number tell story card*/

@@ -19,7 +19,8 @@ class FrontHomeController extends Controller
     }
 
     public function ourDoctorsDetails($slug){
+        $doctorsList = $doctors = Doctors::orderBy('id', 'desc')->get();
         $doctor = Doctors::where('slug', $slug)->firstOrFail();
-        return view('frontend.pages.doctors.doctors-details', compact('doctor'));
+        return view('frontend.pages.doctors.doctors-details', compact('doctor', 'doctorsList'));
     }
 }
