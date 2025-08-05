@@ -19,7 +19,7 @@ class BannerVideos extends Model
         'is_active',
         'sort_order'
     ];
-
+    
     protected $casts = [
         'features' => 'array',
         'is_active' => 'boolean'

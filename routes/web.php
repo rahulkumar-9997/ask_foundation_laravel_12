@@ -14,6 +14,8 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\DoctorsController;
 
 Route::get('/', [FrontHomeController::class, 'home'])->name('home');
+Route::get('blog', [FrontHomeController::class, 'blogList'])->name('blog');
+Route::get('blog/{slug}', [FrontHomeController::class, 'blogDetails'])->name('blog.details');
 Route::get('our-doctors', [FrontHomeController::class, 'ourDoctorsList'])->name('our-doctors');
 Route::get('our-doctors/{slug}', [FrontHomeController::class, 'ourDoctorsDetails'])->name('doctor.details');
 

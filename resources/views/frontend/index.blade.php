@@ -2,16 +2,27 @@
 @section('title','Leading Global Pharmaceutical Company in India | Anti Retroviral Drugs')
 @section('description', 'Hetero is the first company in India to launch the generic version of Remdesivir injection, COVIFOR, in India, which is used to treat hospitalization cases of COVID-19. Click here to know more.')
 @section('main-content')
-<!-- Hero Section Start -->
+@if (!empty($data['bannerVideo']) && $data['bannerVideo']->count() > 0)
 <div class="hero hero-video">
-   <!-- Video Start -->
    <div class="hero-bg-video">
+      @if($data['bannerVideo']->desktop_video_url)
+      <video autoplay muted loop id="myVideo" class="desktopvideo">
+         <source src="{{ asset('upload/banner/' . $data['bannerVideo']->desktop_video_url) }}" type="video/mp4">
+      </video>
+      @else
       <video autoplay muted loop id="myVideo" class="desktopvideo">
          <source src="https://inforbit.in/ask2.mp4" type="video/mp4">
       </video>
+      @endif
+      @if($data['bannerVideo']->mobile_video_url)
+      <video autoplay muted loop id="myVideo" class="mobilevideo">
+         <source src="{{ asset('upload/banner/' . $data['bannerVideo']->mobile_video_url) }}" type="video/mp4">
+      </video>
+      @else
       <video autoplay muted loop id="myVideo" class="mobilevideo">
          <source src="{{asset('fronted/assets/ask-img/vertical-banner-video.mp4')}}" type="video/mp4">
       </video>
+      @endif
       <div class="video-overlay"></div>
    </div>
    <div class="container container-for-mobile">
@@ -19,38 +30,44 @@
          <div class="col-lg-8">
             <div class="hero-content">
                <div class="section-title">
-                  <h3 class="wow fadeInUp">Welcome to Ask Foundation</h3>
-                  <h1 class="text-anime-style-2" data-cursor="-opaque"><span>
-                        Empower lives & communities</span>
-                     through preventive care & education</h1>
-                  <p class="wow fadeInUp" data-wow-delay="0.2s">Accessible health resources, early detection &
-                     lifelong bone wellness.</p>
+                  <h3 class="wow fadeInUp">{{ $data['bannerVideo']->title }}</h3>
+                  <h1 class="text-anime-style-2" data-cursor="-opaque">
+                     {!! $data['bannerVideo']->subtitle !!}
+                  </h1>
+                  <p class="wow fadeInUp" data-wow-delay="0.2s">
+                     {{ $data['bannerVideo']->description }}
+                  </p>
                </div>
                <div class="hero-body wow fadeInUp" data-wow-delay="0.4s">
+                  @if($data['bannerVideo']->button_link)
                   <div class="hero-btn">
-                     <a href="#" class="btn-default">donate now</a>
+                     <a href="{{ $data['bannerVideo']->button_link}}" class="btn-default">donate now</a>
                   </div>
-                  <div class="video-play-button">
+                  @endif
+                  <!-- <div class="video-play-button">
                      <p>play video</p>
                      <a href="#" class="popup-video" data-cursor-text="Play">
                         <i class="fa-solid fa-play"></i>
                      </a>
-                  </div>
+                  </div> -->
                </div>
+               @if($data['bannerVideo']->features)
                <div class="hero-footer wow fadeInUp" data-wow-delay="0.6s">
                   <div class="hero-list">
                      <ul>
-                        <li>Bone Health & Osteoporosis</li>
-                        <li>School Road Safety Programs</li>
-                        <li>Lifestyle Disease Prevention </li>
+                        @foreach ($data['bannerVideo']->features as $feature)
+                        <li>{{ $feature }}</li>
+                        @endforeach
                      </ul>
                   </div>
                </div>
+               @endif
             </div>
          </div>
       </div>
    </div>
 </div>
+@endif
 <!-- Hero Section End -->
 <!-- About Us Section Start -->
 <div class="about-us">
@@ -671,7 +688,7 @@
    </div>
 </div>
 <!-- How It Work Section End -->
-<!-- Our Blog Section Start -->
+@if (!empty($data['blog']) && $data['blog']->count() > 0)
 <div class="our-blog">
    <div class="container">
       <div class="row section-row">
@@ -687,86 +704,45 @@
       </div>
 
       <div class="row">
+         @foreach ($data['blog'] as $blog)
          <div class="col-lg-4 col-md-6">
             <div class="post-item wow fadeInUp">
                <div class="post-item-header">
                   <div class="post-item-meta">
                      <ul>
-                        <li>10 feb, 2025</li>
+                        <li>{{ $blog->created_at->format('d M, Y') }}</li>
                      </ul>
                   </div>
                   <div class="post-item-content">
-                     <h2><a href="blog-single.html">Protecting the Future: Road Safety, Health Camps for
-                           India’s Children</a></h2>
-                  </div>
-               </div>
-               <div class="post-featured-image">
-                  <a href="#" data-cursor-text="View">
-                     <figure class="image-anime">
-                        <img src="{{asset('fronted/assets/images/ask-d.png')}}" alt="">
-                     </figure>
-                  </a>
-               </div>
-               <div class="blog-item-btn">
-                  <a href="#" class="readmore-btn">read more</a>
-               </div>
-            </div>
-         </div>
-
-         <div class="col-lg-4 col-md-6">
-            <div class="post-item wow fadeInUp" data-wow-delay="0.2s">
-               <div class="post-item-header">
-                  <div class="post-item-meta">
-                     <ul>
-                        <li>07 feb, 2025</li>
-                     </ul>
-                  </div>
-                  <div class="post-item-content">
-                     <h2><a href="#">Healing Begins with Hope: Stories of Rural Health and Community Care</a>
+                     <h2>
+                        <a href="{{ route('blog.details', $blog->slug) }}">
+                           {{ $blog->title }}
+                        </a>
                      </h2>
                   </div>
                </div>
                <div class="post-featured-image">
-                  <a href="blog-single.html" data-cursor-text="View">
+                  <a href="{{ route('blog.details', $blog->slug) }}" data-cursor-text="View">
                      <figure class="image-anime">
-                        <img src="{{asset('fronted/assets/images/services-image-2.jpg')}}" alt="">
+                        <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" alt="{{ $blog->title }}">
                      </figure>
                   </a>
                </div>
                <div class="blog-item-btn">
-                  <a href="#" class="readmore-btn">read more</a>
+                  <a href="{{ route('blog.details', $blog->slug) }}" class="readmore-btn">read more</a>
                </div>
             </div>
          </div>
-
-         <div class="col-lg-4 col-md-6">
-            <div class="post-item wow fadeInUp" data-wow-delay="0.4s">
-               <div class="post-item-header">
-                  <div class="post-item-meta">
-                     <ul>
-                        <li>04 feb, 2025</li>
-                     </ul>
-                  </div>
-                  <div class="post-item-content">
-                     <h2><a href="#">Celebrating Lifesavers: How Doctors, Nurses & Educators are Transforming
-                           Public Health</a></h2>
-                  </div>
-               </div>
-               <div class="post-featured-image">
-                  <a href="blog-single.html" data-cursor-text="View">
-                     <figure class="image-anime">
-                        <img src="{{asset('fronted/assets/images/service-entry-image-2.jpg')}}" alt="">
-                     </figure>
-                  </a>
-               </div>
-               <div class="blog-item-btn">
-                  <a href="blog-single.html" class="readmore-btn">read more</a>
-               </div>
+         @endforeach
+         <div class="col-lg-12">
+            <div class="wow fadeInUp text-end" data-wow-delay="0.6s">
+               <a href="{{ route('blog') }}" class="btn-default">View all Post</a>
             </div>
          </div>
       </div>
    </div>
 </div>
+@endif
 @endsection
 @push('scripts')
 

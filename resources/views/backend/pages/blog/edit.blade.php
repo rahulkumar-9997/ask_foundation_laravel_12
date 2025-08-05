@@ -120,16 +120,6 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="row">
-                    <div class="col-lg-12">
-                        <div class="summer-description-box mb-3">
-                            <label class="form-label">Content</label>
-                            <textarea id="summernote" name="content">
-                                {{ old('meta_description', $blog->content) }}
-                            </textarea>
-                        </div>
-                    </div>
-                </div>
                     @if($blog->images->count() > 0)
                     <div class="col-sm-12 col-12">
                         <div class="mt-2">
@@ -144,6 +134,17 @@
                         </div>
                     </div>
                     @endif
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="summer-description-box mb-3">
+                                <label class="form-label">Content</label>
+                                <textarea id="summernote" name="content">
+                                    {{ old('meta_description', $blog->content) }}
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
