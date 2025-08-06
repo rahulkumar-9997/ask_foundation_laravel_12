@@ -3,7 +3,7 @@
 <!-- Bootstrap js file -->
 <script src="{{asset('fronted/assets/js/bootstrap.min.js')}}"></script>
 <!-- Validator js file -->
-<script src="{{asset('fronted/assets/js/validator.min.js')}}"></script>
+<!-- <script src="{{asset('fronted/assets/js/validator.min.js')}}"></script> -->
 <!-- SlickNav js file -->
 <script src="{{asset('fronted/assets/js/jquery.slicknav.js')}}"></script>
 <!-- Swiper js file -->
@@ -26,8 +26,9 @@
 <script src="{{asset('fronted/assets/js/SplitText.js')}}"></script>
 <script src="{{asset('fronted/assets/js/ScrollTrigger.min.js')}}"></script>
 <!-- YTPlayer js File -->
-<script src="{{asset('fronted/assets/js/jquery.mb.YTPlayer.min.js')}}"></script>
+<!-- <script src="{{asset('fronted/assets/js/jquery.mb.YTPlayer.min.js')}}"></script> -->
 <!-- Wow js file -->
 <script src="{{asset('fronted/assets/js/wow.min.js')}}"></script>
 <!-- Main Custom js file -->
 <script src="{{asset('fronted/assets/js/function.js')}}"></script>
+<script src="{{asset('fronted/assets/js/common.js')}}"></script>

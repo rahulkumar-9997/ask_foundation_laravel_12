@@ -44,4 +44,5 @@ class Blog extends Model
     {
         return $this->hasMany(BlogParagraphs::class, 'blog_id')->orderBy('sort_order');
     }
+    
 }

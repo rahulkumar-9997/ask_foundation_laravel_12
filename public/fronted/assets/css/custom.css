@@ -420,7 +420,7 @@ body {
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);
-	background: url('../images/icon-sub-heading.svg');
+	background: url('../ask-img/icon/icon-sub-heading.svg');
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: cover;
@@ -992,7 +992,7 @@ header.main-header .header-sticky.active {
 }
 
 .hero-list ul li {
-	background: url('../images/icon-check.svg') no-repeat;
+	background: url('../ask-img/icon/icon-check.svg') no-repeat;
 	background-position: left center;
 	background-size: 26px auto;
 	color: var(--white-color);
@@ -1193,7 +1193,7 @@ header.main-header .header-sticky.active {
 	width: 100%;
 	background-color: var(--secondary-color);
 	display: inline-block;
-	mask-image: url('../images/helped-fund-box-mask.svg');
+	mask-image: url('../ask-img/icon/helped-fund-box-mask.svg');
 	mask-size: contain;
 	mask-position: bottom center;
 	mask-repeat: no-repeat;
@@ -1247,7 +1247,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .our-services {
-	background: url('../images/our-service-bg.svg'), var(--secondary-color);
+	background: url('../ask-img/icon/our-service-bg.svg'), var(--secondary-color);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 100% auto;
@@ -1482,7 +1482,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .our-causes {
-	background: url(../images/our-service-bg.svg), var(--secondary-color);
+	background: url(../ask-img/icon/our-service-bg.svg), var(--secondary-color);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 100% auto;
@@ -3796,7 +3796,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .page-blog {
-	padding: 100px 0;
+	padding: 60px 0;
 }
 
 .page-pagination {
@@ -3838,7 +3838,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .page-single-post {
-	padding: 100px 0;
+	padding: 60px 0;
 }
 
 .post-image {
@@ -3857,6 +3857,11 @@ header.main-header .header-sticky.active {
 	aspect-ratio: 1 / 0.50;
 	object-fit: cover;
 	border-radius: 40px;
+}
+.blog-short-content .short-title{
+	font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 28px;
 }
 
 .post-content {
@@ -3917,8 +3922,10 @@ header.main-header .header-sticky.active {
 }
 
 .post-entry p {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	text-align: justify;
 }
+
 
 .post-entry p:last-child {
 	margin-bottom: 0;
@@ -3926,8 +3933,8 @@ header.main-header .header-sticky.active {
 
 .post-entry p strong {
 	color: var(--primary-color);
-	font-size: 20px;
-	font-weight: 600;
+	font-size: 16px;
+    font-weight: bolder;
 }
 
 .post-entry ol {
@@ -3943,17 +3950,17 @@ header.main-header .header-sticky.active {
 
 .post-entry ul {
 	padding: 0;
-	margin: 20px 0 20px;
-	padding-left: 20px;
+	margin: 10px 0 10px;
+	padding-left: 25px;
 }
 
 .post-entry ul li {
 	position: relative;
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 1.5em;
-	color: var(--text-color);
-	margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 9px;
 }
 
 .post-entry ul li:last-child {
@@ -4065,6 +4072,28 @@ header.main-header .header-sticky.active {
 .post-social-sharing ul li a i {
 	font-size: 18px;
 	color: inherit;
+}
+.blog-paragraphs {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.blog-p-img figure{
+	display: block;
+    border-radius: 20px;
+}
+
+.para-img-se{
+	position: relative;
+    overflow: hidden;
+}
+
+.para-img-se img{	
+    width: 100%;
+    /* aspect-ratio: 1 / 0.81; */
+    object-fit: content;
+    border-radius: 20px;
 }
 
 /************************************/
@@ -4688,14 +4717,14 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .page-contact-us {
-	padding: 100px 0;
+	padding: 60px 0;
 }
 
 .contact-info-box {
 	background-color: var(--white-color);
 	border: 1px solid var(--divider-color);
 	border-radius: 30px;
-	padding: 80px;
+	padding: 40px;
 	box-shadow: 0px -10px 40px 5px #00000005;
 	display: flex;
 	flex-wrap: wrap;
@@ -4785,8 +4814,11 @@ header.main-header .header-sticky.active {
 }
 
 .contact-form-box {
-	background: var(--secondary-color);
-	padding: 6.25vw;
+	background: var(--accent-color);
+	padding: 2.25vw;
+}
+#contactForm .invalid-feedback{
+	color: var(--bs-body-bg);
 }
 
 .contact-form .form-control {
@@ -7519,5 +7551,42 @@ header.main-header .header-sticky.active {
     margin-bottom: 15px;
 
 }
+.video-container {
+   	position: relative;
+    /* height: calc(100% - 30px); */
+    background: var(--white-color);
+    /* border: 1px solid var(--divider-color); */
+    box-shadow: 0px 0px 40px 5px #0000004d;
+    border-radius: 30px;
+    padding: 20px;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+.video-container .tag-video {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+/* .video-container::before {
+    content: "";
+    display: block;
+    padding-top: 66.25%;
+}
 
-/*number tell story card*/
+.video-container .tag-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+} */
+.hero-content .section-title h3::before{
+	display: none;
+}
+.hero-content .section-title h3{
+	padding-left: 0px;
+}

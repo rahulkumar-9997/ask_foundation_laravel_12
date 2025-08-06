@@ -18,7 +18,9 @@
                     <div class="nav-menu-wrapper">
                         <ul class="navbar-nav mr-auto" id="menu">
 
-                            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('about-us') }}">About Us</a>
+                            </li>
                             <li class="nav-item submenu"><a class="nav-link" href="#">Focus Areas</a>
                                 <ul>
                                     <li class="nav-item"><a class="nav-link" href="#">Bone Health and
@@ -33,18 +35,22 @@
                             </li>
                             <li class="nav-item"><a class="nav-link" href="#">Patient Support</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('our-doctors') }}">Our Doctors</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('blog') }}">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('contact-us') }}">Contact Us</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- Contact Now Box Start -->
                     <div class="contact-now-box">
                         <div class="icon-box">
-                            <img src="{{asset('fronted/assets/images/icon-phone.svg')}}" alt="">
+                            <img src="{{asset('fronted/assets/ask-img/icon/icon-phone.svg')}}" alt="">
                         </div>
                         <div class="contact-now-box-content">
                             <p>need help !</p>
-                            <h3><a href="tel:789987645">(+91) 99350 70000</a></h3>
+                            <h3><a href="tel:+919010844055">(+91) 9010844055</a></h3>
                         </div>
                     </div>
                 </div>

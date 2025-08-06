@@ -17,7 +17,7 @@
                         <div class="footer-contact-detail">
                             <div class="footer-contact-item">
                                 <p>Connect with us</p>
-                                <h3><a href="tel:+123456789">+91 123 456 789</a></h3>
+                                <h3><a href="tel:+919010844055">+91 9010844055</a></h3>
                             </div>
 
                             <div class="footer-contact-item">
@@ -31,10 +31,21 @@
                         <div class="footer-social-links">
                             <h3>Follow on</h3>
                             <ul>
-                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li>
+                                    <a href="https://www.youtube.com/@AskTheFoundation" target="_blank">
+                                        <i class="fa-brands fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/people/Ask-The-Foundation/61578640861940/" target="_blank">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/askthefoundation/" target="_blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <!-- Footer Social Links End -->
@@ -116,3 +127,16 @@
     <!-- Footer Copyright End -->
 </footer>
 <!-- Main Footer Section End -->
+<!--Toast notification-->
+<div class="position-fixed start-0 end-0" style="z-index: 11; bottom: 50px">
+    <div id="liveToast" class="toast align-items-center mx-auto" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<!--Toast notification-->

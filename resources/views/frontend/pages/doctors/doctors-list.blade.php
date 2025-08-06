@@ -53,6 +53,9 @@
                     </div>
                 </div>
                 @endforeach
+                <div class="col-lg-12">
+                    {{ $doctors->links('vendor.pagination.bootstrap-4') }}
+                </div>
             @else
                 <div class="col-12">
                     <p class="text-center">No doctors found.</p>

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Leading Global Pharmaceutical Company in India | Anti Retroviral Drugs')
-@section('description', 'Hetero is the first company in India to launch the generic version of Remdesivir injection, COVIFOR, in India, which is used to treat hospitalization cases of COVID-19. Click here to know more.')
+@section('title','Ask Foundation')
+@section('description', 'To create comprehensive awareness about bone health and road safety, empowering communities with knowledge and resources for prevention.')
 @section('main-content')
 @if (!empty($data['bannerVideo']) && $data['bannerVideo']->count() > 0)
 <div class="hero hero-video">
@@ -86,7 +86,7 @@
                   </figure>
                </div>
                <div class="need-fund-box">
-                  <img src="{{asset('fronted/assets/images/icon-funded-dollar.svg')}}" alt="">
+                  <img src="{{asset('fronted/assets/ask-img/icon/icon-funded-dollar.svg')}}" alt="">
                   <p>Promoting early detection and prevention of bone diseases.</p>
                </div>
             </div>
@@ -107,7 +107,7 @@
                   <div class="about-us-body-content">
                      <div class="about-support-box wow fadeInUp" data-wow-delay="0.4s">
                         <div class="icon-box">
-                           <img src="{{asset('fronted/assets/images/icon-about-support.svg')}}" alt="">
+                           <img src="{{asset('fronted/assets/ask-img/icon/icon-about-support.svg')}}" alt="">
                         </div>
                         <div class="about-support-content">
                            <h3>Road Safety Programs </h3>
@@ -150,7 +150,7 @@
                <div class="what-we-list">
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.2s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/images/icon-what-we-1.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-1.svg')}}" alt="">
                      </div>
                      <div class="what-we-item-content">
                         <h3>economic empowerment</h3>
@@ -160,7 +160,7 @@
                   </div>
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.4s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/images/icon-what-we-2.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-2.svg')}}" alt="">
                      </div>
                      <div class="what-we-item-content">
                         <h3>clean water and sanitation</h3>
@@ -170,7 +170,7 @@
                   </div>
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.6s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/images/icon-what-we-3.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-3.svg')}}" alt="">
                      </div>
                      <div class="what-we-item-content">
                         <h3>economic empowerment</h3>
@@ -195,7 +195,7 @@
                </div>
                <div class="donate-now-box">
                   <a href="donation.html">
-                     <img src="{{asset('fronted/assets/images/icon-donate-now.svg')}}" alt="">
+                     <img src="{{asset('fronted/assets/ask-img/icon/icon-donate-now.svg')}}" alt="">
                      donate now
                   </a>
                </div>
@@ -432,88 +432,112 @@
          </div>
       </div>
 
-      <div class="row">
-         <div class="col-lg-3 col-md-6">
-            <div class="about-ask-foundation-card wow fadeInUp">
-               <div class="about-ask-foundation-content">
-                  <div class="about-ask-foundation-icon-container about-ask-icon-bg1">
-                     <svg class="about-ask-foundation-icon" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <circle cx="12" cy="12" r="6"></circle>
-                        <circle cx="12" cy="12" r="2"></circle>
-                     </svg>
+      <div class="row align-items-center">
+         <div class="col-lg-6">
+            <div class="row">
+               <div class="col-lg-6 col-md-6">
+                  <div class="about-ask-foundation-card wow fadeInUp">
+                     <div class="about-ask-foundation-content">
+                        <div class="about-ask-foundation-icon-container about-ask-icon-bg1">
+                           <svg class="about-ask-foundation-icon" xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round">
+                              <circle cx="12" cy="12" r="10"></circle>
+                              <circle cx="12" cy="12" r="6"></circle>
+                              <circle cx="12" cy="12" r="2"></circle>
+                           </svg>
+                        </div>
+                        <h3 class="about-ask-foundation-title">Our Mission</h3>
+                        <p class="about-ask-foundation-description">
+                           To create comprehensive awareness about bone health and road safety, empowering
+                           communities with knowledge and resources for prevention.
+                        </p>
+                     </div>
                   </div>
-                  <h3 class="about-ask-foundation-title">Our Mission</h3>
-                  <p class="about-ask-foundation-description">
-                     To create comprehensive awareness about bone health and road safety, empowering
-                     communities with knowledge and resources for prevention.
-                  </p>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="about-ask-foundation-card wow fadeInUp">
+                     <div class="about-ask-foundation-content">
+                        <div class="about-ask-foundation-icon-container about-ask-icon-bg2">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-users h-8 w-8 text-white">
+                              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                              <circle cx="9" cy="7" r="4"></circle>
+                              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                           </svg>
+                        </div>
+                        <h3 class="about-ask-foundation-title">Community Impact</h3>
+                        <p class="about-ask-foundation-description">
+                           Building a network of informed individuals who can make healthier choices and contribute
+                           to safer communities for everyone.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="about-ask-foundation-card wow fadeInUp">
+                     <div class="about-ask-foundation-content">
+                        <div class="about-ask-foundation-icon-container about-ask-icon-bg3">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-book-open h-8 w-8 text-white">
+                              <path d="M12 7v14"></path>
+                              <path
+                                 d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z">
+                              </path>
+                           </svg>
+                        </div>
+                        <h3 class="about-ask-foundation-title">Education Focus</h3>
+                        <p class="about-ask-foundation-description">
+                           Providing evidence-based information about osteoporosis, osteoarthritis prevention, and
+                           road traffic safety measures.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="about-ask-foundation-card wow fadeInUp">
+                     <div class="about-ask-foundation-content">
+                        <div class="about-ask-foundation-icon-container about-ask-icon-bg4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-lightbulb h-8 w-8 text-white">
+                              <path
+                                 d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5">
+                              </path>
+                              <path d="M9 18h6"></path>
+                              <path d="M10 22h4"></path>
+                           </svg>
+                        </div>
+                        <h3 class="about-ask-foundation-title">Innovation</h3>
+                        <p class="about-ask-foundation-description">
+                           Developing innovative approaches to health education and safety awareness through modern
+                           communication channels.
+                        </p>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
-         <div class="col-lg-3 col-md-6">
-            <div class="about-ask-foundation-card wow fadeInUp">
-               <div class="about-ask-foundation-content">
-                  <div class="about-ask-foundation-icon-container about-ask-icon-bg2">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-users h-8 w-8 text-white">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                     </svg>
-                  </div>
-                  <h3 class="about-ask-foundation-title">Community Impact</h3>
-                  <p class="about-ask-foundation-description">
-                     Building a network of informed individuals who can make healthier choices and contribute
-                     to safer communities for everyone.
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-6">
-            <div class="about-ask-foundation-card wow fadeInUp">
-               <div class="about-ask-foundation-content">
-                  <div class="about-ask-foundation-icon-container about-ask-icon-bg3">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-book-open h-8 w-8 text-white">
-                        <path d="M12 7v14"></path>
-                        <path
-                           d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z">
-                        </path>
-                     </svg>
-                  </div>
-                  <h3 class="about-ask-foundation-title">Education Focus</h3>
-                  <p class="about-ask-foundation-description">
-                     Providing evidence-based information about osteoporosis, osteoarthritis prevention, and
-                     road traffic safety measures.
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-6">
-            <div class="about-ask-foundation-card wow fadeInUp">
-               <div class="about-ask-foundation-content">
-                  <div class="about-ask-foundation-icon-container about-ask-icon-bg4">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-lightbulb h-8 w-8 text-white">
-                        <path
-                           d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5">
-                        </path>
-                        <path d="M9 18h6"></path>
-                        <path d="M10 22h4"></path>
-                     </svg>
-                  </div>
-                  <h3 class="about-ask-foundation-title">Innovation</h3>
-                  <p class="about-ask-foundation-description">
-                     Developing innovative approaches to health education and safety awareness through modern
-                     communication channels.
-                  </p>
+         <div class="col-lg-6">
+            <div class="about-video-section">
+               <div class="about-video-item video-container">
+                  <video
+                     class="tag-video"
+                     controls
+                     autoplay
+                     muted
+                     playsinline
+                     loop
+                     preload="metadata"
+                     loading="lazy"
+                    >
+                     <source src="{{asset('fronted/assets/ask-img/about-video.mp4')}}" type="video/mp4">
+                     <source src="{{asset('fronted/assets/ask-img/about-video.webm')}}" type="video/webm">
+                     Your browser does not support HTML5 video.
+                  </video>
                </div>
             </div>
          </div>
@@ -525,21 +549,21 @@
 <div class="scrolling-ticker mb-3">
    <div class="scrolling-ticker-box">
       <div class="scrolling-content">
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Road safety programs</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Road safety programs</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Road safety programs</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Road safety programs</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
       </div>
 
       <div class="scrolling-content">
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Road safety programs</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Road safety programs</span>
-         <span><img src="{{asset('fronted/assets/images/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Road safety programs</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Road safety programs</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
       </div>
    </div>
 </div>
@@ -626,7 +650,7 @@
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.4s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/images/icon-how-it-work-1.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-1.svg')}}" alt="">
                      </div>
                      <div class="how-it-work-body">
                         <h3>healthcare support</h3>
@@ -642,7 +666,7 @@
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.4s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/images/icon-how-it-work-2.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-2.svg')}}" alt="">
                      </div>
                      <div class="how-it-work-body">
                         <h3>Plan and design</h3>
@@ -658,7 +682,7 @@
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.6s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/images/icon-how-it-work-3.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-3.svg')}}" alt="">
                      </div>
                      <div class="how-it-work-body">
                         <h3>Implement solutions</h3>
@@ -674,7 +698,7 @@
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.6s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/images/icon-how-it-work-4.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-4.svg')}}" alt="">
                      </div>
                      <div class="how-it-work-body">
                         <h3>Report and share</h3>
