@@ -30,7 +30,7 @@
          <div class="col-lg-8">
             <div class="hero-content">
                <div class="section-title">
-                  <h3 class="wow fadeInUp">{{ $data['bannerVideo']->title }}</h3>
+                  <!-- <h3 class="wow fadeInUp">{{ $data['bannerVideo']->title }}</h3> -->
                   <h1 class="text-anime-style-2" data-cursor="-opaque">
                      {!! $data['bannerVideo']->subtitle !!}
                   </h1>
@@ -51,7 +51,7 @@
                      </a>
                   </div> -->
                </div>
-               @if($data['bannerVideo']->features)
+               <!-- @if($data['bannerVideo']->features)
                <div class="hero-footer wow fadeInUp" data-wow-delay="0.6s">
                   <div class="hero-list">
                      <ul>
@@ -61,7 +61,40 @@
                      </ul>
                   </div>
                </div>
-               @endif
+               @endif -->
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+@endif
+@php
+$bgColors = ['#fff7ed', '#f0fdf4', '#faf5ff'];
+$colorIndex = 0;
+$features = $data['bannerVideo']->features ?? [];
+@endphp
+@if(count($features) > 0)
+<div class="feature-area home-feature fa-negative home-features-section">
+   <div class="container">
+      <div class="row justify-content-md-center">
+         <div class="col-xl-12 col-lg-12">
+            <div class="feature-wrapper wow fadeInUp" data-wow-delay="0.6s">
+               <div class="row justify-content-md-center">
+                  @foreach ($features as $feature)
+                  <div class="col-lg-4">
+                     <div class="feature-item" style="background-color: {{ $bgColors[$colorIndex % count($bgColors)] }};">
+                        <a href="#">
+                           <div class="banner-feature" >
+                              <h3>
+                                 {{ $feature }}
+                              </h3>
+                           </div>
+                        </a>
+                     </div>
+                  </div>
+                  @php $colorIndex++; @endphp
+                  @endforeach
+               </div>
             </div>
          </div>
       </div>
@@ -77,12 +110,12 @@
             <div class="about-us-images">
                <div class="about-img-1">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="">
+                     <img src="{{asset('fronted/assets/ask-img/dr.sai-laxman-anne.jpg')}}" alt="">
                   </figure>
                </div>
                <div class="about-img-2">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/ask-2.png')}}" alt="">
+                     <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="">
                   </figure>
                </div>
                <div class="need-fund-box">
@@ -93,42 +126,17 @@
          </div>
 
          <div class="col-lg-6">
-            <div class="about-us-content">
+            <div class="about-us-content home-about-us-page">
                <div class="section-title">
-                  <h2 class="text-anime-style-2" data-cursor="-opaque">
-                     United for bone health, building stronger communities
+                  <h2 class="text-anime-style-2 empowerh2" data-cursor="-opaque">
+                     EMPOWER LIVES & <br>COMMUNITIES THROUGH <br><span class="spanabou"> PREVENTIVE CARE & EDUCATION</span>
                   </h2>
-                  <p class="wow fadeInUp" data-wow-delay="0.2s">
-                     Driven by care and prevention, we spread awareness and resources to help every
-                     individual live stronger, healthier lives.
+                  <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
+                     Dr. Sai Laxman Anne is a highly accomplished Chief Consultant Orthopaedic and Joint Replacement Surgeon, holding an M.S. in Orthopaedics and distinguished by prestigious fellowships in Arthroplasty from both India and the UK. With a vast surgical experience that includes performing over 5,000 primary and 200 revision knee and hip replacements, his expertise is further demonstrated through his leadership roles as a Head of Department, Programme Director for Minimally Invasive Surgery, and Consultant Limb Reconstruction Surgeon. His practice incorporates advanced techniques, with special training in computer-navigated surgery and pain management from John Hopkins, USA. Deeply committed to serving the medical community and advancing the field, Dr. Anne actively contributes as a national faculty member at esteemed institutes, dedicating his time to training the next generation of surgeons through numerous workshops, publications, and presentations across the country.
                   </p>
                </div>
-               <div class="about-us-body">
-                  <div class="about-us-body-content">
-                     <div class="about-support-box wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="icon-box">
-                           <img src="{{asset('fronted/assets/ask-img/icon/icon-about-support.svg')}}" alt="">
-                        </div>
-                        <div class="about-support-content">
-                           <h3>Road Safety Programs </h3>
-                           <p>Creating safer habits among school children and communities.</p>
-                        </div>
-                     </div>
-                     <div class="about-btn wow fadeInUp" data-wow-delay="0.6s">
-                        <a href="about.html" class="btn-default">about us</a>
-                     </div>
-                  </div>
-                  <div class="helped-fund-item">
-                     <div class="helped-fund-img">
-                        <figure class="image-anime">
-                           <img src="{{asset('fronted/assets/images/helped-fund-img.jpg')}}" alt="">
-                        </figure>
-                     </div>
-                     <div class="helped-fund-content">
-                        <h3>Lifestyle Disease Camps</h3>
-                        <p>Focusing on diabetes, hypertension, and preventive screenings.</p>
-                     </div>
-                  </div>
+               <div class="about-btn wow fadeInUp mt-3" data-wow-delay="0.6s">
+                  <a href="{{ route('about-us') }}" class="btn-default">about us</a>
                </div>
             </div>
          </div>
@@ -136,75 +144,6 @@
    </div>
 </div>
 <!-- About Us Section End -->
-<!-- What We Do Section Start -->
-<div class="what-we-do">
-   <div class="container">
-      <div class="row align-items-center">
-         <div class="col-lg-6">
-            <div class="what-we-do-content">
-               <div class="section-title">
-                  <h3 class="wow fadeInUp">what we do</h3>
-                  <h2 class="text-anime-style-2" data-cursor="-opaque">Building hope creating lasting change
-                  </h2>
-               </div>
-               <div class="what-we-list">
-                  <div class="what-we-item wow fadeInUp" data-wow-delay="0.2s">
-                     <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-1.svg')}}" alt="">
-                     </div>
-                     <div class="what-we-item-content">
-                        <h3>economic empowerment</h3>
-                        <p>Empowering individuals through job training, financial literacy, and small
-                           business support to create sustainable livelihoods.</p>
-                     </div>
-                  </div>
-                  <div class="what-we-item wow fadeInUp" data-wow-delay="0.4s">
-                     <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-2.svg')}}" alt="">
-                     </div>
-                     <div class="what-we-item-content">
-                        <h3>clean water and sanitation</h3>
-                        <p>Empowering individuals through job training, financial literacy, and small
-                           business support to create sustainable livelihoods.</p>
-                     </div>
-                  </div>
-                  <div class="what-we-item wow fadeInUp" data-wow-delay="0.6s">
-                     <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-3.svg')}}" alt="">
-                     </div>
-                     <div class="what-we-item-content">
-                        <h3>economic empowerment</h3>
-                        <p>Empowering individuals through job training, financial literacy, and small
-                           business support to create sustainable livelihoods.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-6">
-            <div class="what-we-do-images">
-               <div class="what-we-do-img-1">
-                  <figure class="image-anime reveal">
-                     <img src="{{asset('fronted/assets/images/ask-3.png')}}" alt="">
-                  </figure>
-               </div>
-               <div class="what-we-do-img-2">
-                  <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/ask-e.png')}}" alt="">
-                  </figure>
-               </div>
-               <div class="donate-now-box">
-                  <a href="donation.html">
-                     <img src="{{asset('fronted/assets/ask-img/icon/icon-donate-now.svg')}}" alt="">
-                     donate now
-                  </a>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- What We Do Section End -->
 <!-- Our Causes Section Start -->
 <div class="our-causes health-focus-area">
    <div class="container">
@@ -364,6 +303,75 @@
    </div>
 </div>
 <!-- Our Causes Section End -->
+<!-- What We Do Section Start -->
+<div class="what-we-do">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-lg-6">
+            <div class="what-we-do-content">
+               <div class="section-title">
+                  <h3 class="wow fadeInUp">what we do</h3>
+                  <h2 class="text-anime-style-2" data-cursor="-opaque">Building hope creating lasting change
+                  </h2>
+               </div>
+               <div class="what-we-list">
+                  <div class="what-we-item wow fadeInUp" data-wow-delay="0.2s">
+                     <div class="icon-box">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-1.svg')}}" alt="">
+                     </div>
+                     <div class="what-we-item-content">
+                        <h3>economic empowerment</h3>
+                        <p>Empowering individuals through job training, financial literacy, and small
+                           business support to create sustainable livelihoods.</p>
+                     </div>
+                  </div>
+                  <div class="what-we-item wow fadeInUp" data-wow-delay="0.4s">
+                     <div class="icon-box">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-2.svg')}}" alt="">
+                     </div>
+                     <div class="what-we-item-content">
+                        <h3>clean water and sanitation</h3>
+                        <p>Empowering individuals through job training, financial literacy, and small
+                           business support to create sustainable livelihoods.</p>
+                     </div>
+                  </div>
+                  <div class="what-we-item wow fadeInUp" data-wow-delay="0.6s">
+                     <div class="icon-box">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-3.svg')}}" alt="">
+                     </div>
+                     <div class="what-we-item-content">
+                        <h3>economic empowerment</h3>
+                        <p>Empowering individuals through job training, financial literacy, and small
+                           business support to create sustainable livelihoods.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="what-we-do-images">
+               <div class="what-we-do-img-1">
+                  <figure class="image-anime reveal">
+                     <img src="{{asset('fronted/assets/images/ask-3.png')}}" alt="">
+                  </figure>
+               </div>
+               <div class="what-we-do-img-2">
+                  <figure class="image-anime">
+                     <img src="{{asset('fronted/assets/images/ask-e.png')}}" alt="">
+                  </figure>
+               </div>
+               <div class="donate-now-box">
+                  <a href="donation.html">
+                     <img src="{{asset('fronted/assets/ask-img/icon/icon-donate-now.svg')}}" alt="">
+                     donate now
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- What We Do Section End -->
 <!-- Why Choose Us Section Start -->
 <div class="why-choose-us">
    <div class="container">
@@ -532,8 +540,7 @@
                      playsinline
                      loop
                      preload="metadata"
-                     loading="lazy"
-                    >
+                     loading="lazy">
                      <source src="{{asset('fronted/assets/ask-img/about-video.mp4')}}" type="video/mp4">
                      <source src="{{asset('fronted/assets/ask-img/about-video.webm')}}" type="video/webm">
                      Your browser does not support HTML5 video.

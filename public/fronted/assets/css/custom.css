@@ -57,6 +57,7 @@
 	--dark-divider-color: #FFFFFF1A;
 	--color-one: #f15d5f;
 	--color-two: #662d91;
+	--color-yellow: #fec020;
 	--error-color: rgb(230, 87, 87);
 	--default-font: "Inter", serif;
 	--accent-font: "Onest", serif;
@@ -435,7 +436,7 @@ body {
 }
 
 .section-title h2 {
-	font-size: 40px;
+	font-size: 34px;
 	margin-bottom: 0;
 	cursor: none;
 }
@@ -446,7 +447,7 @@ body {
 }
 
 .section-title p {
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-bottom: 0;
 }
 
@@ -1033,7 +1034,7 @@ header.main-header .header-sticky.active {
 
 .about-us-images {
 	position: relative;
-	padding: 0 0 190px 110px;
+	padding: 0 0 190px 75px;
 	margin-right: 30px;
 }
 
@@ -6181,7 +6182,31 @@ header.main-header .header-sticky.active {
 }
 
 @media only screen and (max-width: 767px) {
+	.home-features-section.fa-negative {
+		margin-top: 20px;
+	}
+	.home-features-section .feature-item{
+		padding: 10px 10px;
+	}
+	.home-features-section .banner-feature h3 {
+		font-size: 18px;
+	}
+	.home-features-section .col-6:last-child:nth-child(odd) {
+		width: 100%;
+	}
 
+	.home-features-section.home-feature .feature-item{
+		margin-bottom: 10px;
+	}
+	.about-us .home-about-us-page .empowerh2{
+		font-size: 22px;
+	}
+	.about-us .section-title .aboutP{
+		text-align: unset;
+	}
+	.about-us .home-about-us-page .empowerh2 .spanabou{
+		font-size: 21px;
+	}
 	.section-row {
 		margin-bottom: 30px;
 	}
@@ -7165,11 +7190,12 @@ header.main-header .header-sticky.active {
 
 	.hero-content .section-title,
 	.hero-body {
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 }
 
 @media (max-width: 767px) {
+	
 	.hero-bg-video {
 		position: static !important;
 		height: auto !important;
@@ -7192,7 +7218,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.hero-content {
-		padding: 10px 0 10px 0;
+		padding: 10px 0 0px 0;
 	}
 	.slicknav_menu{
 		width: 75%;
@@ -7301,7 +7327,12 @@ header.main-header .header-sticky.active {
 	font-weight: 600;
 	color: #111827;
 	margin-bottom: 8px;
-	font-size: 16px;
+	font-size: 18px;
+}
+.section-title .aboutP{
+	color: #4b5563;
+    text-align: justify;
+    font-size: 18px;
 }
 
 .badges-container {
@@ -7589,4 +7620,47 @@ header.main-header .header-sticky.active {
 }
 .hero-content .section-title h3{
 	padding-left: 0px;
+}
+/* .home-about-us-page .empowerh2{
+	text-align: right;
+} */
+.home-about-us-page .empowerh2{
+	font-size: 26px;
+    line-height: normal;
+    text-transform: uppercase;
+    /* color: var(--primary-color); */
+    color: var(--color-yellow);
+    margin-bottom: 5px;
+}
+.home-about-us-page .empowerh2 .spanabou{
+	font-size: 34px;
+    margin-bottom: 0;
+	margin-top: 20px;
+    cursor: none;
+	font-family: var(--accent-font);
+    color: var(--primary-color);
+}
+
+.fa-negative {
+    margin-top: -62px;
+}
+.feature-area {
+    position: relative;
+    z-index: 1;
+}
+
+.home-feature .feature-item {
+    text-align: center;
+}
+.feature-item {
+   	position: relative;
+    padding: 20px 15px;
+    background: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 0 40px 5px rgb(0 0 0 / 26%);
+    z-index: 1;
+}
+.banner-feature h3{
+	color: var(--color-one);
+    font-size: 28px;
 }

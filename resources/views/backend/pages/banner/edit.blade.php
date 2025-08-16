@@ -63,8 +63,7 @@
                             <label class="form-label" for="banner_description">
                                 Banner video description
                             </label>
-                            <textarea class="form-control @error('banner_description') is-invalid @enderror" id="banner_description" name="banner_description" rows="2">
-                            {{ old('banner_description', $banner->description) }}
+                            <textarea class="form-control @error('banner_description') is-invalid @enderror" id="banner_description" name="banner_description" rows="2">{{ old('banner_description', $banner->description) }}
                             </textarea>
                             @error('banner_description')
                             <div class="invalid-feedback">{{ $message }}</div>
