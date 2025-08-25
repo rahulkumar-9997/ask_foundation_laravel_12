@@ -4990,6 +4990,7 @@ header.main-header .header-sticky.active {
 
 	.section-title p {
 		margin-top: 10px;
+        line-height: 25px;
 	}
 
 	.section-title-content {
@@ -6199,7 +6200,7 @@ header.main-header .header-sticky.active {
 		margin-bottom: 10px;
 	}
 	.about-us .home-about-us-page .empowerh2{
-		font-size: 22px;
+		font-size: 20px;
 	}
 	.about-us .section-title .aboutP{
 		text-align: unset;
@@ -6244,11 +6245,13 @@ header.main-header .header-sticky.active {
 	} */
 
 	.hero::before {
-		background: linear-gradient(270deg, rgb(2 13 25 / 0%) 16.33%, rgb(2 13 25 / 0%) 100%), linear-gradient(360deg, rgba(2, 13, 25, 0) 87.52%, #020d1900 101.14%);
+		/* background: linear-gradient(270deg, rgb(2 13 25 / 0%) 16.33%, rgb(2 13 25 / 0%) 100%), linear-gradient(360deg, rgba(2, 13, 25, 0) 87.52%, #020d1900 101.14%); */
+		background: unset;
 	}
 
-	.video-overlay {
-		background: linear-gradient(to bottom, rgb(0 0 0) 0%, rgba(0, 0, 0, 0.3) 20%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.3) 80%, rgb(0 0 0 / 0%) 100%);
+	.formobile-overlay.video-overlay {
+		/* background: linear-gradient(to bottom, rgb(0 0 0) 0%, rgba(0, 0, 0, 0.3) 20%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.3) 80%, rgb(0 0 0 / 0%) 100%); */
+		background: none;
 	}
 
 	.hero-body {
@@ -7170,7 +7173,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.navbar-brand img {
-		width: 105px;
+		width: 135px;
 	}
 
 	.logo-area {
@@ -7185,12 +7188,18 @@ header.main-header .header-sticky.active {
 	}
 
 	.header-sticky.active .navbar-brand img {
-		width: 80px;
+		width: 126px;
 	}
 
 	.hero-content .section-title,
 	.hero-body {
 		margin-bottom: 10px;
+	}
+	header.header-for-mobile.main-header{
+		position: relative;
+	}
+	.container-for-mobile .section-title h1{
+		font-size: 20px;
 	}
 }
 
@@ -7214,7 +7223,7 @@ header.main-header .header-sticky.active {
 
 	.hero {
 		background: unset;
-		background-color: #43c8f3;
+		background-color: #f15d5f;
 	}
 
 	.hero-content {
@@ -7332,7 +7341,7 @@ header.main-header .header-sticky.active {
 .section-title .aboutP{
 	color: #4b5563;
     text-align: justify;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .badges-container {

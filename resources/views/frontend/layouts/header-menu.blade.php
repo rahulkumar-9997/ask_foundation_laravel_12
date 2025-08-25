@@ -1,13 +1,13 @@
 <!-- Header Start -->
-<header class="main-header active-sticky-header">
+<header class="main-header active-sticky-header header-for-mobile">
     <div class="header-sticky">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo Start -->
                 <div class="logo-area">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{asset('fronted/assets/ask-img/logo-horizantal.png')}}" alt="Logo" class="for_desktop_logo">
-                        <img src="{{asset('fronted/assets/ask-img/logo-vertical.png')}}" alt="Logo" class="for_mobile_logo">
+                        <img src="{{asset('fronted/assets/ask-img/logo-horizantal.png')}}" alt="Logo" class="for_desktop_logo1">
+                        <!-- <img src="{{asset('fronted/assets/ask-img/logo-vertical.png')}}" alt="Logo" class="for_mobile_logo"> -->
                     </a>
                 </div>
                 

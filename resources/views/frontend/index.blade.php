@@ -23,7 +23,7 @@
          <source src="{{asset('fronted/assets/ask-img/vertical-banner-video.mp4')}}" type="video/mp4">
       </video>
       @endif
-      <div class="video-overlay"></div>
+      <div class="video-overlay formobile-overlay"></div>
    </div>
    <div class="container container-for-mobile">
       <div class="row align-items-center">
