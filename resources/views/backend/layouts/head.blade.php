@@ -1,4 +1,3 @@
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +14,9 @@
 <link rel="stylesheet" href="{{asset('backend/assets/css/animate.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/plugins/select2/css/select2.min.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/plugins/daterangepicker/daterangepicker.css')}}">
-
 <link rel="stylesheet" href="{{asset('backend/assets/plugins/tabler-icons/tabler-icons.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/plugins/fontawesome/css/fontawesome.min.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/plugins/fontawesome/css/all.min.css')}}">
-
 <link rel="stylesheet" href="{{asset('backend/assets/plugins/toastr/toastify.min.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/css/style.css')}}">
 @stack('styles')
- 

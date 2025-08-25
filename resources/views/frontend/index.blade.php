@@ -41,7 +41,7 @@
                <div class="hero-body wow fadeInUp" data-wow-delay="0.4s">
                   @if($data['bannerVideo']->button_link)
                   <div class="hero-btn">
-                     <a href="{{ $data['bannerVideo']->button_link}}" class="btn-default">donate now</a>
+                     <a href="{{ $data['bannerVideo']->button_link}}" target="_blank" class="btn-default">Know More</a>
                   </div>
                   @endif
                   <!-- <div class="video-play-button">
@@ -407,7 +407,7 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="why-choose-counters">
                   <div class="why-choose-counter-item">
                      <h2><span class="counter">10</span>M+</h2>
-                     <p>Years of experience</p>
+                     <p>People Affected by Osteoporosis</p>
                   </div>
                   <div class="why-choose-counter-item">
                      <h2><span class="counter">1.3</span>M+</h2>

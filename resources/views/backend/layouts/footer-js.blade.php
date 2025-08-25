@@ -19,50 +19,46 @@
 <script src="{{asset('backend/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js')}}" type="text/javascript"></script>
 <script src="{{asset('backend/assets/js/script.js')}}" type="text/javascript"></script>
 <script src="{{asset('backend/assets/plugins/toastr/toastify-js.js')}}" type="text/javascript"></script>
-<!-- <script src="{{asset('backend/assets/js/rocket-loader.min.js')}}" data-cf-settings="6420e90c5e02f67c34f41542-|49" defer></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"></script> -->
 @stack('scripts')
-
 @if(session()->has('success'))
 <script>
-    Toastify({
-        text: "{{ session()->get('success') }}",
-        duration: 5000,
-        gravity: "top",
-        position: "right",
-        className: "bg-success",
-        close: true,
-        onClick: function() {}
-    }).showToast();
+   Toastify({   
+       text: "{{ session()->get('success') }}",   
+       duration: 5000,   
+       gravity: "top",   
+       position: "right",   
+       className: "bg-success",   
+       close: true,   
+       onClick: function() {}   
+   }).showToast();   
 </script>
 @endif
 @if(session()->has('error'))
 <script>
-    Toastify({
-        text: "{{ session()->get('error') }}",
-        duration: 5000,
-        gravity: "top",
-        position: "right",
-        className: "bg-danger",
-        close: true,
-        onClick: function() {}
-    }).showToast();
+   Toastify({   
+       text: "{{ session()->get('error') }}",   
+       duration: 5000,   
+       gravity: "top",   
+       position: "right",   
+       className: "bg-danger",   
+       close: true,   
+       onClick: function() {}   
+   }).showToast();
+   
 </script>
 @endif
-
-
 @if($errors->any())
 <script>
-    @foreach($errors->all() as $error)
-    Toastify({
-        text: "{{ $error }}",
-        duration: 4000,
-        gravity: "top",
-        position: "right",
-        className: "bg-danger",
-        close: true,
-        onClick: function() {}
-    }).showToast();
-    @endforeach
+   @foreach($errors->all() as $error)   
+   Toastify({   
+       text: "{{ $error }}",   
+       duration: 4000,   
+       gravity: "top",   
+       position: "right",   
+       className: "bg-danger",   
+       close: true,   
+       onClick: function() {}   
+   }).showToast();   
+   @endforeach   
 </script>
 @endif
