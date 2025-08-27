@@ -5,24 +5,18 @@
 @if (!empty($data['bannerVideo']) && $data['bannerVideo']->count() > 0)
 <div class="hero hero-video">
    <div class="hero-bg-video">
-      @if($data['bannerVideo']->desktop_video_url)
-      <video autoplay muted loop id="myVideo" class="desktopvideo">
-         <source src="{{ asset('upload/banner/' . $data['bannerVideo']->desktop_video_url) }}" type="video/mp4">
+      <video autoplay muted loop playsinline
+         id="myVideo"
+         preload="none"
+         class="desktopvideo"
+         data-src="{{ asset('upload/banner/' . $data['bannerVideo']->desktop_video_url) }}">
+         <source type="video/mp4">
       </video>
-      @else
-      <video autoplay muted loop id="myVideo" class="desktopvideo">
-         <source src="https://inforbit.in/ask2.mp4" type="video/mp4">
+      <video autoplay muted loop playsinline id="myVideo" class="mobilevideo"
+         data-src="{{ asset('upload/banner/' . $data['bannerVideo']->mobile_video_url) }}"
+         preload="none">
+         <source type="video/mp4">
       </video>
-      @endif
-      @if($data['bannerVideo']->mobile_video_url)
-      <video autoplay muted loop id="myVideo" class="mobilevideo">
-         <source src="{{ asset('upload/banner/' . $data['bannerVideo']->mobile_video_url) }}" type="video/mp4">
-      </video>
-      @else
-      <video autoplay muted loop id="myVideo" class="mobilevideo">
-         <source src="{{asset('fronted/assets/ask-img/vertical-banner-video.mp4')}}" type="video/mp4">
-      </video>
-      @endif
       <div class="video-overlay formobile-overlay"></div>
    </div>
    <div class="container container-for-mobile">
@@ -84,7 +78,7 @@ $features = $data['bannerVideo']->features ?? [];
                   <div class="col-lg-4">
                      <div class="feature-item" style="background-color: {{ $bgColors[$colorIndex % count($bgColors)] }};">
                         <a href="#">
-                           <div class="banner-feature" >
+                           <div class="banner-feature">
                               <h3>
                                  {{ $feature }}
                               </h3>
@@ -361,9 +355,9 @@ $features = $data['bannerVideo']->features ?? [];
                   </figure>
                </div>
                <div class="donate-now-box">
-                  <a href="donation.html">
+                  <a href="{{ route('donate-us')}}">
                      <img src="{{asset('fronted/assets/ask-img/icon/icon-donate-now.svg')}}" alt="">
-                     donate now
+                     Donate Us
                   </a>
                </div>
             </div>
@@ -776,5 +770,31 @@ $features = $data['bannerVideo']->features ?? [];
 @endif
 @endsection
 @push('scripts')
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+      let isMobile = window.innerWidth <= 768;
+      let video = document.querySelector(isMobile ? ".mobilevideo" : ".desktopvideo");
 
+      if (video) {
+         let observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                  let source = document.createElement("source");
+                  source.src = video.getAttribute("data-src");
+                  source.type = "video/mp4";
+                  video.appendChild(source);
+                  video.load();
+                  video.play().catch(() => {
+                     console.log("Autoplay blocked");
+                  });
+                  obs.unobserve(video);
+               }
+            });
+         }, {
+            threshold: 0.2
+         });
+         observer.observe(video);
+      }
+   });
+</script>
 @endpush

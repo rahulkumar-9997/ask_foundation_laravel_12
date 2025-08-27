@@ -88,4 +88,8 @@ class FrontHomeController extends Controller
     public function aboutUs(){
         return view('frontend.pages.about-us.index');
     }
+
+    public function donateUs(){
+        return view('frontend.pages.donate-us.index');
+    }
 }

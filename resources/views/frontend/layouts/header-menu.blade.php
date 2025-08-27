@@ -1,5 +1,5 @@
 <!-- Header Start -->
-<header class="main-header active-sticky-header header-for-mobile">
+<header class="main-header active-sticky-header {{ request()->routeIs('home') ? 'header-for-mobile' : 'none-header' }}">
     <div class="header-sticky">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
