@@ -436,7 +436,7 @@ body {
 }
 
 .section-title h2 {
-	font-size: 34px;
+	font-size: 30px;
 	margin-bottom: 0;
 	cursor: none;
 }
@@ -827,7 +827,7 @@ header.main-header .header-sticky.active {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: linear-gradient(270deg, rgba(2, 13, 25, 0) 16.33%, rgba(2, 13, 25, 0.8) 100%), linear-gradient(360deg, rgba(2, 13, 25, 0) 87.52%, #020d1900 101.14%);
+	background: linear-gradient(270deg, rgba(2, 13, 25, 0) 16.33%, rgb(2 13 25 / 47%) 100%), linear-gradient(360deg, rgba(2, 13, 25, 0) 87.52%, #020d1900 101.14%);
 	width: 100%;
 	height: 100%;
 	z-index: 1;
@@ -2480,20 +2480,20 @@ header.main-header .header-sticky.active {
 
 .post-item {
 	background-color: var(--white-color);
-	border: 1px solid var(--divider-color);
-	border-radius: 30px;
-	box-shadow: 0px 0px 40px 5px #00000005;
-	padding: 40px;
-	height: calc(100% - 30px);
-	margin-bottom: 30px;
+    border: 1px solid var(--divider-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px 5px #00000005;
+    padding: 15px;
+    height: calc(100% - 30px);
+    margin-bottom: 30px;
 }
 
 .post-item-header {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .post-item-meta {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 
 .post-item-meta ul {
@@ -2517,7 +2517,7 @@ header.main-header .header-sticky.active {
 }
 
 .post-featured-image {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .post-featured-image a {
@@ -4295,7 +4295,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .page-team {
-	padding: 100px 0 70px;
+	padding: 60px 0 60px;
 }
 
 /************************************/
@@ -4303,7 +4303,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .page-team-single {
-	padding: 100px 0;
+	padding: 60px 0;
 }
 
 .page-team-single-box {
@@ -4846,15 +4846,15 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .page-donation {
-	padding: 100px 0;
+	padding: 60px 0;
 }
 
 .donation-box {
 	background: var(--white-color);
 	border: 1px solid var(--divider-color);
 	box-shadow: 0px -10px 40px 5px #00000008;
-	border-radius: 30px;
-	padding: 120px;
+	border-radius: 20px;
+    padding: 25px;
 }
 
 .campaign-donate-form .form-control {
@@ -4882,8 +4882,8 @@ header.main-header .header-sticky.active {
 .donate-payment-method .section-title,
 .donar-personal-info .section-title {
 	border-bottom: 1px solid var(--divider-color);
-	margin-bottom: 40px;
-	padding-bottom: 40px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .donate-payment-type {
@@ -7651,7 +7651,7 @@ header.none-header.main-header {
     margin-bottom: 5px;
 }
 .home-about-us-page .empowerh2 .spanabou{
-	font-size: 34px;
+	font-size: 30px;
     margin-bottom: 0;
 	margin-top: 20px;
     cursor: none;
