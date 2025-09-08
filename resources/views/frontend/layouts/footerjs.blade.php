@@ -9,8 +9,8 @@
 <!-- Swiper js file -->
 <script src="{{asset('fronted/assets/js/swiper-bundle.min.js')}}"></script>
 <!-- Counter js file -->
-<script src="{{asset('fronted/assets/js/jquery.waypoints.min.js')}}"></script>
-<script src="{{asset('fronted/assets/js/jquery.counterup.min.js')}}"></script>
+<!-- <script src="{{asset('fronted/assets/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('fronted/assets/js/jquery.counterup.min.js')}}"></script> -->
 <!-- Isotop js file -->
 <script src="{{asset('fronted/assets/js/isotope.min.js')}}"></script>
 <!-- Magnific js file -->

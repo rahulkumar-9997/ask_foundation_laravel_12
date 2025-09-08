@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('title','Edit new Doctor')
 @push('styles')
-<link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}"> -->
 @endpush
 @section('main-content')
 <div class="content">
@@ -133,7 +133,7 @@
                     <div class="col-lg-6">
                         <div class="summer-description-box mb-3">
                             <label class="form-label">Content <span class="text-danger">*</span></label>
-                            <textarea id="summernote" name="content" hidden>{{ old('content', $doctor->content) }}</textarea>
+                            <textarea name="content" class="ckeditor4">{{ old('content', $doctor->content) }}</textarea>
                             @error('content')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -142,7 +142,7 @@
                     <div class="col-lg-6">
                         <div class="summer-description-box mb-3">
                             <label class="form-label">Role in ASK Foundation </label>
-                            <textarea class="summernoteClassTwo" name="role_content" hidden>{{ old('role_content', $doctor->role_in_ask_foundation) }}</textarea>
+                            <textarea class="ckeditor4" name="role_content" hidden>{{ old('role_content', $doctor->role_in_ask_foundation) }}</textarea>
                             @error('role_content')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -167,6 +167,13 @@
 
 @endsection
 @push('scripts')
-
+<script src="{{ asset('backend/assets/ckeditor-4/ckeditor.js') }}"></script>
+<script>
+    document.querySelectorAll('.ckeditor4').forEach(function(el) {
+        CKEDITOR.replace(el, {
+            removePlugins: 'exportpdf'
+        });
+    });
+</script>
 
 @endpush

@@ -45965,5 +45965,7 @@ span.flatpickr-weekday {
 .note-editable {
     min-height: 150px;
 }
-
+.cke_notification_warning{
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
