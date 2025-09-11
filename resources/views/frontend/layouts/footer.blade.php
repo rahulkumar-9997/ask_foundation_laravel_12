@@ -52,12 +52,13 @@
                         <div class="footer-links footer-service-links">
                             <h3>Key Focus Areas</h3>
                             <ul>
-                                <li><a href="#">Bone Health and Orthopedics</a></li>
-                                <li><a href="#">Road Safety Programs</a></li>
-                                <li><a href="#">Preventive Medicine and Medical Camps</a></li>
-                                <li><a href="#">Medical Education and skill building </a></li>
+                                <li><a href="{{ route('focus.bone') }}">Bone Health and Orthopedics</a></li>
+                                <li><a href="{{ route('focus.road') }}">Road Safety Programs</a></li>
+                                <li><a href="{{ route('focus.preventive') }}">Preventive Medicine and Medical Camps</a></li>
+                                <li><a href="{{ route('focus.education') }}">Medical Education and skill building</a></li>
                             </ul>
                         </div>
+
                         <div class="footer-links">
                             <h3>support</h3>
                             <ul>
@@ -77,7 +78,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright-text">
-                        <p>Copyright © 2025 All Rights Reserved.</p>
+                        <p class="n1-color copyrightp">© <span class="currentYear n1-color">{{ date('Y') }}</span> Ask Foundation | Design &amp; Developed by <a href="https://wizards.co.in/" target="_blank" style="color: #ffff;">wizards.co.in</a></p>
                     </div>
                 </div>
             </div>

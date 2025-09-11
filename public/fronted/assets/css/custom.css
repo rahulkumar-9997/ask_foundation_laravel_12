@@ -180,13 +180,29 @@ body {
 	transition: all 600ms linear;
 	background-color: transparent;
 }
+.donateusimg figure{
+	border-radius: 30px;
+}
+.donateusimg{
+	padding-top: 30px;
+}
+.donate-form form{
+	padding: 20px 0px;
+}
+.title-underline{
+    display: block;
+    width: 28px;
+    border-bottom: 5px solid;
+    margin-top: 20px;
+    border-color: #528ff0;
+}
 
 .reveal {
 	position: relative;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
-	visibility: hidden;
+	visibility: visible;
 	overflow: hidden;
 }
 
@@ -1350,8 +1366,8 @@ header.main-header .header-sticky.active {
 	display: flex;
 	align-items: start;
 	border-bottom: 1px solid var(--divider-color);
-	margin-bottom: 35px;
-	padding-bottom: 35px;
+	margin-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 .what-we-item:last-child {
@@ -1377,6 +1393,7 @@ header.main-header .header-sticky.active {
 	width: 42px;
 	height: 42px;
 	z-index: 0;
+	display: none;
 }
 
 .what-we-item .icon-box img {
@@ -7126,13 +7143,7 @@ header.header-for-mobile.main-header {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(to bottom,
-			rgb(0 0 0) 0%,
-			rgba(0, 0, 0, 0.3) 25%,
-			transparent 30%,
-			transparent 70%,
-			rgba(0, 0, 0, 0.3) 80%,
-			rgb(0 0 0 / 0%) 100%);
+	background: linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, rgba(0, 0, 0, 0.3) 25%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.3) 80%, rgb(0 0 0 / 0%) 100%);
 	pointer-events: none;
 	z-index: 1;
 }
@@ -7682,3 +7693,276 @@ header.none-header.main-header {
 	color: var(--color-one);
     font-size: 28px;
 }
+/*Donation form*/
+
+.selectoption{
+	display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.UI-form.UI-form .Field {
+  position: relative;
+  display: block;  
+  padding: 10px 0px;
+  transition: 0.12s;
+}
+.UI-form.UI-form .Field::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.UI-form.UI-form .Field--small .Field-wrapper {
+  width: 55%;
+}
+
+.UI-form.UI-form .Field-wrapper {
+  position: relative;
+  height: 40px;
+  color: #0d2366;
+  width: 100%;
+}
+.UI-form.UI-form .Field-wrapper .Field-el label {
+  line-height: 36px;
+}
+.UI-form.UI-form .Field-addon {
+  position: absolute;
+  top: 0;
+  display: table;
+  height: 100%;
+}
+.UI-form.UI-form .Field-addon > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.UI-form.UI-form .Field-addon > * > .Field-content {
+  margin: 0;
+}
+
+.UI-form.UI-form .Field--amount div.Field-el,
+.UI-form.UI-form .Field--amount input.Field-el {
+  background: #fcfcfc;
+  border: 1px solid #e3e9eb;
+}
+.UI-form.UI-form .Field--amount--error div.Field-el,
+.UI-form.UI-form .Field--amount--error input.Field-el {
+  background: #fffcfc;
+  border: 1px solid #fcdada;
+}
+.UI-form.UI-form .Field-error {
+  color: #f05050;
+  opacity: 0;
+  transition: 0.12s;
+  min-height: 20px;
+}
+
+.UI-form.UI-form .Field-addon--after {
+  right: 9px;
+}
+.UI-form.UI-form .Field-addon--before {
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.UI-form.UI-form .Field-addon--after--CheckBox {
+  width: 100%;
+  right: 0;
+}
+.UI-form.UI-form .Field-addon--after--CheckBox .Field--CheckBox {
+  text-align: right;
+}
+.UI-form.UI-form .Field-addon--after--CheckBox .Field--CheckBox .Field-wrapper {
+  height: 36px;
+}
+.UI-form.UI-form .Field-addon--after--CheckBox .Field--CheckBox .Field-wrapper .Field-el {
+  display: block;
+  line-height: 36px;
+  background: transparent;
+}
+.UI-form.UI-form .Field-addon--after--CheckBox .Field--CheckBox .Field-wrapper .CheckBox-mark {
+  margin-right: 9px;
+}
+.UI-form.UI-form .Field--currency-1 .Field-addon--before + .Field-el {
+  padding-left: 20px;
+}
+.UI-form.UI-form .Field--currency-2 .Field-addon--before + .Field-el {
+  padding-left: 34px;
+}
+.UI-form.UI-form .Field--currency-3 .Field-addon--before + .Field-el {
+  padding-left: 40px;
+}
+.UI-form.UI-form .Field--currency-4 .Field-addon--before + .Field-el {
+  padding-left: 50px;
+}
+.UI-form.UI-form .Field--currency-long .Field-addon--before + .Field-el {
+  padding-left: 54px;
+}
+.UI-form.UI-form .Field-addon > span> * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.UI-form.UI-form .Field--amount--selected div.Field-el,
+.UI-form.UI-form .Field--amount--selected input.Field-el {
+  background: #fcfdff;
+  border: 1px solid #dae7fc;
+}
+.UI-form.UI-form .Field--amount--selected img {
+  border-color: #dae7fc;
+}
+.UI-form.UI-form .Field-el {
+  line-height: 16px;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  overflow: hidden;
+  font-size: 14px;
+  padding: 0 9px;
+  outline: none;
+  color: inherit;
+}
+.UI-form.UI-form .Field-el::placeholder {
+  color: rgba(0,0,0,0.3);
+}
+.UI-form.UI-form .Field.has-error {
+  margin-bottom: 0;
+}
+.UI-form.UI-form .Field.has-error .Field-el {
+  border-color: #f05050;
+}
+.UI-form.UI-form .Field.has-error .Field-error {
+  opacity: 1;
+}
+.UI-form.UI-form .Field.has-error .Field-error + .Field-description {
+  transform: translateY(0);
+}
+.UI-form.UI-form .Field--disabled .Field-el {
+  cursor: not-allowed;
+}
+.UI-form.UI-form .Field:not(.Field--disabled) .Field-el:hover {
+  border-color: #c1c1c1;
+}
+.UI-form.UI-form .Field:not(.Field--disabled) .Field-el:focus {
+  border-color: #528ff0;
+}
+.UI-form.UI-form .Field--select select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+  -moz-appearance: none;
+  text-indent: 0.001px;
+  text-overflow: '';
+  cursor: pointer;
+}
+
+.UI-form.UI-form .Field--textarea .Field-wrapper {
+  height: auto;
+  font-size: 0;
+}
+.UI-form.UI-form .Field--textarea textarea.Field-el {
+  padding: 8px 12px;
+  height: 32px;
+  min-height: 32px;
+  max-height: 230px;
+  line-height: 16px;
+  resize: vertical;
+}
+
+.UI-form.UI-form .Field-label {
+  position: relative;
+  float: left;
+  width: 140px;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-color);
+  word-break: break-word;
+}
+
+.UI-form.UI-form .Field-content {
+  margin-left: 164px;
+}
+.UI-form.UI-form .Field--CheckBox {
+  font-size: 0;
+}
+.UI-form.UI-form .Field--CheckBox .Field-wrapper {
+  min-width: unset;
+  max-width: unset;
+}
+.UI-form.UI-form .Field--CheckBox .Field-el {
+  font-size: 0;
+}
+.UI-form.UI-form .Field--counter .Field-label {
+  margin-bottom: 0;
+}
+.UI-form.UI-form .Field--counter .Field-wrapper {
+  min-width: 96px;
+  max-width: 96px;
+  height: 24px;
+}
+.UI-form.UI-form .Field--counter .Field-wrapper .counter-value {
+  width: 100%;
+  padding: 0 32px;
+  display: block;
+  text-align: center;
+  background: #fff;
+}
+.UI-form.UI-form .Field-el[type=number]::-webkit-inner-spin-button,
+.UI-form.UI-form .Field-el[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+.UI-form.UI-form .currency-symbol {
+  margin-top: 2px;
+}
+.UI-form.UI-form .Field--tnc .Field-wrapper {
+  height: 20px;
+}
+.UI-form.UI-form .Field--tnc .Field-content {
+  display: inline-flex;
+  margin: 0;
+}
+.UI-form.UI-form .Field--tnc .Field-content .CheckBox-mark {
+  margin-bottom: 10px;
+}
+.UI-form.UI-form .Field--tnc .Field-label {
+  display: inline-flex;
+  width: auto;
+  margin-left: 10px;
+  float: none;
+}
+.UI-form.UI-form .Field--tnc .Field-label a {
+  margin-left: 5px;
+}
+#form-footer{
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#form-footer .btn {
+    position: relative;
+    width: 180px;
+    min-height: 56px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    float: right;
+    border-radius: 0;
+    text-align: center;
+    color: #fff;
+}
+#form-footer .btn {
+    background-color: rgb(82, 143, 240);
+    color: #fff !important;
+}
+.donate-form{
+	margin-left: 40px;
+}
+.input-with-select select{
+	border: 1px solid #e2e2e2;
+    padding: 9px;
+}
+/*Donation form*/

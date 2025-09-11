@@ -10,8 +10,8 @@
                         <!-- <img src="{{asset('fronted/assets/ask-img/logo-vertical.png')}}" alt="Logo" class="for_mobile_logo"> -->
                     </a>
                 </div>
-                
-                
+
+
                 <!-- Logo End -->
                 <!-- Main Menu Start -->
                 <div class="collapse navbar-collapse main-menu">
@@ -21,18 +21,24 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('about-us') }}">About Us</a>
                             </li>
-                            <li class="nav-item submenu"><a class="nav-link" href="#">Focus Areas</a>
+                            <li class="nav-item submenu">
+                                <a class="nav-link" href="#">Focus Areas</a>
                                 <ul>
-                                    <li class="nav-item"><a class="nav-link" href="#">Bone Health and
-                                            Orthopedics</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Road safety programs</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Preventive Medicine and
-                                            Medical Camps</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Medical Education and skill
-                                            building </a></li>
-
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('focus.bone') }}">Bone Health and Orthopedics</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('focus.road') }}">Road safety programs</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('focus.preventive') }}">Preventive Medicine and Medical Camps</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('focus.education') }}">Medical Education and skill building</a>
+                                    </li>
                                 </ul>
                             </li>
+
                             <li class="nav-item"><a class="nav-link" href="#">Patient Support</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('our-doctors') }}">Our Doctors</a></li>
                             <li class="nav-item">

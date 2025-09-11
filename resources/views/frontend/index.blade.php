@@ -126,7 +126,10 @@ $features = $data['bannerVideo']->features ?? [];
                      EMPOWER LIVES & <br>COMMUNITIES THROUGH <br><span class="spanabou"> PREVENTIVE CARE & EDUCATION</span>
                   </h2>
                   <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
-                     Dr. Sai Laxman Anne is a highly accomplished Chief Consultant Orthopaedic and Joint Replacement Surgeon, holding an M.S. in Orthopaedics and distinguished by prestigious fellowships in Arthroplasty from both India and the UK. With a vast surgical experience that includes performing over 5,000 primary and 200 revision knee and hip replacements, his expertise is further demonstrated through his leadership roles as a Head of Department, Programme Director for Minimally Invasive Surgery, and Consultant Limb Reconstruction Surgeon. His practice incorporates advanced techniques, with special training in computer-navigated surgery and pain management from John Hopkins, USA. Deeply committed to serving the medical community and advancing the field, Dr. Anne actively contributes as a national faculty member at esteemed institutes, dedicating his time to training the next generation of surgeons through numerous workshops, publications, and presentations across the country.
+                     The ASK Foundation was established by Dr. Sai Laxman Anne, a highly accomplished Chief Consultant Orthopaedic and Joint Replacement Surgeon, with the vision of giving back to society in a meaningful way. Named in honor of his mother, the foundation reflects his lifelong commitment to community welfare and preventive healthcare. Over the years, Dr. Anne has dedicated himself not only to clinical excellence but also to creating awareness about critical issues such as bone health, joint care, preventive medicine, and road safety. Having witnessed the devastating impact of trauma cases, particularly road accidents affecting the working-age population, he recognized the urgent need to spread awareness, prevent avoidable injuries, and support families in safeguarding their future. The foundation, therefore, goes beyond treatment to focus on prevention, education, and outreach at the grassroots level.
+                  </p>
+                  <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
+                     ASK Foundation works actively through health camps, wellness initiatives, and educational programs, aiming to reach individuals across diverse communities. Its initiatives range from bone health awareness, road safety campaigns in schools and colleges, preventive screening for lifestyle diseases such as diabetes and hypertension, to providing support for underprivileged orthopedic patients. The foundation also emphasizes collaboration, inviting doctors, professionals, students, and volunteers from all walks of life to contribute their time, skills, or resources. With transparency, compassion, and inclusivity at its core, ASK Foundation stands as a platform where like-minded individuals can come together to create healthier, safer, and more resilient communities.
                   </p>
                </div>
                <div class="about-btn wow fadeInUp mt-3" data-wow-delay="0.6s">
@@ -304,39 +307,48 @@ $features = $data['bannerVideo']->features ?? [];
          <div class="col-lg-6">
             <div class="what-we-do-content">
                <div class="section-title">
-                  <h3 class="wow fadeInUp">what we do</h3>
-                  <h2 class="text-anime-style-2" data-cursor="-opaque">Building hope creating lasting change
+                  <h3 class="wow fadeInUp">About Our Founder</h3>
+                  <h2 class="text-anime-style-2 mb-3" data-cursor="-opaque">
+                     Building healthier lives with compassion and expertise
                   </h2>
                </div>
                <div class="what-we-list">
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.2s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-1.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/preventive-healthcare.svg')}}" alt="A Vision for Preventive Healthcare">
                      </div>
                      <div class="what-we-item-content">
-                        <h3>economic empowerment</h3>
-                        <p>Empowering individuals through job training, financial literacy, and small
-                           business support to create sustainable livelihoods.</p>
+                        <h3>A Vision for Preventive Healthcare</h3>
+                        <p>
+                           Dr. Sai Laxman Anne, a leading Orthopaedic and Joint Replacement Surgeon, founded ASK Foundation with the mission to go beyond treatment and focus on prevention, awareness, and community well-being.
+                        </p>
                      </div>
                   </div>
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.4s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-2.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/orthopaedic-excellence.svg')}}" alt="Orthopaedic Excellence">
                      </div>
                      <div class="what-we-item-content">
-                        <h3>clean water and sanitation</h3>
-                        <p>Empowering individuals through job training, financial literacy, and small
-                           business support to create sustainable livelihoods.</p>
+                        <h3>Orthopaedic Excellence</h3>
+                        <p>With over 5,000 successful joint replacements and advanced training from India, the UK, and Johns Hopkins University, Dr. Anne brings unmatched expertise in bone and joint health.</p>
                      </div>
                   </div>
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.6s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-what-we-3.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/commitment-to-society.svg')}}" alt="Commitment to Society">
                      </div>
                      <div class="what-we-item-content">
-                        <h3>economic empowerment</h3>
-                        <p>Empowering individuals through job training, financial literacy, and small
-                           business support to create sustainable livelihoods.</p>
+                        <h3>Commitment to Society</h3>
+                        <p>Deeply inspired by his mother, Anne Santha Kumari, he has dedicated his career to giving back through free health camps, road safety initiatives, and support for underprivileged patients in need of orthopaedic care.</p>
+                     </div>
+                  </div>
+                  <div class="what-we-item wow fadeInUp" data-wow-delay="0.6s">
+                     <div class="icon-box">
+                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/educator-and-mentor.svg')}}" alt="Educator & Mentor">
+                     </div>
+                     <div class="what-we-item-content">
+                        <h3>Educator & Mentor</h3>
+                        <p>As National Faculty at leading medical institutes, Dr. Anne shares his knowledge with young surgeons and inspires the next generation to combine skill with compassion.</p>
                      </div>
                   </div>
                </div>

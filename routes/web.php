@@ -22,6 +22,10 @@ Route::get('donate-us', [FrontHomeController::class, 'donateUs'])->name('donate-
 Route::get('contact-us', [FrontHomeController::class, 'contactUs'])->name('contact-us');
 Route::post('contact-us-submit', [FrontHomeController::class, 'contactSubmitForm'])->name('contact-us.submit');
 Route::get('about-us', [FrontHomeController::class, 'aboutUs'])->name('about-us');
+Route::get('focus-areas/bone-health-orthopedics', [FrontHomeController::class, 'boneHealth'])->name('focus.bone');
+Route::get('focus-areas/road-safety-programs', [FrontHomeController::class, 'roadSafety'])->name('focus.road');
+Route::get('focus-areas/preventive-medicine', [FrontHomeController::class, 'preventiveMedicine'])->name('focus.preventive');
+Route::get('focus-areas/medical-education', [FrontHomeController::class, 'medicalEducation'])->name('focus.education');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm']);

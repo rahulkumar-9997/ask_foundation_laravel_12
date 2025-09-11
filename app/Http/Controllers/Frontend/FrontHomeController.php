@@ -47,6 +47,26 @@ class FrontHomeController extends Controller
         return view('frontend.pages.blog.blog-details', compact('blog'));
     }
 
+    public function boneHealth()
+    {
+        return view('frontend.pages.focus-area.bone-health');
+    }
+
+    public function roadSafety()
+    {
+        return view('frontend.pages.focus-area.road-safety');
+    }
+
+    public function preventiveMedicine()
+    {
+        return view('frontend.pages.focus-area.preventive');
+    }
+
+    public function medicalEducation()
+    {
+        return view('frontend.pages.focus-area.medical-education');
+    }
+
     public function contactUs(){
         return view('frontend.pages.contact-us.index');
     }
