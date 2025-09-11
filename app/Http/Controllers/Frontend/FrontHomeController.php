@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnquiryMail;
 use App\Http\Controllers\Controller;
@@ -111,5 +112,45 @@ class FrontHomeController extends Controller
 
     public function donateUs(){
         return view('frontend.pages.donate-us.index');
+    }
+
+    public function donateStore(Request $request){
+        $validator = Validator::make($request->all(), [
+            'amount'     => 'required|numeric|min:1',
+            'salutation' => 'required|string',
+            'name'       => 'required|string|min:2|max:255',
+            'pan_number' => 'required|string|size:10',
+            'email'      => 'required|email',
+            'mobile'     => 'required|digits:10',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+        $token = Str::random(40);
+        session([
+            'donation' => $request->only([
+                'amount', 'salutation', 'name', 'pan_number', 'email', 'mobile'
+            ]),
+            'donation_token' => $token
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Donation details submitted successfully!',
+            'redirect' => route('donate.confirmation', ['token' => $token])
+        ]);
+    }
+
+    public function confirmation($token){
+        $donation = session('donation');
+        $sessionToken = session('donation_token');
+        if (!$donation || $token !== $sessionToken) {
+            return redirect()->route('donate-us')->with('error', 'Invalid or expired donation session.');
+        }
+        return view('frontend.pages.donate-us.donate-con-display', compact('donation'));
     }
 }

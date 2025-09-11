@@ -19,6 +19,9 @@ Route::get('blog/{slug}', [FrontHomeController::class, 'blogDetails'])->name('bl
 Route::get('our-doctors', [FrontHomeController::class, 'ourDoctorsList'])->name('our-doctors');
 Route::get('our-doctors/{slug}', [FrontHomeController::class, 'ourDoctorsDetails'])->name('doctor.details');
 Route::get('donate-us', [FrontHomeController::class, 'donateUs'])->name('donate-us');
+Route::post('donate-us', [FrontHomeController::class, 'donateStore'])->name('donate-confirmation.store');
+Route::get('donate-confirmation/{token}', [FrontHomeController::class, 'confirmation'])->name('donate.confirmation');
+
 Route::get('contact-us', [FrontHomeController::class, 'contactUs'])->name('contact-us');
 Route::post('contact-us-submit', [FrontHomeController::class, 'contactSubmitForm'])->name('contact-us.submit');
 Route::get('about-us', [FrontHomeController::class, 'aboutUs'])->name('about-us');
