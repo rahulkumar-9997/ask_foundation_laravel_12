@@ -3098,6 +3098,7 @@ header.main-header .header-sticky.active {
 	font-weight: 600;
 	text-transform: capitalize;
 	margin-bottom: 10px;
+	line-height: 26px;
 }
 
 .how-help-item-content p {
@@ -8033,6 +8034,7 @@ header.none-header.main-header {
   pointer-events: none;
   transition: opacity 0.24s cubic-bezier(.4,0,.2,1);
   opacity: 0;
+  line-height: 25px;
 }
 .focus-area-oth .how-help-item:hover .highlight-con p,
 .focus-area-oth .how-help-item:focus .highlight-con p {
@@ -8097,4 +8099,7 @@ header.none-header.main-header {
 }
 .mb-6{
 	margin-bottom: 60px;
+}
+.choose-area.prevetive-focus{
+    background: #f15d5f;
 }
