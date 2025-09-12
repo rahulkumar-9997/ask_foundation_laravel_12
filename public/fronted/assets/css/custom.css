@@ -69,7 +69,7 @@
 
 body {
 	font-family: var(--default-font);
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.1em;
 	background-color: var(--white-color);
@@ -97,8 +97,8 @@ body {
 }
 
 p {
-	line-height: 1.8em;
-	margin-bottom: 1.5em;
+	line-height: 29px;
+	margin-bottom: 10px;
 }
 
 h1,
@@ -420,11 +420,11 @@ body {
 .section-title h3 {
 	position: relative;
 	display: inline-block;
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: 500;
 	line-height: normal;
-	letter-spacing: 0.2em;
-	text-transform: uppercase;
+	/* letter-spacing: 0.2em; */
+	/* text-transform: uppercase; */
 	/* color: var(--primary-color); */
 	color: var(--color-two);
 	padding-left: 34px;
@@ -452,7 +452,7 @@ body {
 }
 
 .section-title h2 {
-	font-size: 30px;
+	font-size: 25px;
 	margin-bottom: 0;
 	cursor: none;
 }
@@ -2835,7 +2835,7 @@ header.main-header .header-sticky.active {
 
 .page-header-box h1 {
 	display: inline-block;
-	font-size: 35px;
+	font-size: 26px;
 	font-weight: 700;
 	line-height: 1.2em;
 	color: var(--white-color);
@@ -2877,11 +2877,11 @@ header.main-header .header-sticky.active {
 }
 
 .our-approach {
-	padding: 100px 0;
-	background: url('../images/our-service-bg.svg'), var(--secondary-color);
+	padding: 60px 0;
+	/* background: url('../images/our-service-bg.svg'), var(--secondary-color);
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: auto;
+	background-size: auto; */
 }
 
 .our-approach-box-content {
@@ -2889,12 +2889,12 @@ header.main-header .header-sticky.active {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
-	padding-bottom: 100px;
+	/* padding-bottom: 100px; */
 }
 
 .our-approach-content {
 	width: calc(50% - 15px);
-	padding-bottom: 200px;
+	/* padding-bottom: 200px; */
 }
 
 .our-approach-image {
@@ -2991,7 +2991,7 @@ header.main-header .header-sticky.active {
 
 .how-we-help {
 	position: relative;
-	padding: 100px 0;
+	padding: 60px 0;
 }
 
 .how-we-help:before {
@@ -7965,5 +7965,136 @@ header.none-header.main-header {
 	border: 1px solid #e2e2e2;
     padding: 9px;
 }
+.bone-health p{
+	text-align: justify;
+}
 
 /*Donation form*/
+.choose-area {
+    position: relative;
+    background: #662d91b8;
+    z-index: 1;
+}
+.choose-area::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../ask-img/bg-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.08;
+    z-index: -1;
+}
+.focus-area-oth .section-title h2{
+	color: #fff;
+}
+.focus-area-oth .how-help-item{
+	width: 100%;
+	border-radius: 10px;
+}
+.focus-area-oth .how-help-item .icon-box:before{
+	display: none;
+}
+.focus-area-oth .icon-box img {
+  filter: brightness(0) invert(1);
+}
+.focus-area-oth .how-help-item {
+	position: relative;
+	height: 100%;   
+	width: 100%;
+	min-height: 150px;
+	overflow: hidden;
+	outline: 2px solid #662d91;
+	outline-offset: -0.75em;
+	
+}
+.focus-area-oth .how-help-item .highlight-con p {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 24px 16px;
+  background: rgb(102 45 145);
+  color: #fff;
+  border-radius: 10px;
+  z-index: 100;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 0.24s cubic-bezier(.4,0,.2,1);
+  opacity: 0;
+}
+.focus-area-oth .how-help-item:hover .highlight-con p,
+.focus-area-oth .how-help-item:focus .highlight-con p {
+  display: flex;
+  pointer-events: auto;
+  opacity: 1;
+}
+.text-2xl.font-semibold{
+	color: #fff;
+}
+.why-bone-img{
+	max-height: 450px;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.flex-col {
+    flex-direction: column;
+}
+.w-full {
+    width: 100%;
+}
+.h-full {
+    height: 100%;
+}
+.flex {
+    display: flex;
+}
+.p-6 {
+    padding: calc(.25rem * 6);
+}
+.-z-20 {
+    z-index: calc(20 * -1);
+}
+.block {
+    display: block;
+}
+.object-cover{
+	object-fit: cover;
+}
+
+@media (width >= 64rem) {
+    .lg-opacity-0 {
+        opacity: 0;
+    }
+}
+.solution-card:hover .group-hover-opacity-100{
+	opacity: 1;
+}
+.bg-black-50 {
+	background-color: color-mix(in oklab,#000 50%,transparent);
+	border-radius: 10px;
+}
+.solution-card img{
+	border-radius: 10px;
+}
+.mb-6{
+	margin-bottom: 60px;
+}
