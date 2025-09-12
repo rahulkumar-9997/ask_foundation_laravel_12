@@ -8103,3 +8103,15 @@ header.none-header.main-header {
 .choose-area.prevetive-focus{
     background: #f15d5f;
 }
+.work-details-details {
+	color: #fff;
+}
+.work-details-details h3{
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    position: relative;
+    color: #fff;
+
+}
