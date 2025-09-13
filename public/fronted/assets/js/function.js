@@ -133,11 +133,7 @@
 		var myPlayer = $("#herovideo").YTPlayer();
 	}
 
-	/* Init Counter */
-	if ($('.counter').length) {
-		$('.counter').counterUp({ delay: 6, time: 3000 });
-	}
-
+	
 	/* Image Reveal Animation */
 	if ($('.reveal').length) {
         gsap.registerPlugin(ScrollTrigger);

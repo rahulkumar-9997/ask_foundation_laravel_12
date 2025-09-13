@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
                     <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/bone-health-awareness.svg')}}" alt="Bone Health Awareness">
@@ -75,9 +75,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg2 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/orthopaedic-care.svg')}}" alt="Orthopaedic Care">
                     </div>
                     <div class="how-help-item-content">
@@ -90,9 +90,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg3 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/joint-replacement-guidance.svg')}}" alt="Joint Replacement Guidance">
                     </div>
                     <div class="how-help-item-content">
@@ -105,9 +105,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg4 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/community-health-drives.svg')}}" alt="Community Health Drives">
                     </div>
                     <div class="how-help-item-content">
@@ -135,7 +135,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
                     <img src="{{asset('fronted/assets/ask-img/focus-area/why-bone/mobility-and-independence.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
@@ -147,7 +147,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
                     <img src="{{asset('fronted/assets/ask-img/focus-area/why-bone/active-ageing.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
@@ -159,7 +159,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
                     <img src="{{asset('fronted/assets/ask-img/focus-area/why-bone/preventing-disability-preventing-disability.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
@@ -194,28 +194,27 @@
             </div>
             <div class="col-lg-6">
                 <div class="how-help-list">
-                    <div class="how-help-item wow fadeInUp">
-                        
+                    <div class="how-help-item wow fadeInUp bg1">                        
                         <div class="how-help-item-content">
                             <h3>Learn & Share</h3>
                             <p>Attend awareness programs and spread knowledge about bone health with your family, friends, and community.</p>
                         </div>
                     </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="how-help-item wow fadeInUp bg2" data-wow-delay="0.2s">
                         
                         <div class="how-help-item-content">
                             <h3>Volunteer Your Time</h3>
                             <p>Join as a volunteer at bone health camps and events to support screenings, awareness drives, and education programs.</p>
                         </div>
                     </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="how-help-item wow fadeInUp bg3" data-wow-delay="0.4s">
                         
                         <div class="how-help-item-content">
                             <h3>Partner with Us</h3>
                             <p>Collaborate with ASK Foundation to host programs at schools, colleges, workplaces, or community centers.</p>
                         </div>
                     </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="how-help-item wow fadeInUp bg4" data-wow-delay="0.6s">
                         
                         <div class="how-help-item-content">
                             <h3>Support Access to Care</h3>

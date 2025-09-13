@@ -14,7 +14,8 @@
       </video>
       <video autoplay muted loop playsinline id="myVideo" class="mobilevideo"
          data-src="{{ asset('upload/banner/' . $data['bannerVideo']->mobile_video_url) }}"
-         preload="none">
+         preload="none"
+         poster="{{ asset('fronted/assets/images/hero-bg.jpg') }}">
          <source type="video/mp4">
       </video>
       <div class="video-overlay formobile-overlay"></div>
@@ -104,16 +105,16 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="about-us-images">
                <div class="about-img-1">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/ask-img/dr.sai-laxman-anne.jpg')}}" alt="">
+                     <img src="{{asset('fronted/assets/ask-img/dr.sai-laxman-anne.jpg')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="about-img-2">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="">
+                     <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="need-fund-box">
-                  <img src="{{asset('fronted/assets/ask-img/icon/icon-funded-dollar.svg')}}" alt="">
+                  <img src="{{asset('fronted/assets/ask-img/icon/icon-funded-dollar.svg')}}" alt="" loading="lazy">
                   <p>Promoting early detection and prevention of bone diseases.</p>
                </div>
             </div>
@@ -315,7 +316,7 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="what-we-list">
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.2s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/preventive-healthcare.svg')}}" alt="A Vision for Preventive Healthcare">
+                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/preventive-healthcare.svg')}}" alt="A Vision for Preventive Healthcare" loading="lazy">
                      </div>
                      <div class="what-we-item-content">
                         <h3>A Vision for Preventive Healthcare</h3>
@@ -326,7 +327,7 @@ $features = $data['bannerVideo']->features ?? [];
                   </div>
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.4s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/orthopaedic-excellence.svg')}}" alt="Orthopaedic Excellence">
+                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/orthopaedic-excellence.svg')}}" alt="Orthopaedic Excellence" loading="lazy">
                      </div>
                      <div class="what-we-item-content">
                         <h3>Orthopaedic Excellence</h3>
@@ -335,7 +336,7 @@ $features = $data['bannerVideo']->features ?? [];
                   </div>
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.6s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/commitment-to-society.svg')}}" alt="Commitment to Society">
+                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/commitment-to-society.svg')}}" alt="Commitment to Society" loading="lazy">
                      </div>
                      <div class="what-we-item-content">
                         <h3>Commitment to Society</h3>
@@ -344,7 +345,7 @@ $features = $data['bannerVideo']->features ?? [];
                   </div>
                   <div class="what-we-item wow fadeInUp" data-wow-delay="0.6s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/educator-and-mentor.svg')}}" alt="Educator & Mentor">
+                        <img src="{{asset('fronted/assets/ask-img/about-our-founder/educator-and-mentor.svg')}}" alt="Educator & Mentor" loading="lazy">
                      </div>
                      <div class="what-we-item-content">
                         <h3>Educator & Mentor</h3>
@@ -358,17 +359,17 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="what-we-do-images">
                <div class="what-we-do-img-1">
                   <figure class="image-anime reveal">
-                     <img src="{{asset('fronted/assets/images/ask-3.png')}}" alt="">
+                     <img src="{{asset('fronted/assets/images/ask-3.png')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="what-we-do-img-2">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/ask-e.png')}}" alt="">
+                     <img src="{{asset('fronted/assets/images/ask-e.png')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="donate-now-box">
                   <a href="{{ route('donate-us')}}">
-                     <img src="{{asset('fronted/assets/ask-img/icon/icon-donate-now.svg')}}" alt="">
+                     <img src="{{asset('fronted/assets/ask-img/icon/icon-donate-now.svg')}}" alt="" loading="lazy">
                      Donate Us
                   </a>
                </div>
@@ -386,12 +387,12 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="why-choose-images">
                <div class="why-choose-image-1">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/why-choose-img-1.jpg')}}" alt="">
+                     <img src="{{asset('fronted/assets/images/why-choose-img-1.jpg')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="why-choose-image-2">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/team-1.jpg')}}" alt="">
+                     <img src="{{asset('fronted/assets/images/team-1.jpg')}}" alt="" loading="lazy">
                   </figure>
                </div>
             </div>5
@@ -562,21 +563,21 @@ $features = $data['bannerVideo']->features ?? [];
 <div class="scrolling-ticker mb-3">
    <div class="scrolling-ticker-box">
       <div class="scrolling-content">
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Road safety programs</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Road safety programs</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Bone Health and Orthopedics</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Road safety programs</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Preventive Medicine and Medical Camps</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Bone Health and Orthopedics</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Road safety programs</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Preventive Medicine and Medical Camps</span>
       </div>
 
       <div class="scrolling-content">
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Road safety programs</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Bone Health and Orthopedics</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Road safety programs</span>
-         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" alt="">Preventive Medicine and Medical Camps</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Bone Health and Orthopedics</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Road safety programs</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Preventive Medicine and Medical Camps</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Bone Health and Orthopedics</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Road safety programs</span>
+         <span><img src="{{asset('fronted/assets/ask-img/icon/icon-asterisk.svg')}}" loading="lazy" alt="">Preventive Medicine and Medical Camps</span>
       </div>
    </div>
 </div>
@@ -658,12 +659,12 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="how-it-work-item">
                   <div class="how-it-work-image">
                      <figure class="image-anime reveal">
-                        <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="">
+                        <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="" loading="lazy">
                      </figure>
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.4s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-1.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-1.svg')}}" alt="" loading="lazy">
                      </div>
                      <div class="how-it-work-body">
                         <h3>healthcare support</h3>
@@ -674,12 +675,12 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="how-it-work-item">
                   <div class="how-it-work-image">
                      <figure class="image-anime reveal">
-                        <img src="{{asset('fronted/assets/images/ask-a.png')}}" alt="">
+                        <img src="{{asset('fronted/assets/images/ask-a.png')}}" alt="" loading="lazy">
                      </figure>
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.4s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-2.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-2.svg')}}" alt="" loading="lazy">
                      </div>
                      <div class="how-it-work-body">
                         <h3>Plan and design</h3>
@@ -690,12 +691,12 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="how-it-work-item">
                   <div class="how-it-work-image">
                      <figure class="image-anime reveal">
-                        <img src="{{asset('fronted/assets/images/ask-b.png')}}" alt="">
+                        <img src="{{asset('fronted/assets/images/ask-b.png')}}" alt="" loading="lazy">
                      </figure>
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.6s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-3.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-3.svg')}}" alt="" loading="lazy">
                      </div>
                      <div class="how-it-work-body">
                         <h3>Implement solutions</h3>
@@ -706,12 +707,12 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="how-it-work-item">
                   <div class="how-it-work-image">
                      <figure class="image-anime reveal">
-                        <img src="{{asset('fronted/assets/images/ask-3.png')}}" alt="">
+                        <img src="{{asset('fronted/assets/images/ask-3.png')}}" alt="" loading="lazy">
                      </figure>
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.6s">
                      <div class="icon-box">
-                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-4.svg')}}" alt="">
+                        <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-4.svg')}}" alt="" loading="lazy">
                      </div>
                      <div class="how-it-work-body">
                         <h3>Report and share</h3>
@@ -761,7 +762,7 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="post-featured-image">
                   <a href="{{ route('blog.details', $blog->slug) }}" data-cursor-text="View">
                      <figure class="image-anime">
-                        <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" alt="{{ $blog->title }}">
+                        <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" alt="{{ $blog->title }}" loading="lazy">
                      </figure>
                   </a>
                </div>
@@ -786,7 +787,6 @@ $features = $data['bannerVideo']->features ?? [];
    document.addEventListener("DOMContentLoaded", function() {
       let isMobile = window.innerWidth <= 768;
       let video = document.querySelector(isMobile ? ".mobilevideo" : ".desktopvideo");
-
       if (video) {
          let observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
@@ -796,15 +796,23 @@ $features = $data['bannerVideo']->features ?? [];
                   source.type = "video/mp4";
                   video.appendChild(source);
                   video.load();
-                  video.play().catch(() => {
+
+                  video.play().then(() => {
+                     let placeholder = video.parentElement.querySelector(".video-placeholder");
+                     if (placeholder) {
+                        placeholder.classList.add("hide");
+                     }
+                  }).catch(() => {
                      console.log("Autoplay blocked");
                   });
+
                   obs.unobserve(video);
                }
             });
          }, {
             threshold: 0.2
          });
+
          observer.observe(video);
       }
    });

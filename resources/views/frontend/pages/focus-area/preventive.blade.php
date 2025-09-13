@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
                     <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/our-key/bone-&-Joint-Health.svg')}}" alt="Bone & Joint Health">
@@ -76,9 +76,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg2 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/our-key/lifestyle-disease-screening.svg')}}" alt="Lifestyle Disease Screening">
                     </div>
                     <div class="how-help-item-content">
@@ -91,9 +91,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg3 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/our-key/health-awareness-programs.svg')}}" alt="Health Awareness Programs">
                     </div>
                     <div class="how-help-item-content">
@@ -106,9 +106,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg4 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/our-key/support-for-underprivileged-communities.svg')}}" alt="Support for Underprivileged Communities">
                     </div>
                     <div class="how-help-item-content">
@@ -136,10 +136,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
-                    <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/protecting-young-lives.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
+                    <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/early-detection-saves-lives.jpg')}}" alt="Early Detection Saves Lives" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
                     <div class="flex flex-col justify-between gap-10 text-white absolute top-0 left-0 w-full h-full p-6 z-0">
                         <h4 class="text-2xl font-semibold text-center">Early Detection Saves Lives</h4>
                         <div class="solution-content lg-opacity-0 group-hover-opacity-100 text-center">
@@ -150,10 +150,10 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
-                    <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/reducing-preventable-loss.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
+                    <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/healthier-communities.jpg')}}" alt="Healthier Communities" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
                     <div class="flex flex-col justify-between gap-10 text-white absolute top-0 left-0 w-full h-full p-6 z-0">
                         <h4 class="text-2xl font-semibold text-center">Healthier Communities</h4>
                         <div class="solution-content lg-opacity-0 group-hover-opacity-100 text-center">
@@ -164,10 +164,10 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
-                    <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/creating-responsible-citizens.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
+                    <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/reducing-the-burden-of-disease.jpg')}}" alt="Reducing the Burden of Disease" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
                     <div class="flex flex-col justify-between gap-10 text-white absolute top-0 left-0 w-full h-full p-6 z-0">
                         <h4 class="text-2xl font-semibold text-center">Reducing the Burden of Disease</h4>
                         <div class="solution-content lg-opacity-0 group-hover-opacity-100 text-center">
@@ -179,7 +179,7 @@
         </div>
     </div>
 </div>
-<div class="our-features where-we-work" style="background-color: #116f5f;">
+<div class="where-we-work mb-50" style="background-color: #662d91; border-bottom: 5px solid #f15d5f;">
     <div class="container">
         <div class="row align-items-center">
 			<div class="col-lg-6 col-md-6">				
@@ -187,31 +187,31 @@
                     <div class="tour-title wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
                         <h3> Where We Work</h3>
                     </div>
-					<ul>
+					<ul class="ulli">
                         <li>
                             <strong>
-                                Schools & Colleges
+                                Schools & Colleges :
                             </strong>
                             Encouraging the youth to adopt healthier lifestyles from the beginning.
                         </li>
                         <li>
                             <strong>
-                                Workplaces
+                                Workplaces :
                             </strong>
                             Helping professionals manage stress and lifestyle-related risks.
                         </li>
                         <li>
                             <strong>
-                                Rural & Underserved Areas
+                                Rural & Underserved Areas :
                             </strong>
-                            : Extending healthcare access to those who need it most.
+                            Extending healthcare access to those who need it most.
                         </li>
                     </ul>
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6">
 				<div class="step-img wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-					<img src="https://www.inforbit.in/sunbeamacademy/public/fronted/assets/sunbeam-img/branches/samneghat/samneghat.jpg" alt="class image" class="w100">
+					<img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/where-we-work.jpg')}}" alt="Where we work" class="w-100">
 				</div>
 			</div>
 		</div>
@@ -239,31 +239,31 @@
             </div>
             <div class="col-lg-6">
                 <div class="how-help-list">
-                    <div class="how-help-item wow fadeInUp">                        
-                        <div class="how-help-item-content">
-                            <h3>Host Awareness Programs</h3>
-                            <p>Invite ASK Foundation to conduct interactive sessions at your school, college, or workplace.</p>
-                        </div>
-                    </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.2s">
-                        
+                    <div class="how-help-item bg1 wow fadeInUp">                        
                         <div class="how-help-item-content">
                             <h3>Volunteer Your Time</h3>
-                            <p>Join awareness drives, rallies, and community campaigns to spread the message of safe driving.</p>
+                            <p>Join our free medical camps and help with screenings, awareness sessions, and community support.</p>
                         </div>
                     </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="how-help-item bg3 wow fadeInUp" data-wow-delay="0.2s">
                         
                         <div class="how-help-item-content">
-                            <h3>Practice Safe Habits</h3>
-                            <p>Lead by example—always wear a helmet, use seatbelts, avoid distractions, and follow road rules.</p>
+                            <h3>Host a Camp</h3>
+                            <p>Collaborate with ASK Foundation to organize a preventive healthcare camp at your school, workplace, or community.</p>
                         </div>
                     </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="how-help-item bg4 wow fadeInUp" data-wow-delay="0.4s">
                         
                         <div class="how-help-item-content">
-                            <h3>Support Community Campaigns</h3>
-                            <p>Partner with us through sponsorships or collaborations to expand the reach of road safety initiatives.</p>
+                            <h3>Spread Awareness</h3>
+                            <p>Share health information, encourage regular check-ups, and inspire your community to adopt preventive practices.</p>
+                        </div>
+                    </div>
+                    <div class="how-help-item bg2 wow fadeInUp" data-wow-delay="0.6s">
+                        
+                        <div class="how-help-item-content">
+                            <h3>Contribute Resources</h3>
+                            <p>Support our mission by providing funds, medical supplies, or facilities that help extend care to more people.</p>
                         </div>
                     </div>
                 </div>

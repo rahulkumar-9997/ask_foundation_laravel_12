@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
                     <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/our-key/youth-awareness.svg')}}" alt="Youth Awareness">
@@ -75,9 +75,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg2 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/our-key/community-campaigns.svg')}}" alt="Community Campaigns">
                     </div>
                     <div class="how-help-item-content">
@@ -90,9 +90,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg3 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/our-key/corporate-sessions.svg')}}" alt="Corporate Sessions">
                     </div>
                     <div class="how-help-item-content">
@@ -105,9 +105,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-3">
                 <div class="how-help-item wow fadeInUp">
-                    <div class="icon-box about-ask-icon-bg1 about-ask-foundation-icon-container">
+                    <div class="icon-box about-ask-icon-bg4 about-ask-foundation-icon-container">
                         <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/our-key/practical-safety-education.svg')}}" alt="Practical Safety Education">
                     </div>
                     <div class="how-help-item-content">
@@ -135,7 +135,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
                     <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/protecting-young-lives.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
@@ -149,7 +149,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
                     <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/reducing-preventable-loss.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
@@ -163,7 +163,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <a href="#" class="solution-card block group rounded-xl overflow-hidden relative aos-init aos-animate">
                     <div class="absolute left-0 top-0 h-full w-full -z-10 bg-black-50 lg-opacity-1 group-hover-opacity-100"></div>
                     <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/creating-responsible-citizens.jpg')}}" alt="Fintech" loading="lazy" width="552" height="840" class="why-bone-img w-full max-h-[450px] object-cover relative -z-20">
@@ -200,27 +200,27 @@
             </div>
             <div class="col-lg-6">
                 <div class="how-help-list">
-                    <div class="how-help-item wow fadeInUp">                        
+                    <div class="how-help-item bg1 wow fadeInUp">                        
                         <div class="how-help-item-content">
                             <h3>Host Awareness Programs</h3>
                             <p>Invite ASK Foundation to conduct interactive sessions at your school, college, or workplace.</p>
                         </div>
                     </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="how-help-item bg2 wow fadeInUp" data-wow-delay="0.2s">
                         
                         <div class="how-help-item-content">
                             <h3>Volunteer Your Time</h3>
                             <p>Join awareness drives, rallies, and community campaigns to spread the message of safe driving.</p>
                         </div>
                     </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="how-help-item bg4 wow fadeInUp" data-wow-delay="0.4s">
                         
                         <div class="how-help-item-content">
                             <h3>Practice Safe Habits</h3>
                             <p>Lead by example—always wear a helmet, use seatbelts, avoid distractions, and follow road rules.</p>
                         </div>
                     </div>
-                    <div class="how-help-item wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="how-help-item bg3 wow fadeInUp" data-wow-delay="0.6s">
                         
                         <div class="how-help-item-content">
                             <h3>Support Community Campaigns</h3>

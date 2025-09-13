@@ -2766,7 +2766,7 @@ header.main-header .header-sticky.active {
 	color: var(--primary-color);
 	text-transform: capitalize;
 	line-height: 1.6em;
-	margin-bottom: 10px;
+	margin-bottom: 4px;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -6690,7 +6690,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.page-header-box h1 {
-		font-size: 28px;
+		font-size: 24px;
 	}
 
 	.mission-vision-box {
@@ -6744,7 +6744,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.how-help-item-content h3 {
-		font-size: 18px;
+		font-size: 20px;
 		margin-bottom: 5px;
 	}
 
@@ -7284,7 +7284,7 @@ header.none-header.main-header {
 }
 
 .health-icon-bg2 {
-	background-color: #22c55e;
+	background-color: #4bbd92;
 }
 
 .health-icon-bg3 {
@@ -8100,6 +8100,9 @@ header.none-header.main-header {
 .mb-6{
 	margin-bottom: 60px;
 }
+.mb-50{
+	margin-bottom: 50px;
+}
 .choose-area.prevetive-focus{
     background: #f15d5f;
 }
@@ -8114,4 +8117,70 @@ header.none-header.main-header {
     position: relative;
     color: #fff;
 
+}
+.solution-card:hover img{
+	transform: scale(1.1);
+    transition: transform 0.6s ease;
+	border-radius: 10px;
+}
+.step-img{
+	margin-right: -302px;
+    background: #fff;
+    padding-bottom: 0px;
+}
+.ulli{
+	padding: 0;
+    margin: 20px 0 20px;
+    padding-left: 20px;
+}
+.ulli li strong{
+	font-weight: bolder;
+}
+.ulli li{
+	position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.how-help-list .how-help-item,
+.how-help-list .how-help-item-content h3{
+	color: #fff;
+}
+.how-help-list .how-help-item:hover{
+	transform: scale(1.1);
+    transition: transform 0.6s ease;
+	border-radius: 10px;
+}
+.how-help-item.bg1{
+	background-color: #f15d5f;
+}
+.how-help-item.bg2{
+	background-color: #4bbd92;
+}
+
+.how-help-item.bg3 {
+	background-color: #43c8f3;
+}
+
+.how-help-item.bg4 {
+	background-color: #662d91;
+}
+@media only screen and (max-width: 767px) {
+	.bone-health p {
+		text-align: unset;
+	}
+	.focus-area-oth .how-help-item .highlight-con p{
+		position: unset;
+		background: unset;
+		color:#000;
+		opacity: 1;
+		font-size: 18px;
+		line-height: 29px;
+		padding: 0px 0px
+	}
+	.how-help-list {
+		gap: 15px;
+	}
 }
