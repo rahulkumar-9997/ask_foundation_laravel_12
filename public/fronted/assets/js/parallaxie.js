@@ -30,8 +30,6 @@
             if( typeof image_url === 'undefined' ){
                 image_url = $el.css('background-image');
                 if( !image_url ) return;
-
-                // APPLY DEFAULT CSS
                 var pos_y =  local_options.offset + ($el.offset().top - $(window).scrollTop()) * (1 - local_options.speed );
                 $el.css({
                     'background-image': image_url,
@@ -42,7 +40,6 @@
                 });
 
                 $(window).scroll( function(){
-                        //var pos_y = - ( $(window).scrollTop() - $el.offset().top ) * ( 1 + local_options.speed ) - ( $el.offset().top * local_options.speed );
                         var pos_y =  local_options.offset + ($el.offset().top - $(window).scrollTop()) * (1 - local_options.speed );
                         $el.data( 'pos_y', pos_y );
                         $el.css( 'background-position', local_options.pos_x + ' ' + pos_y + 'px' );
