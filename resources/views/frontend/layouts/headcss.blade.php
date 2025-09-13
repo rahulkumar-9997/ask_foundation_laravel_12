@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link
 href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Onest:wght@100..900&amp;display=swap"
 rel="stylesheet">
+<!-- @vite(['resources/css/app.css']) -->
 <link href="{{asset('fronted/assets/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
 <link href="{{asset('fronted/assets/css/slicknav.min.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('fronted/assets/css/swiper-bundle.min.css')}}">
