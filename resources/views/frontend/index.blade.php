@@ -105,7 +105,7 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="about-us-images">
                <div class="about-img-1">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/ask-img/dr.sai-laxman-anne.jpg')}}" alt="" loading="lazy">
+                     <img src="{{asset('fronted/assets/images/ask-intro-1.jpg')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="about-img-2">
@@ -113,10 +113,10 @@ $features = $data['bannerVideo']->features ?? [];
                      <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="" loading="lazy">
                   </figure>
                </div>
-               <div class="need-fund-box">
+               <!--div class="need-fund-box">
                   <img src="{{asset('fronted/assets/ask-img/icon/icon-funded-dollar.svg')}}" alt="" loading="lazy">
                   <p>Promoting early detection and prevention of bone diseases.</p>
-               </div>
+               </div-->
             </div>
          </div>
 
@@ -124,13 +124,24 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="about-us-content home-about-us-page">
                <div class="section-title">
                   <h2 class="text-anime-style-2 empowerh2" data-cursor="-opaque">
-                     EMPOWER LIVES & <br>COMMUNITIES THROUGH <br><span class="spanabou"> PREVENTIVE CARE & EDUCATION</span>
+                     <span class="spanabou"> ASK Foundation </span>
                   </h2>
+                  <h3 class="text-anime-style-2 empowerh3" data-cursor="-opaque">
+                     <span class="spanabou"> Care today, stronger tomorrow</span>
+                  </h3>
+				      <h4 class="text-anime-style-2 empowerh4" >Empowering Lives Through Preventive Care</h4>
                   <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
+				      The <strong>ASK Foundation</strong>, founded by Dr. Sai Laxman Anne, Chief Consultant Orthopaedic and Joint Replacement Surgeon, was created to give back to society with a focus on preventive healthcare. Named in honor of his mother, the foundation reflects his lifelong dedication to improving community welfare through awareness, education, and compassion.
+					<!--
                      The ASK Foundation was established by Dr. Sai Laxman Anne, a highly accomplished Chief Consultant Orthopaedic and Joint Replacement Surgeon, with the vision of giving back to society in a meaningful way. Named in honor of his mother, the foundation reflects his lifelong commitment to community welfare and preventive healthcare. Over the years, Dr. Anne has dedicated himself not only to clinical excellence but also to creating awareness about critical issues such as bone health, joint care, preventive medicine, and road safety. Having witnessed the devastating impact of trauma cases, particularly road accidents affecting the working-age population, he recognized the urgent need to spread awareness, prevent avoidable injuries, and support families in safeguarding their future. The foundation, therefore, goes beyond treatment to focus on prevention, education, and outreach at the grassroots level.
+					 **-->
                   </p>
+				  <h3 class="home-lives">Empowering Lives Through Preventive Care</h3>
                   <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
+				  ASK Foundation actively conducts health camps, wellness initiatives, and educational programs across schools, colleges, and communities. Its efforts range from bone health awareness and road safety campaigns to lifestyle disease screenings and support for underprivileged orthopedic patients. With transparency and inclusivity at its core, the foundation invites doctors, professionals, students, and volunteers to join hands in building healthier and more resilient communities.
+				  <!--
                      ASK Foundation works actively through health camps, wellness initiatives, and educational programs, aiming to reach individuals across diverse communities. Its initiatives range from bone health awareness, road safety campaigns in schools and colleges, preventive screening for lifestyle diseases such as diabetes and hypertension, to providing support for underprivileged orthopedic patients. The foundation also emphasizes collaboration, inviting doctors, professionals, students, and volunteers from all walks of life to contribute their time, skills, or resources. With transparency, compassion, and inclusivity at its core, ASK Foundation stands as a platform where like-minded individuals can come together to create healthier, safer, and more resilient communities.
+					 -->
                   </p>
                </div>
                <div class="about-btn wow fadeInUp mt-3" data-wow-delay="0.6s">
@@ -308,9 +319,9 @@ $features = $data['bannerVideo']->features ?? [];
          <div class="col-lg-6">
             <div class="what-we-do-content">
                <div class="section-title">
-                  <h3 class="wow fadeInUp">About Our Founder</h3>
-                  <h2 class="text-anime-style-2 mb-3" data-cursor="-opaque">
-                     Building healthier lives with compassion and expertise
+                  <!--h3 class="wow fadeInUp">About Our Founder</h3-->
+                  <h2 class="text-anime-style-2 mb-3 sai-laxam" data-cursor="-opaque">
+                     Dr. Sai Laxman Anne: A Vision for Preventive Healthcare
                   </h2>
                </div>
                <div class="what-we-list">
@@ -359,18 +370,18 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="what-we-do-images">
                <div class="what-we-do-img-1">
                   <figure class="image-anime reveal">
-                     <img src="{{asset('fronted/assets/images/ask-3.png')}}" alt="" loading="lazy">
+                     <img src="{{asset('fronted/assets/images/ask-3.jpg')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="what-we-do-img-2">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/ask-e.png')}}" alt="" loading="lazy">
+                     <img src="{{asset('fronted/assets/images/founder-intro.png')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="donate-now-box">
                   <a href="{{ route('donate-us')}}">
                      <img src="{{asset('fronted/assets/ask-img/icon/icon-donate-now.svg')}}" alt="" loading="lazy">
-                     Donate Us
+                     Donate 
                   </a>
                </div>
             </div>
@@ -401,7 +412,7 @@ $features = $data['bannerVideo']->features ?? [];
          <div class="col-lg-7">
             <div class="why-choose-content">
                <div class="section-title">
-                  <h3 class="wow fadeInUp">why choose us</h3>
+                  <h3 class="wow fadeInUp">Why choose ASK Foundation</h3>
                   <h2 class="text-anime-style-2" data-cursor="-opaque">
                      Building Stronger Bones & Safer Roads
                   </h2>
@@ -659,7 +670,7 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="how-it-work-item">
                   <div class="how-it-work-image">
                      <figure class="image-anime reveal">
-                        <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="" loading="lazy">
+                        <img src="{{asset('fronted/assets/images/ask-1-old.png')}}" alt="" loading="lazy">
                      </figure>
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.4s">
@@ -707,7 +718,7 @@ $features = $data['bannerVideo']->features ?? [];
                <div class="how-it-work-item">
                   <div class="how-it-work-image">
                      <figure class="image-anime reveal">
-                        <img src="{{asset('fronted/assets/images/ask-3.png')}}" alt="" loading="lazy">
+                        <img src="{{asset('fronted/assets/images/ask-3-old.png')}}" alt="" loading="lazy">
                      </figure>
                   </div>
                   <div class="how-it-work-content wow fadeInUp" data-wow-delay="0.6s">

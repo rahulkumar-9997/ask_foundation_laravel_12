@@ -7691,7 +7691,7 @@ header.none-header.main-header {
     z-index: 1;
 }
 .banner-feature h3{
-	color: var(--color-one);
+	color: var(--primary-color);
     font-size: 28px;
 }
 /*Donation form*/
@@ -8166,6 +8166,38 @@ header.none-header.main-header {
 
 .how-help-item.bg4 {
 	background-color: #662d91;
+}
+.section-title .empowerh3{
+	font-size: 26px;
+	padding-left: 0px;
+	font-weight: 700;
+    line-height: 1.2em;
+	margin-bottom: 10px;
+	color: var(--primary-color);
+}
+
+.section-title .empowerh4{
+	font-size: 22px;
+	padding-left: 0px;
+	font-weight: 500;
+    line-height: 1.2em;
+	color: var(--color-two);
+	margin-bottom: 10px;
+}
+.section-title .home-lives{
+	padding-left: 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 22px;
+}
+.section-title .sai-laxam{
+	color: var(--primary-color);
+}
+.section-title .home-lives::before{
+	display: none;
+}
+.section-title .empowerh3::before{
+	display: none;
 }
 @media only screen and (max-width: 767px) {
 	.bone-health p {
