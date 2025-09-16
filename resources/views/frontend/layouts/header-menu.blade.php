@@ -38,7 +38,6 @@
                                     </li>
                                 </ul>
                             </li>
-
                             <!-- <li class="nav-item"><a class="nav-link" href="#">Patient Support</a></li> -->
                             <li class="nav-item"><a class="nav-link" href="{{ route('our-doctors') }}">Our Doctors</a></li>
                             <li class="nav-item">
