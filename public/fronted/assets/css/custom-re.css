@@ -3919,23 +3919,23 @@ header.main-header .header-sticky.active {
 }
 
 .post-entry h1 {
-	font-size: 63px;
-}
-
-.post-entry h2 {
-	font-size: 50px;
-}
-
-.post-entry h3 {
-	font-size: 40px;
-}
-
-.post-entry h4 {
 	font-size: 30px;
 }
 
-.post-entry h5 {
+.post-entry h2 {
+	font-size: 26px;
+}
+
+.post-entry h3 {
 	font-size: 24px;
+}
+
+.post-entry h4 {
+	font-size: 22px;
+}
+
+.post-entry h5 {
+	font-size: 20px;
 }
 
 .post-entry h6 {
@@ -3977,10 +3977,19 @@ header.main-header .header-sticky.active {
 
 .post-entry ul li {
 	position: relative;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 1.5em;
-    color: var(--primary-color);
+    color: var(--text-color);
+    margin-bottom: 9px;
+}
+
+.post-entry ol li {
+	position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: var(--text-color);
     margin-bottom: 9px;
 }
 
