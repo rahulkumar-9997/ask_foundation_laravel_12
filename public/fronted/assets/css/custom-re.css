@@ -2835,8 +2835,8 @@ header.main-header .header-sticky.active {
 
 .page-header-box h1 {
 	display: inline-block;
-	font-size: 26px;
-	font-weight: 700;
+	font-size: 22px;
+	font-weight: 600;
 	line-height: 1.2em;
 	color: var(--white-color);
 	margin-bottom: 0px;
