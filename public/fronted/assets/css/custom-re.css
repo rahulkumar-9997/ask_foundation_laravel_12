@@ -6768,10 +6768,20 @@ header.main-header .header-sticky.active {
 		width: 100%;
 	}
 
+	.section-title.banner-section-title{
+		text-align: left;
+	}
 	.how-help-item .icon-box {
 		margin-bottom: 15px;
 	}
-
+	
+	.about-us p,
+	.about-btn{
+		text-align: center;
+	}
+	.topics-section .section-title{
+		text-align: left;
+	}
 	.how-help-item .icon-box img {
 		max-width: 45px;
 	}
@@ -7130,6 +7140,7 @@ header.main-header .header-sticky.active {
 		display: block;
 	}
 }
+
 header.header-for-mobile.main-header {
 	position: relative;
 }
@@ -8367,4 +8378,41 @@ header.none-header.main-header {
         padding: 15px 15px 5px 15px;
     } */
 	/*menu link*/
+}
+/*ipad mini*/
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+	header .navbar {
+        padding: 10px 0;
+    }
+	.navbar-brand img {
+        width: 62px;
+    }
+	.header-sticky.active .navbar-brand img {
+		width: 62px;
+	}
+	.navbar-toggle {
+      float: right;
+   	}
+	.navbar-toggle {
+		margin-left: auto;
+	}
+	.home-features-section.fa-negative {
+        margin-top: 20px;
+    }
+	.feature-wrapper .feature-item {
+        box-shadow: 0 0 15px 5px rgb(0 0 0 / 13%);
+    }		
+	.home-features-section .banner-feature h3 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+	.container-for-mobile .section-title h1 {
+        font-size: 20px;
+    }
+	.hero{
+		padding: 210px 0 110px;
+	}
+	.about-us-images{
+		max-width: 100%;
+	}
 }

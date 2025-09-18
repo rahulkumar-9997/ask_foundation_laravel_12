@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\CacheController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\DoctorsController;
+use App\Http\Controllers\Backend\ActivitiesController;
 
 Route::get('/', [FrontHomeController::class, 'home'])->name('home');
 Route::get('blog', [FrontHomeController::class, 'blogList'])->name('blog');
@@ -29,6 +30,7 @@ Route::get('focus-areas/bone-health-orthopedics', [FrontHomeController::class, '
 Route::get('focus-areas/road-safety-programs', [FrontHomeController::class, 'roadSafety'])->name('focus.road');
 Route::get('focus-areas/preventive-medicine', [FrontHomeController::class, 'preventiveMedicine'])->name('focus.preventive');
 Route::get('focus-areas/medical-education', [FrontHomeController::class, 'medicalEducation'])->name('focus.education');
+Route::get('our-activities', [FrontHomeController::class, 'ourActivities'])->name('our-activities');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm']);
@@ -48,6 +50,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('manage-banner', BannerController::class)->names('manage-banner');
     Route::resource('manage-blog', BlogController::class)->names('manage-blog');
     Route::resource('manage-doctors', DoctorsController::class)->names('manage-doctors');
+    Route::resource('manage-activities', ActivitiesController::class)->names('manage-activities');
        
     Route::get('/clear-cache', [CacheController::class, 'clearCache'])->name('clear-cache');
     Route::resource('pages', PageController::class);

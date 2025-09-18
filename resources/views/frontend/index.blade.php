@@ -24,7 +24,7 @@
       <div class="row align-items-center">
          <div class="col-lg-8">
             <div class="hero-content">
-               <div class="section-title">
+               <div class="section-title banner-section-title">
                   <h1 class="text-anime-style-2" data-cursor="-opaque">
                      {!! $data['bannerVideo']->subtitle !!}
                   </h1>
@@ -38,7 +38,7 @@
                      <a href="{{ $data['bannerVideo']->button_link}}" target="_blank" class="btn-default">Know More</a>
                   </div>
                   @endif
-               </div>               
+               </div>
             </div>
          </div>
       </div>
@@ -63,11 +63,11 @@ $features = $data['bannerVideo']->features ?? [];
                         <a href="#">
                            <div class="banner-feature fun-facts-box-item d-flex align-items-center gap-3">
                               @if(isset($feature['icon']) && !empty($feature['icon']))
-                                 <div class="feature-img-box">
-                                    <figure class="mb-0 d-inline-block">
-                                       <img src="{{ asset('upload/banner/features/' . $feature['icon']) }}" alt="{{ $feature['feature'] }}" class="feature-icon img-fluid" loading="lazy">
-                                    </figure>
-                                 </div>
+                              <div class="feature-img-box">
+                                 <figure class="mb-0 d-inline-block">
+                                    <img src="{{ asset('upload/banner/features/' . $feature['icon']) }}" alt="{{ $feature['feature'] }}" class="feature-icon img-fluid" loading="lazy">
+                                 </figure>
+                              </div>
                               @endif
                               <div class="feature-text">
                                  <h3>
@@ -121,25 +121,25 @@ $features = $data['bannerVideo']->features ?? [];
                   <h3 class="text-anime-style-2 empowerh3" data-cursor="-opaque">
                      <span class="spanabou"> Care Today, Stronger Tomorrow</span>
                   </h3>
-				      <h4 class="text-anime-style-2 empowerh4" >Empowering Lives Through Preventive Care</h4>
+                  <h4 class="text-anime-style-2 empowerh4">Empowering Lives Through Preventive Care</h4>
                </div>
-                  <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
-				      Founded by Dr. Sai Laxman Anne, Chief Consultant Orthopaedic and Joint Replacement Surgeon, the ASK Foundation is dedicated to preventive healthcare and community welfare. Named in honor of his mother, it reflects his commitment to awareness, education, and compassion.					
-                  </p>
-                  <div class="section-title">
-				         <h3 class="home-lives">Creating Healthier, Safer Communities</h3>
-                  </div>
-                  <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
-				      The foundation conducts health camps, wellness drives, and awareness programs on bone health, road safety, and lifestyle diseases, while also supporting underprivileged orthopedic patients. With transparency and inclusivity, ASK Foundation welcomes doctors, professionals, students, and volunteers to help build healthier communities.
-                  </p>
+               <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
+                  Founded by Dr. Sai Laxman Anne, Chief Consultant Orthopaedic and Joint Replacement Surgeon, the ASK Foundation is dedicated to preventive healthcare and community welfare. Named in honor of his mother, it reflects his commitment to awareness, education, and compassion.
+               </p>
+               <div class="section-title">
+                  <h3 class="home-lives">Creating Healthier, Safer Communities</h3>
                </div>
-               <div class="about-btn wow fadeInUp mt-3" data-wow-delay="0.6s">
-                  <a href="{{ route('about-us') }}" class="btn-default">about us</a>
-               </div>
+               <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
+                  The foundation conducts health camps, wellness drives, and awareness programs on bone health, road safety, and lifestyle diseases, while also supporting underprivileged orthopedic patients. With transparency and inclusivity, ASK Foundation welcomes doctors, professionals, students, and volunteers to help build healthier communities.
+               </p>
+            </div>
+            <div class="about-btn wow fadeInUp mt-3" data-wow-delay="0.6s">
+               <a href="{{ route('about-us') }}" class="btn-default">about us</a>
             </div>
          </div>
       </div>
    </div>
+</div>
 </div>
 <!-- About Us Section End -->
 <!-- Our Causes Section Start -->
@@ -366,7 +366,7 @@ $features = $data['bannerVideo']->features ?? [];
                   <figure class="image-anime">
                      <img src="{{asset('fronted/assets/images/founder-intro.png')}}" alt="" loading="lazy">
                   </figure>
-               </div>               
+               </div>
             </div>
          </div>
       </div>
@@ -545,7 +545,7 @@ $features = $data['bannerVideo']->features ?? [];
                </div>
                <div class="about-btn wow fadeInUp mt-5" data-wow-delay="0.6s">
                   <a href="{{ route('donate-us')}}" class="btn-default">Donate</a>
-               </div>               
+               </div>
             </div>
          </div>
       </div>
@@ -600,7 +600,7 @@ $features = $data['bannerVideo']->features ?? [];
                </div>
             </div>
          </div>
-         <div class="col-lg-3 col-md-3 col-6">
+         <div class="col-lg-3 col-md-6 col-6">
             <div class="number-tell-story-card">
                <div class="tell-story-content">
                   <div class="number-tell-story-stat story-color2">54M</div>
@@ -609,7 +609,7 @@ $features = $data['bannerVideo']->features ?? [];
                </div>
             </div>
          </div>
-         <div class="col-lg-3 col-md-3 col-6">
+         <div class="col-lg-3 col-md-6 col-6">
             <div class="number-tell-story-card">
                <div class="tell-story-content">
                   <div class="number-tell-story-stat story-color3">200M</div>
@@ -618,7 +618,7 @@ $features = $data['bannerVideo']->features ?? [];
                </div>
             </div>
          </div>
-         <div class="col-lg-3 col-md-3 col-6">
+         <div class="col-lg-3 col-md-6 col-6">
             <div class="number-tell-story-card">
                <div class="tell-story-content">
                   <div class="number-tell-story-stat story-color4">38,000</div>
@@ -640,7 +640,7 @@ $features = $data['bannerVideo']->features ?? [];
                <h3 class="wow fadeInUp">How ASK Foundation works</h3>
                <h2 class="text-anime-style-2" data-cursor="-opaque">Step by step working process</h2>
                <p class="wow fadeInUp" data-wow-delay="0.2s">Our approach ensures lasting impact—identifying real needs, designing practical solutions, and creating healthier communities.
-</p>
+               </p>
             </div>
          </div>
       </div>
@@ -776,9 +776,54 @@ $features = $data['bannerVideo']->features ?? [];
 @endsection
 @push('scripts')
 <script>
-   document.addEventListener("DOMContentLoaded", function() {
+   /*document.addEventListener("DOMContentLoaded", function() {
       let isMobile = window.innerWidth <= 768;
       let video = document.querySelector(isMobile ? ".mobilevideo" : ".desktopvideo");
+      if (video) {
+         let observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                  let source = document.createElement("source");
+                  source.src = video.getAttribute("data-src");
+                  source.type = "video/mp4";
+                  video.appendChild(source);
+                  video.load();
+
+                  video.play().then(() => {
+                     let placeholder = video.parentElement.querySelector(".video-placeholder");
+                     if (placeholder) {
+                        placeholder.classList.add("hide");
+                     }
+                  }).catch(() => {
+                     console.log("Autoplay blocked");
+                  });
+
+                  obs.unobserve(video);
+               }
+            });
+         }, {
+            threshold: 0.2
+         });
+
+         observer.observe(video);
+      }
+   });
+   */
+   document.addEventListener("DOMContentLoaded", function() {
+      let width = window.innerWidth;
+      let video;
+      /*mobile (<= 767px) => mobile video*/
+      if (width <= 767) {
+         video = document.querySelector(".mobilevideo");
+      }
+      /*iPad (768–1024px) => desktop video*/
+      else if (width >= 768 && width <= 1024) {
+         video = document.querySelector(".desktopvideo");
+      }
+      /* desktop (> 1024px) => desktop video*/
+      else {
+         video = document.querySelector(".desktopvideo");
+      }
       if (video) {
          let observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {

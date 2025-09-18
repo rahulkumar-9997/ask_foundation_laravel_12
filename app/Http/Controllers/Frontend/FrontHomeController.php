@@ -153,4 +153,8 @@ class FrontHomeController extends Controller
         }
         return view('frontend.pages.donate-us.donate-con-display', compact('donation'));
     }
+
+    public function ourActivities(){
+        return view('frontend.pages.activities.activities-list');
+    }
 }

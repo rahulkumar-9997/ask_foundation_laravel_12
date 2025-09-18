@@ -38,7 +38,7 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="#">Our Activities</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('our-activities') }}">Our Activities</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('our-doctors') }}">Our Doctors</a></li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('blog') }}">Blogs</a>

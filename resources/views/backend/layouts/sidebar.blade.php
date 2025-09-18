@@ -84,6 +84,16 @@
                         <li><a href="{{ route('manage-doctors.index') }}">Doctors</a></li>
                      </ul>
                   </li>
+                  <li class="submenu">
+                     <a href="javascript:void(0);">
+                     <i class="ti ti-receipt-pound fs-16 me-2"></i>
+                     <span>Manage Activities</span>
+                     <span class="menu-arrow"></span>
+                     </a>
+                     <ul>
+                        <li><a href="{{ route('manage-activities.index') }}">Activities</a></li>
+                     </ul>
+                  </li>
                </ul>
             </li>
          </ul>
