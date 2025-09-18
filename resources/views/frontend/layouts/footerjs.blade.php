@@ -9,7 +9,7 @@
 <script src="{{asset('fronted/assets/js/SmoothScroll.js')}}"></script>
 <script src="{{asset('fronted/assets/js/parallaxie.js')}}"></script>
 <script src="{{asset('fronted/assets/js/gsap.min.js')}}"></script>
-<script src="{{asset('fronted/assets/js/magiccursor.js')}}"></script>
+<!-- <script src="{{asset('fronted/assets/js/magiccursor.js')}}"></script> -->
 <script src="{{asset('fronted/assets/js/SplitText.js')}}"></script>
 <script src="{{asset('fronted/assets/js/ScrollTrigger.min.js')}}"></script>
 <script src="{{asset('fronted/assets/js/wow.min.js')}}"></script>

@@ -13,8 +13,8 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="page-header-box">
-                    <h1 class="text-anime-style-2" data-cursor="-opaque"><span>B</span>log</h1>
-                    <p>{{ $blog->title ?? $blog->short_desc }}</p>
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">{{ $blog->title ?? $blog->short_desc }}</h1>
+                    
                 </div>
             </div>
         </div>

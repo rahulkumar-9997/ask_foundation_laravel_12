@@ -17,8 +17,8 @@
    <div class="card">
       <div class="card-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
          <a href="{{ route('manage-banner.index') }}" data-title="Go Back to Previous Page" data-bs-toggle="tooltip" class="btn btn-sm btn-info" data-bs-original-title="Go Back to Previous Page">
-         <i class="ti ti-arrow-left me-1"></i>
-         Go Back to Previous Page
+            <i class="ti ti-arrow-left me-1"></i>
+            Go Back to Previous Page
          </a>
       </div>
       <div class="card-body">
@@ -37,7 +37,7 @@
                <div class="col-sm-6 col-12">
                   <div class="mb-3">
                      <label class="form-label" for="banner_video_title">
-                     Banner video title 
+                        Banner video title
                      </label>
                      <input type="text" class="form-control @error('banner_video_title') is-invalid @enderror" id="banner_video_title" name="banner_video_title" value="{{ old('banner_video_title') }}" />
                      @error('banner_video_title')
@@ -48,7 +48,7 @@
                <div class="col-sm-6 col-12">
                   <div class="mb-3">
                      <label class="form-label" for="banner_video_subtitle">
-                     Banner video sub-title
+                        Banner video sub-title
                      </label>
                      <input type="text" class="form-control @error('banner_video_subtitle') is-invalid @enderror" id="banner_video_subtitle" name="banner_video_subtitle" value="{{ old('banner_video_subtitle') }}" />
                      @error('banner_video_subtitle')
@@ -59,7 +59,7 @@
                <div class="col-sm-6 col-12">
                   <div class="mb-3">
                      <label class="form-label" for="banner_description">
-                     Banner video description 
+                        Banner video description
                      </label>
                      <textarea class="form-control @error('banner_description') is-invalid @enderror" id="banner_description" name="banner_description" rows="1">{{ old('banner_description') }}</textarea>
                      @error('banner_description')
@@ -95,45 +95,83 @@
                <div class="col-sm-4 col-12">
                   <div class="mb-3">
                      <label class="form-label" for="mobile_video_file">Mobile video file <span class="text-danger">*</span></label>
-                     <input type="file" class="form-control @error('mobile_video_file') is-invalid @enderror" name="mobile_video_file" id="mobile_video_file" >
+                     <input type="file" class="form-control @error('mobile_video_file') is-invalid @enderror" name="mobile_video_file" id="mobile_video_file">
                      <small class="form-text text-muted">Supported formats: MP4, AVI, MOV. Max size: 50MB</small>
                   </div>
                </div>
                <div class="col-12">
                   <div class="mb-3">
-                     <label class="form-label">Video Features </label>
-                     <div id="features-container">
-                        @if(old('video_features'))
-                        @foreach(old('video_features') as $index => $feature)
-                        <div class="input-group mb-2">
-                           <input type="text" name="video_features[]" class="form-control @error('video_features.'.$index) is-invalid @enderror"
-                              value="{{ $feature }}" placeholder="Enter feature" required>
-                           <button class="btn btn-outline-danger remove-feature" type="button">
-                           <i class="fas fa-times"></i>
-                           </button>
-                           @error('video_features.'.$index)
-                           <div class="invalid-feedback">{{ $message }}</div>
-                           @enderror
-                        </div>
-                        @endforeach
-                        @else
-                        <div class="input-group mb-2">
-                           <input type="text" name="video_features[]" class="form-control"
-                              placeholder="Enter feature">
-                           <button class="btn btn-outline-danger remove-feature" type="button">
-                           <i class="fas fa-times"></i>
-                           </button>
-                        </div>
-                        @endif
-                     </div>
+                     <label class="form-label">Video Features</label>
+
+                     <table class="table table-bordered" id="features-table">
+                        <thead>
+                           <tr>
+                              <th style="width: 30%">Featur Text</th>
+                              <th style="width: 60%">Feature Icon</th>
+                              <th style="width: 10%">Action</th>
+                           </tr>
+                        </thead>
+                        <tbody id="features-container">
+                           @if(old('video_features'))
+                           @foreach(old('video_features') as $index => $feature)
+                           <tr>
+                              
+                              <td>
+                                 <input type="text" name="video_features[]"
+                                    class="form-control @error('video_features.'.$index) is-invalid @enderror"
+                                    value="{{ $feature }}" placeholder="Enter feature" required>
+                                 @error('video_features.'.$index)
+                                 <div class="invalid-feedback">{{ $message }}</div>
+                                 @enderror
+                              </td>
+                              <td>
+                                 <input type="file" name="video_icons[]"
+                                    class="form-control @error('video_icons.'.$index) is-invalid @enderror"
+                                    value="{{ old('video_icons.'.$index) }}"
+                                    placeholder="fas fa-play">
+                                 @error('video_icons.'.$index)
+                                 <div class="invalid-feedback">{{ $message }}</div>
+                                 @enderror
+                              </td>
+                              <td class="text-center">
+                                 <button class="btn btn-outline-danger remove-feature" type="button">
+                                    <i class="fas fa-times"></i>
+                                 </button>
+                              </td>
+                           </tr>
+                           @endforeach
+                           @else
+                           <tr>
+                              
+                              <td>
+                                 <input type="text" name="video_features[]" class="form-control"
+                                    placeholder="Enter feature">
+                              </td>
+                              <td>
+                                 <input type="file" name="video_icons[]" class="form-control"
+                                    placeholder="fas fa-play">
+                              </td>
+                              <td class="text-center">
+                                 <button class="btn btn-outline-danger remove-feature" type="button">
+                                    <i class="fas fa-times"></i>
+                                 </button>
+                              </td>
+                           </tr>
+                           @endif
+                        </tbody>
+                     </table>
+
                      <button type="button" class="btn btn-outline-primary btn-sm" id="add-feature">
-                     <i class="fas fa-plus"></i> Add Feature
+                        <i class="fas fa-plus"></i> Add Feature
                      </button>
+
                      @error('video_features')
                      <div class="invalid-feedback d-block">{{ $message }}</div>
                      @enderror
                   </div>
                </div>
+
+
             </div>
             <div class="row">
                <div class="col-lg-12">
@@ -147,7 +185,7 @@
                      </button>
                   </div>
                   <div class="progress mb-3 d-none" id="progressBarContainer">
-                     <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" 
+                     <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
                         role="progressbar" style="width: 0%"></div>
                   </div>
                   <div id="uploadStatus" class="text-center small"></div>
@@ -160,130 +198,143 @@
 @endsection
 @push('scripts')
 <script>
-   $(document).ready(function () {
-   /*Add more feature and remove feature */
-   const container = $('#features-container');
-   const addButton = $('#add-feature');
-   addButton.on('click', function () {
-      const newFeature = `   
-               <div class="input-group mb-2">   
-                   <input type="text" name="video_features[]" class="form-control"    
-                          placeholder="Enter feature">   
-                   <button class="btn btn-outline-danger remove-feature" type="button">   
-                       <i class="fas fa-times"></i>   
-                   </button>   
-               </div>  
-           `;
-      container.append(newFeature);
+   $(document).ready(function() {
+      /*Add more feature and remove feature */
+      const container = $('#features-container');
+      const addButton = $('#add-feature');
+      const maxRows = 3;
 
-   });
-   container.on('click', '.remove-feature', function (e) {
-      const inputGroup = $(this).closest('.input-group');
-      if (container.children().length > 1) {
-         inputGroup.remove();
-      } else {
-         alert('At least one feature is required.');
-      }
-   });
-   /*Add more feature and remove feature */
-   /*Add banner form submit code */
-   $(document).off('submit', '#bannerUploadForm').on('submit', '#bannerUploadForm', function (event) {
-      event.preventDefault();
-      var form = $(this);
-      var submitButton = form.find('button[type="submit"]');
-      var submitText = $('#submitText');
-      var uploadProgress = $('#uploadProgress');
-      var progressBarContainer = $('#progressBarContainer');
-      var progressBar = $('#progressBar');
-      var uploadStatus = $('#uploadStatus');
-      $('.form-control').removeClass('is-invalid');
-      $('.invalid-feedback').remove();
-      var desktopFile = $('#desktop_video_file')[0].files[0];
-      var mobileFile = $('#mobile_video_file')[0].files[0];
-      var hasFilesToUpload = desktopFile || mobileFile;
-      submitButton.prop('disabled', true);
-      submitText.text(hasFilesToUpload ? 'Uploading...' : 'Saving...');
-      if (hasFilesToUpload) {
-         uploadProgress.removeClass('d-none');
-         progressBarContainer.removeClass('d-none');
-      } else {
-         uploadProgress.addClass('d-none');
-         progressBarContainer.addClass('d-none');
-      }
-      var formData = new FormData(this);
-      $.ajax({
-         url: form.attr('action'),
-         type: 'POST',
-         data: formData,
-         processData: false,
-         contentType: false,
-         xhr: function () {
-            var xhr = new window.XMLHttpRequest();
-            if (hasFilesToUpload) {
-               xhr.upload.addEventListener('progress', function (e) {
-                  if (e.lengthComputable) {
-                     var percentComplete = Math.round((e.loaded / e.total) * 100);
-                     progressBar.css('width', percentComplete + '%');
-                     progressBar.attr('aria-valuenow', percentComplete);
-                     uploadStatus.text('Uploading: ' + percentComplete + '%');
-                  }
-               }, false);
-            }
-            return xhr;
-         },
-         success: function (response) {
-            submitButton.prop('disabled', false);
-            submitText.text('Submit');
-            uploadProgress.addClass('d-none');
-            progressBarContainer.addClass('d-none');
-            if (response.status === true) {
-               Toastify({
-                  text: response.message || 'Banner video created successfully!',
-                  duration: 10000,
-                  gravity: "top",
-                  position: "right",
-                  className: "bg-success",
-                  escapeMarkup: false,
-                  close: true,
-                  onClick: function () {}
-               }).showToast();
-               setTimeout(function () {
-                  window.location.href = "{{ route('manage-banner.index') }}";
-               }, 1500);
-            }
-         },
-         error: function (xhr, status, error) {
-            submitButton.prop('disabled', false);
-            submitText.text('Submit');
-            uploadProgress.addClass('d-none');
-            progressBarContainer.addClass('d-none');
-            var errors = xhr.responseJSON && xhr.responseJSON.errors;
-            if (errors) {
-               $.each(errors, function (key, value) {
-                  var inputField = $('[name="' + key + '"]');
-                  inputField.addClass('is-invalid');
-                  inputField.after('<div class="invalid-feedback">' + value[0] + '</div>');
-               });
-            } else {
-               var errorMessage = xhr.responseJSON && xhr.responseJSON.message
-                  ?
-                  xhr.responseJSON.message
-                  :
-                  'Error processing request. Please try again.';
-               Toastify({
-                  text: errorMessage,
-                  duration: 10000,
-                  gravity: "top",
-                  position: "right",
-                  className: "bg-danger",
-                  escapeMarkup: false,
-                  close: true,
-                  onClick: function () {}
-               }).showToast();
-            }
+      addButton.on('click', function () {
+         if (container.children().length >= maxRows) {
+            alert('You can only add up to ' + maxRows + ' features.');
+            return;
+         }
+
+         const newRow = `
+            <tr>
+               <td>
+                  <input type="text" name="video_features[]" class="form-control"
+                        placeholder="Enter feature">
+               </td>
+               <td>
+                  <input type="file" name="video_icons[]" class="form-control">
+               </td>
+               <td class="text-center">
+                  <button class="btn btn-outline-danger remove-feature" type="button">
+                     <i class="fas fa-times"></i>
+                  </button>
+               </td>
+            </tr>
+         `;
+         container.append(newRow);
+      });
+
+      container.on('click', '.remove-feature', function () {
+         if (container.children().length > 1) {
+            $(this).closest('tr').remove();
+         } else {
+            alert('At least one feature is required.');
          }
       });
+
+
+      /*Add more feature and remove feature */
+      /*Add banner form submit code */
+      $(document).off('submit', '#bannerUploadForm').on('submit', '#bannerUploadForm', function(event) {
+         event.preventDefault();
+         var form = $(this);
+         var submitButton = form.find('button[type="submit"]');
+         var submitText = $('#submitText');
+         var uploadProgress = $('#uploadProgress');
+         var progressBarContainer = $('#progressBarContainer');
+         var progressBar = $('#progressBar');
+         var uploadStatus = $('#uploadStatus');
+         $('.form-control').removeClass('is-invalid');
+         $('.invalid-feedback').remove();
+         var desktopFile = $('#desktop_video_file')[0].files[0];
+         var mobileFile = $('#mobile_video_file')[0].files[0];
+         var hasFilesToUpload = desktopFile || mobileFile;
+         submitButton.prop('disabled', true);
+         submitText.text(hasFilesToUpload ? 'Uploading...' : 'Saving...');
+         if (hasFilesToUpload) {
+            uploadProgress.removeClass('d-none');
+            progressBarContainer.removeClass('d-none');
+         } else {
+            uploadProgress.addClass('d-none');
+            progressBarContainer.addClass('d-none');
+         }
+         var formData = new FormData(this);
+         $.ajax({
+            url: form.attr('action'),
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            xhr: function() {
+               var xhr = new window.XMLHttpRequest();
+               if (hasFilesToUpload) {
+                  xhr.upload.addEventListener('progress', function(e) {
+                     if (e.lengthComputable) {
+                        var percentComplete = Math.round((e.loaded / e.total) * 100);
+                        progressBar.css('width', percentComplete + '%');
+                        progressBar.attr('aria-valuenow', percentComplete);
+                        uploadStatus.text('Uploading: ' + percentComplete + '%');
+                     }
+                  }, false);
+               }
+               return xhr;
+            },
+            success: function(response) {
+               submitButton.prop('disabled', false);
+               submitText.text('Submit');
+               uploadProgress.addClass('d-none');
+               progressBarContainer.addClass('d-none');
+               if (response.status === true) {
+                  Toastify({
+                     text: response.message || 'Banner video created successfully!',
+                     duration: 10000,
+                     gravity: "top",
+                     position: "right",
+                     className: "bg-success",
+                     escapeMarkup: false,
+                     close: true,
+                     onClick: function() {}
+                  }).showToast();
+                  setTimeout(function() {
+                     window.location.href = "{{ route('manage-banner.index') }}";
+                  }, 1500);
+               }
+            },
+            error: function(xhr, status, error) {
+               submitButton.prop('disabled', false);
+               submitText.text('Submit');
+               uploadProgress.addClass('d-none');
+               progressBarContainer.addClass('d-none');
+               var errors = xhr.responseJSON && xhr.responseJSON.errors;
+               if (errors) {
+                  $.each(errors, function(key, value) {
+                     var inputField = $('[name="' + key + '"]');
+                     inputField.addClass('is-invalid');
+                     inputField.after('<div class="invalid-feedback">' + value[0] + '</div>');
+                  });
+               } else {
+                  var errorMessage = xhr.responseJSON && xhr.responseJSON.message ?
+                     xhr.responseJSON.message :
+                     'Error processing request. Please try again.';
+                  Toastify({
+                     text: errorMessage,
+                     duration: 10000,
+                     gravity: "top",
+                     position: "right",
+                     className: "bg-danger",
+                     escapeMarkup: false,
+                     close: true,
+                     onClick: function() {}
+                  }).showToast();
+               }
+            }
+         });
+      });
    });
-});   
 </script>
 @endpush

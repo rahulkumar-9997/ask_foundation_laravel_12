@@ -36,6 +36,8 @@ class BannerController extends Controller
             'banner_link' => 'nullable|url|max:255',
             'video_features' => 'nullable|array',
             'video_features.*' => 'nullable|string|max:255',
+            'video_icons' => 'nullable|array',
+            'video_icons.*' => 'nullable|file|mimes:jpg,jpeg,png,svg,webp|max:2048',
         ], [
             'desktop_video_file.required' => 'Desktop video file is required.',
             'desktop_video_file.mimes' => 'Desktop video must be a valid video file (MP4, AVI, MOV, WMV, FLV).',
@@ -46,6 +48,7 @@ class BannerController extends Controller
             'banner_button_link.url' => 'Button link must be a valid URL.',
             'button_popup_url.url' => 'Button popup URL must be a valid URL.',
             'banner_link.url' => 'Banner link must be a valid URL.',
+            'video_icons.*.mimes' => 'Feature icons must be an image (JPG, PNG, SVG, WebP).',
         ]);
 
         if ($validator->fails()) {
@@ -63,14 +66,33 @@ class BannerController extends Controller
             if (!file_exists($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
             }
+
+            $destinationPathFeatureIcon = public_path('upload/banner/features/');
+            if (!file_exists($destinationPathFeatureIcon)) {
+                mkdir($destinationPathFeatureIcon, 0755, true);
+            }
             
             $desktopVideoPath = $this->uploadVideo($request->file('desktop_video_file'), 'desktop');
             $mobileVideoPath = $this->uploadVideo($request->file('mobile_video_file'), 'mobile');
+            
             $features = [];
             if ($request->video_features) {
-                $features = array_filter($request->video_features, function($feature) {
-                    return !empty(trim($feature));
-                });
+                foreach ($request->video_features as $index => $feature) {
+                    if (!empty(trim($feature))) {
+                        $iconPath = null;
+                        if ($request->hasFile("video_icons.$index")) {
+                            $iconFile = $request->file("video_icons.$index");
+                            $iconName = time() . '_' . uniqid() . '.webp';
+                            $iconPath =  $destinationPathFeatureIcon. '/' .$iconName;
+                            $image = Image::make($iconFile);
+                            $image->encode('webp', 90)->save(public_path($iconPath));
+                        }
+                        $features[] = [
+                            'feature' => $feature,
+                            'icon' => $iconName,
+                        ];
+                    }
+                }
             }
             
             BannerVideos::create([
@@ -109,6 +131,16 @@ class BannerController extends Controller
                 $fullMobilePath = public_path('upload/banner/' . basename($mobileVideoPath));
                 if (file_exists($fullMobilePath)) {
                     @unlink($fullMobilePath);
+                }
+            }
+            if (!empty($features)) {
+                foreach ($features as $feature) {
+                    if (!empty($feature['icon'])) {
+                        $fullIconPath = public_path($feature['icon']);
+                        if (file_exists($fullIconPath)) {
+                            @unlink($fullIconPath);
+                        }
+                    }
                 }
             }
 
@@ -162,9 +194,16 @@ class BannerController extends Controller
             'button_popup_url' => 'nullable|url|max:255',
             'video_features' => 'nullable|array',
             'video_features.*' => 'nullable|string|max:255',
+            'video_icons' => 'nullable|array',
+            'video_icons.*' => 'nullable|file|mimes:jpg,jpeg,png,svg,webp|max:2048',
+        ], [
+            'video_icons.*.mimes' => 'Feature icons must be an image (JPG, PNG, SVG, WebP).',
         ]);
 
         if ($validator->fails()) {
+            if ($request->ajax()) {
+                return response()->json(['errors' => $validator->errors()], 422);
+            }
             return redirect()->back()
                 ->withErrors($validator)
                 ->withInput();
@@ -174,6 +213,12 @@ class BannerController extends Controller
         DB::beginTransaction();        
         try {
             $destinationPath = public_path('upload/banner');
+            $destinationPathFeatureIcon = public_path('upload/banner/features/');
+            
+            if (!file_exists($destinationPathFeatureIcon)) {
+                mkdir($destinationPathFeatureIcon, 0755, true);
+            }
+
             $data = [
                 'title' => $request->banner_video_title,
                 'subtitle' => $request->banner_video_subtitle,
@@ -188,7 +233,6 @@ class BannerController extends Controller
                 $desktopVideoPath = $this->uploadVideo($request->file('desktop_video_file'), 'desktop');
                 $data['desktop_video_url'] = $desktopVideoPath;
             }
-
             if ($request->hasFile('mobile_video_file')) {
                 if ($banner->mobile_video_url && file_exists($destinationPath . '/' . basename($banner->mobile_video_url))) {
                     unlink($destinationPath . '/' . basename($banner->mobile_video_url));
@@ -196,32 +240,63 @@ class BannerController extends Controller
                 $mobileVideoPath = $this->uploadVideo($request->file('mobile_video_file'), 'mobile');
                 $data['mobile_video_url'] = $mobileVideoPath;
             }
-
+            $features = [];
+            $existingIcons = $request->existing_icons ?? [];
+            
             if ($request->video_features) {
-                $features = array_filter($request->video_features, function($feature) {
-                    return !empty(trim($feature));
-                });
-                $data['features'] = $features;
+                foreach ($request->video_features as $index => $feature) {
+                    if (!empty(trim($feature))) {
+                        $iconName = null;
+                        if (isset($existingIcons[$index]) && !empty($existingIcons[$index])) {
+                            $iconName = $existingIcons[$index];
+                        }
+                        if ($request->hasFile("video_icons.$index")) {
+                            $iconFile = $request->file("video_icons.$index");
+                            if (isset($existingIcons[$index]) && !empty($existingIcons[$index])) {
+                                $oldIconPath = $destinationPathFeatureIcon . $existingIcons[$index];
+                                if (file_exists($oldIconPath)) {
+                                    @unlink($oldIconPath);
+                                }
+                            }
+                            $iconName = time() . '_' . uniqid() . '.webp';
+                            $iconPath = $destinationPathFeatureIcon . $iconName;
+                            $image = Image::make($iconFile);
+                            $image->encode('webp', 100)->save($iconPath);
+                        }
+                        
+                        $features[] = [
+                            'feature' => $feature,
+                            'icon' => $iconName,
+                        ];
+                    }
+                }
             }
+            
+            $data['features'] = $features;
+
             $banner->update($data);
             DB::commit();
+            
             if ($request->ajax()) {
                 return response()->json([
                     'status' => true,
                     'message' => 'Banner video updated successfully!'
                 ]);
             }
+            
             return redirect()->route('manage-banner.index')->with('success', 'Banner video updated successfully!');
 
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Banner update failed: ' . $e->getMessage());
+            
             if ($request->ajax()) {
                 return response()->json([
                     'status' => false,
                     'message' => 'Error updating banner video: ' . $e->getMessage()
                 ], 500);
             }
+            
             return redirect()->back()
                 ->with('error', 'Error updating banner video: ' . $e->getMessage())
                 ->withInput();

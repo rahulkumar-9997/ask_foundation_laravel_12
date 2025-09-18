@@ -24,4 +24,5 @@ class BannerVideos extends Model
         'features' => 'array',
         'is_active' => 'boolean'
     ];
+    
 }

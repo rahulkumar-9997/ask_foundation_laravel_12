@@ -14,10 +14,9 @@
 
                 <!-- Logo End -->
                 <!-- Main Menu Start -->
-                <div class="collapse navbar-collapse main-menu">
-                    <div class="nav-menu-wrapper">
-                        <ul class="navbar-nav mr-auto" id="menu">
-
+                <div class="collapse navbar-collapse main-menu menu-links">
+                    <div class="nav-menu-wrapper" id="menu">
+                        <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('about-us') }}">About Us</a>
                             </li>
@@ -38,7 +37,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="#">Patient Support</a></li> -->
+
+                            <li class="nav-item"><a class="nav-link" href="#">Our Activities</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('our-doctors') }}">Our Doctors</a></li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('blog') }}">Blogs</a>
@@ -47,7 +47,24 @@
                                 <a class="nav-link" href="{{ route('contact-us') }}">Contact Us</a>
                             </li>
                         </ul>
+                        <div class="social-media-menu">
+                            <div class="drawer-menu-contact">
+                                <h6 class="cart-dr-h6">
+                                   <a href="tel:+919010844055">+91 9010844055</a>
+                                </h6>
+                                <h6 class="cart-dr-h6">
+                                   <a href="mailto:info@askfoundation.com">info@askfoundation.com</a>
+                                </h6>
+                            </div>
+                            <ul class="social-media-list">
+                                <li><a target="_blank" href="https://www.facebook.com/" class="social-a"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a target="_blank" href="https://www.google.com/" class="social-a"><i class="fab fa-google"></i></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/" class="social-a"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com/" class="social-a"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
+
                     <!-- Contact Now Box Start -->
                     <div class="contact-now-box">
                         <div class="icon-box">

@@ -25,7 +25,6 @@
          <div class="col-lg-8">
             <div class="hero-content">
                <div class="section-title">
-                  <!-- <h3 class="wow fadeInUp">{{ $data['bannerVideo']->title }}</h3> -->
                   <h1 class="text-anime-style-2" data-cursor="-opaque">
                      {!! $data['bannerVideo']->subtitle !!}
                   </h1>
@@ -39,24 +38,7 @@
                      <a href="{{ $data['bannerVideo']->button_link}}" target="_blank" class="btn-default">Know More</a>
                   </div>
                   @endif
-                  <!-- <div class="video-play-button">
-                     <p>play video</p>
-                     <a href="#" class="popup-video" data-cursor-text="Play">
-                        <i class="fa-solid fa-play"></i>
-                     </a>
-                  </div> -->
-               </div>
-               <!-- @if($data['bannerVideo']->features)
-               <div class="hero-footer wow fadeInUp" data-wow-delay="0.6s">
-                  <div class="hero-list">
-                     <ul>
-                        @foreach ($data['bannerVideo']->features as $feature)
-                        <li>{{ $feature }}</li>
-                        @endforeach
-                     </ul>
-                  </div>
-               </div>
-               @endif -->
+               </div>               
             </div>
          </div>
       </div>
@@ -64,7 +46,7 @@
 </div>
 @endif
 @php
-$bgColors = ['#fff7ed', '#f0fdf4', '#faf5ff'];
+$bgColors = ['#ffff', '#ffff', '#ffff'];
 $colorIndex = 0;
 $features = $data['bannerVideo']->features ?? [];
 @endphp
@@ -76,13 +58,22 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="feature-wrapper wow fadeInUp" data-wow-delay="0.6s">
                <div class="row justify-content-md-center">
                   @foreach ($features as $feature)
-                  <div class="col-lg-4">
+                  <div class="col-lg-4 mb-3">
                      <div class="feature-item" style="background-color: {{ $bgColors[$colorIndex % count($bgColors)] }};">
                         <a href="#">
-                           <div class="banner-feature">
-                              <h3>
-                                 {{ $feature }}
-                              </h3>
+                           <div class="banner-feature fun-facts-box-item d-flex align-items-center gap-3">
+                              @if(isset($feature['icon']) && !empty($feature['icon']))
+                                 <div class="feature-img-box">
+                                    <figure class="mb-0 d-inline-block">
+                                       <img src="{{ asset('upload/banner/features/' . $feature['icon']) }}" alt="{{ $feature['feature'] }}" class="feature-icon img-fluid" loading="lazy">
+                                    </figure>
+                                 </div>
+                              @endif
+                              <div class="feature-text">
+                                 <h3>
+                                    {{ $feature['feature'] }}
+                                 </h3>
+                              </div>
                            </div>
                         </a>
                      </div>
@@ -96,6 +87,7 @@ $features = $data['bannerVideo']->features ?? [];
    </div>
 </div>
 @endif
+
 <!-- Hero Section End -->
 <!-- About Us Section Start -->
 <div class="about-us">
@@ -105,14 +97,14 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="about-us-images">
                <div class="about-img-1">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/ask-intro-1.jpg')}}" alt="" loading="lazy">
+                     <img src="{{asset('fronted/assets/ask-img/about-home/ask-foundation.jpg')}}" alt="" loading="lazy">
                   </figure>
                </div>
-               <div class="about-img-2">
+               <!-- <div class="about-img-2">
                   <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/ask-1.png')}}" alt="" loading="lazy">
+                     <img src="{{asset('fronted/assets/ask-img/about-home/dr-anne.jpg')}}" alt="" loading="lazy">
                   </figure>
-               </div>
+               </div> -->
                <!--div class="need-fund-box">
                   <img src="{{asset('fronted/assets/ask-img/icon/icon-funded-dollar.svg')}}" alt="" loading="lazy">
                   <p>Promoting early detection and prevention of bone diseases.</p>
@@ -127,21 +119,18 @@ $features = $data['bannerVideo']->features ?? [];
                      <span class="spanabou"> ASK Foundation </span>
                   </h2>
                   <h3 class="text-anime-style-2 empowerh3" data-cursor="-opaque">
-                     <span class="spanabou"> Care today, stronger tomorrow</span>
+                     <span class="spanabou"> Care Today, Stronger Tomorrow</span>
                   </h3>
 				      <h4 class="text-anime-style-2 empowerh4" >Empowering Lives Through Preventive Care</h4>
+               </div>
                   <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
-				      The <strong>ASK Foundation</strong>, founded by Dr. Sai Laxman Anne, Chief Consultant Orthopaedic and Joint Replacement Surgeon, was created to give back to society with a focus on preventive healthcare. Named in honor of his mother, the foundation reflects his lifelong dedication to improving community welfare through awareness, education, and compassion.
-					<!--
-                     The ASK Foundation was established by Dr. Sai Laxman Anne, a highly accomplished Chief Consultant Orthopaedic and Joint Replacement Surgeon, with the vision of giving back to society in a meaningful way. Named in honor of his mother, the foundation reflects his lifelong commitment to community welfare and preventive healthcare. Over the years, Dr. Anne has dedicated himself not only to clinical excellence but also to creating awareness about critical issues such as bone health, joint care, preventive medicine, and road safety. Having witnessed the devastating impact of trauma cases, particularly road accidents affecting the working-age population, he recognized the urgent need to spread awareness, prevent avoidable injuries, and support families in safeguarding their future. The foundation, therefore, goes beyond treatment to focus on prevention, education, and outreach at the grassroots level.
-					 **-->
+				      Founded by Dr. Sai Laxman Anne, Chief Consultant Orthopaedic and Joint Replacement Surgeon, the ASK Foundation is dedicated to preventive healthcare and community welfare. Named in honor of his mother, it reflects his commitment to awareness, education, and compassion.					
                   </p>
-				  <h3 class="home-lives">Empowering Lives Through Preventive Care</h3>
+                  <div class="section-title">
+				         <h3 class="home-lives">Creating Healthier, Safer Communities</h3>
+                  </div>
                   <p class="wow fadeInUp aboutP" data-wow-delay="0.2s">
-				  ASK Foundation actively conducts health camps, wellness initiatives, and educational programs across schools, colleges, and communities. Its efforts range from bone health awareness and road safety campaigns to lifestyle disease screenings and support for underprivileged orthopedic patients. With transparency and inclusivity at its core, the foundation invites doctors, professionals, students, and volunteers to join hands in building healthier and more resilient communities.
-				  <!--
-                     ASK Foundation works actively through health camps, wellness initiatives, and educational programs, aiming to reach individuals across diverse communities. Its initiatives range from bone health awareness, road safety campaigns in schools and colleges, preventive screening for lifestyle diseases such as diabetes and hypertension, to providing support for underprivileged orthopedic patients. The foundation also emphasizes collaboration, inviting doctors, professionals, students, and volunteers from all walks of life to contribute their time, skills, or resources. With transparency, compassion, and inclusivity at its core, ASK Foundation stands as a platform where like-minded individuals can come together to create healthier, safer, and more resilient communities.
-					 -->
+				      The foundation conducts health camps, wellness drives, and awareness programs on bone health, road safety, and lifestyle diseases, while also supporting underprivileged orthopedic patients. With transparency and inclusivity, ASK Foundation welcomes doctors, professionals, students, and volunteers to help build healthier communities.
                   </p>
                </div>
                <div class="about-btn wow fadeInUp mt-3" data-wow-delay="0.6s">
@@ -198,7 +187,7 @@ $features = $data['bannerVideo']->features ?? [];
                         <span class="topic-badge">Lifestyle Factors</span>
                      </div>
                   </div>
-                  <a href="#" class="learn-more-btn">Learn More</a>
+                  <a href="{{ route('focus.bone') }}" class="learn-more-btn">Learn More</a>
                </div>
             </div>
          </div>
@@ -304,7 +293,7 @@ $features = $data['bannerVideo']->features ?? [];
                         <span class="topic-badge">Emergency Response</span>
                      </div>
                   </div>
-                  <a href="#" class="learn-more-btn">Learn More</a>
+                  <a href="{{ route('focus.road') }}" class="learn-more-btn">Learn More</a>
                </div>
             </div>
          </div>
@@ -370,79 +359,19 @@ $features = $data['bannerVideo']->features ?? [];
             <div class="what-we-do-images">
                <div class="what-we-do-img-1">
                   <figure class="image-anime reveal">
-                     <img src="{{asset('fronted/assets/images/ask-3.jpg')}}" alt="" loading="lazy">
+                     <img src="{{asset('fronted/assets/ask-img/4.jpg')}}" alt="" loading="lazy">
                   </figure>
                </div>
                <div class="what-we-do-img-2">
                   <figure class="image-anime">
                      <img src="{{asset('fronted/assets/images/founder-intro.png')}}" alt="" loading="lazy">
                   </figure>
-               </div>
-               <div class="donate-now-box">
-                  <a href="{{ route('donate-us')}}">
-                     <img src="{{asset('fronted/assets/ask-img/icon/icon-donate-now.svg')}}" alt="" loading="lazy">
-                     Donate 
-                  </a>
-               </div>
+               </div>               
             </div>
          </div>
       </div>
    </div>
 </div>
-<!-- What We Do Section End -->
-<!-- Why Choose Us Section Start -->
-<div class="why-choose-us">
-   <div class="container">
-      <div class="row align-items-center">
-         <div class="col-lg-5">
-            <div class="why-choose-images">
-               <div class="why-choose-image-1">
-                  <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/why-choose-img-1.jpg')}}" alt="" loading="lazy">
-                  </figure>
-               </div>
-               <div class="why-choose-image-2">
-                  <figure class="image-anime">
-                     <img src="{{asset('fronted/assets/images/team-1.jpg')}}" alt="" loading="lazy">
-                  </figure>
-               </div>
-            </div>5
-         </div>
-
-         <div class="col-lg-7">
-            <div class="why-choose-content">
-               <div class="section-title">
-                  <h3 class="wow fadeInUp">Why choose ASK Foundation</h3>
-                  <h2 class="text-anime-style-2" data-cursor="-opaque">
-                     Building Stronger Bones & Safer Roads
-                  </h2>
-                  <p class="wow fadeInUp" data-wow-delay="0.2s">
-                     ASK Foundation is dedicated to creating awareness about bone health, preventing
-                     osteoporosis and osteoarthritis, and promoting road traffic safety to build healthier,
-                     safer communities.
-                  </p>
-               </div>
-               <div class="why-choose-counters">
-                  <div class="why-choose-counter-item">
-                     <h2><span class="counter">10</span>M+</h2>
-                     <p>People Affected by Osteoporosis</p>
-                  </div>
-                  <div class="why-choose-counter-item">
-                     <h2><span class="counter">1.3</span>M+</h2>
-                     <p>Road Traffic Deaths Annually</p>
-                  </div>
-                  <div class="why-choose-counter-item">
-                     <h2><span class="counter">90</span>%</h2>
-                     <p>Preventable Through Awareness</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- Why Choose Us Section End -->
-<!-- Our Program Section Start -->
 <div class="our-program about-ask-foundation-section">
    <div class="container">
       <div class="row section-row align-items-center">
@@ -569,7 +498,60 @@ $features = $data['bannerVideo']->features ?? [];
       </div>
    </div>
 </div>
-<!-- Our Program Section End -->
+<div class="why-choose-us">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-lg-5">
+            <div class="why-choose-images">
+               <div class="why-choose-image-1">
+                  <figure class="image-anime">
+                     <img src="{{asset('fronted/assets/images/why-choose-img-1.jpg')}}" alt="" loading="lazy">
+                  </figure>
+               </div>
+               <div class="why-choose-image-2">
+                  <figure class="image-anime">
+                     <img src="{{asset('fronted/assets/images/team-1.jpg')}}" alt="" loading="lazy">
+                  </figure>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-lg-7">
+            <div class="why-choose-content">
+               <div class="section-title">
+                  <h3 class="wow fadeInUp">Why choose ASK Foundation</h3>
+                  <h2 class="text-anime-style-2" data-cursor="-opaque">
+                     Building Stronger Bones & Safer Roads
+                  </h2>
+               </div>
+               <p class="wow fadeInUp" data-wow-delay="0.2s">
+                  ASK Foundation is dedicated to creating awareness about bone health, preventing
+                  osteoporosis and osteoarthritis, and promoting road traffic safety to build healthier,
+                  safer communities.
+               </p>
+               <div class="why-choose-counters">
+                  <div class="why-choose-counter-item">
+                     <h2><span class="counter">10</span>M+</h2>
+                     <p>People Affected by Osteoporosis</p>
+                  </div>
+                  <div class="why-choose-counter-item">
+                     <h2><span class="counter">1.3</span>M+</h2>
+                     <p>Road Traffic Deaths Annually</p>
+                  </div>
+                  <div class="why-choose-counter-item">
+                     <h2><span class="counter">90</span>%</h2>
+                     <p>Preventable Through Awareness</p>
+                  </div>
+               </div>
+               <div class="about-btn wow fadeInUp mt-5" data-wow-delay="0.6s">
+                  <a href="{{ route('donate-us')}}" class="btn-default">Donate</a>
+               </div>               
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
 <!-- Scrolling Ticker Start -->
 <div class="scrolling-ticker mb-3">
    <div class="scrolling-ticker-box">
@@ -609,7 +591,7 @@ $features = $data['bannerVideo']->features ?? [];
          </div>
       </div>
       <div class="row">
-         <div class="col-lg-3 col-md-6">
+         <div class="col-lg-3 col-md-6 col-6">
             <div class="number-tell-story-card">
                <div class="tell-story-content">
                   <div class="number-tell-story-stat story-color1">50%</div>
@@ -618,7 +600,7 @@ $features = $data['bannerVideo']->features ?? [];
                </div>
             </div>
          </div>
-         <div class="col-lg-3 col-md-6">
+         <div class="col-lg-3 col-md-3 col-6">
             <div class="number-tell-story-card">
                <div class="tell-story-content">
                   <div class="number-tell-story-stat story-color2">54M</div>
@@ -627,7 +609,7 @@ $features = $data['bannerVideo']->features ?? [];
                </div>
             </div>
          </div>
-         <div class="col-lg-3 col-md-6">
+         <div class="col-lg-3 col-md-3 col-6">
             <div class="number-tell-story-card">
                <div class="tell-story-content">
                   <div class="number-tell-story-stat story-color3">200M</div>
@@ -636,7 +618,7 @@ $features = $data['bannerVideo']->features ?? [];
                </div>
             </div>
          </div>
-         <div class="col-lg-3 col-md-6">
+         <div class="col-lg-3 col-md-3 col-6">
             <div class="number-tell-story-card">
                <div class="tell-story-content">
                   <div class="number-tell-story-stat story-color4">38,000</div>
@@ -655,11 +637,10 @@ $features = $data['bannerVideo']->features ?? [];
       <div class="row section-row">
          <div class="col-lg-12">
             <div class="section-title">
-               <h3 class="wow fadeInUp">How it works</h3>
+               <h3 class="wow fadeInUp">How ASK Foundation works</h3>
                <h2 class="text-anime-style-2" data-cursor="-opaque">Step by step working process</h2>
-               <p class="wow fadeInUp" data-wow-delay="0.2s">Our step-by-step process ensures meaningful
-                  change: identifying community needs, designing tailored programs, implementing sustainable
-                  solutions.</p>
+               <p class="wow fadeInUp" data-wow-delay="0.2s">Our approach ensures lasting impact—identifying real needs, designing practical solutions, and creating healthier communities.
+</p>
             </div>
          </div>
       </div>
@@ -678,8 +659,8 @@ $features = $data['bannerVideo']->features ?? [];
                         <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-1.svg')}}" alt="" loading="lazy">
                      </div>
                      <div class="how-it-work-body">
-                        <h3>healthcare support</h3>
-                        <p>Provide essential healthcare service and resources to communities.</p>
+                        <h3>Identify Health Priorities</h3>
+                        <p>We begin by listening to people and understanding the health concerns that affect their daily lives</p>
                      </div>
                   </div>
                </div>
@@ -694,8 +675,8 @@ $features = $data['bannerVideo']->features ?? [];
                         <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-2.svg')}}" alt="" loading="lazy">
                      </div>
                      <div class="how-it-work-body">
-                        <h3>Plan and design</h3>
-                        <p>Provide essential healthcare service and resources to communities.</p>
+                        <h3>Design Community Programs</h3>
+                        <p>Customized medical camps, awareness drives, and preventive health initiatives are developed for each community.</p>
                      </div>
                   </div>
                </div>
@@ -710,8 +691,8 @@ $features = $data['bannerVideo']->features ?? [];
                         <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-3.svg')}}" alt="" loading="lazy">
                      </div>
                      <div class="how-it-work-body">
-                        <h3>Implement solutions</h3>
-                        <p>Provide essential healthcare service and resources to communities.</p>
+                        <h3>Deliver Care and Awareness</h3>
+                        <p>Our team of doctors, volunteers, and partners provide on-ground medical support and spread health education.</p>
                      </div>
                   </div>
                </div>
@@ -726,8 +707,8 @@ $features = $data['bannerVideo']->features ?? [];
                         <img src="{{asset('fronted/assets/ask-img/icon/icon-how-it-work-4.svg')}}" alt="" loading="lazy">
                      </div>
                      <div class="how-it-work-body">
-                        <h3>Report and share</h3>
-                        <p>Provide essential healthcare service and resources to communities.</p>
+                        <h3>Ensure Sustainable Impact</h3>
+                        <p>We follow up with guidance, resources, and partnerships so that communities continue to benefit long-term.</p>
                      </div>
                   </div>
                </div>
@@ -743,7 +724,7 @@ $features = $data['bannerVideo']->features ?? [];
       <div class="row section-row">
          <div class="col-lg-12">
             <div class="section-title">
-               <h3 class="wow fadeInUp">latest post</h3>
+               <h3 class="wow fadeInUp">Blogs about Bone Care & Ostoeporosis Prevention</h3>
                <h2 class="text-anime-style-2" data-cursor="-opaque">Stories of impact and hope</h2>
                <p class="wow fadeInUp" data-wow-delay="0.2s">Explore inspiring stories and updates about our
                   initiatives, successes, and the lives we've touched. See how your support is creating real,
@@ -757,11 +738,11 @@ $features = $data['bannerVideo']->features ?? [];
          <div class="col-lg-4 col-md-6">
             <div class="post-item wow fadeInUp">
                <div class="post-item-header">
-                  <div class="post-item-meta">
+                  <!--div class="post-item-meta">
                      <ul>
                         <li>{{ $blog->created_at->format('d M, Y') }}</li>
                      </ul>
-                  </div>
+                  </div-->
                   <div class="post-item-content">
                      <h2>
                         <a href="{{ route('blog.details', $blog->slug) }}">

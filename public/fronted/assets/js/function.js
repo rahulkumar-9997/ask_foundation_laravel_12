@@ -28,99 +28,29 @@
 	$('#menu').slicknav({
 		label: '',
 		prependTo: '.responsive-menu',
-		afterOpen: function() {
+		afterInit: function () {
+			$('.submenu').addClass('submenu-start');
+		},
+		afterOpen: function (trigger) {
 			if (window.innerWidth <= 768) {
-				$('body').addClass('mobile-menu-open');
+				if ($(trigger).hasClass('slicknav_btn')) {
+					$('.slicknav_menu').addClass('mobile-menu-open');
+				}
 			}
 		},
-		afterClose: function() {
+		afterClose: function (trigger) {
 			if (window.innerWidth <= 768) {
-				$('body').removeClass('mobile-menu-open');
+				if ($(trigger).hasClass('slicknav_btn')) {
+					$('.slicknav_menu').removeClass('mobile-menu-open');
+				}
 			}
 		}
 	});
+
 	if($("a[href='#top']").length){
 		$(document).on("click", "a[href='#top']", function() {
 			$("html, body").animate({ scrollTop: 0 }, "slow");
 			return false;
-		});
-	}
-
-	/* Hero Slider Layout JS */
-	const hero_slider_layout = new Swiper('.hero-slider-layout .swiper', {
-		slidesPerView : 1,
-		speed: 1000,
-		spaceBetween: 0,
-		loop: true,
-		autoplay: {
-			delay: 4000,
-		},
-		pagination: {
-			el: '.hero-pagination',
-			clickable: true,
-		},
-	});
-
-	/* Testimonial Guarantee Logo Slider JS */
-	if ($('.donar-company-slider').length) {
-		const donar_company_slider = new Swiper('.donar-company-slider .swiper', {
-			slidesPerView : 2,
-			speed: 2000,
-			spaceBetween: 50,
-			loop: true,
-			autoplay: {
-				delay: 5000,
-			},
-			breakpoints: {
-				768:{
-				  	slidesPerView: 3,
-				},
-				991:{
-				  	slidesPerView: 3,
-				}
-			}
-		});
-	}
-
-	/* testimonial Slider JS */
-	if ($('.testimonial-slider').length) {
-		const testimonial_slider = new Swiper('.testimonial-slider .swiper', {
-			slidesPerView : 1,
-			speed: 1000,
-			spaceBetween: 30,
-			loop: true,
-			autoplay: {
-				delay: 5000,
-			},
-			pagination: {
-				el: '.testimonial-pagination',
-				clickable: true,
-			},
-			navigation: {
-				nextEl: '.testimonial-button-next',
-				prevEl: '.testimonial-button-prev',
-			},
-			breakpoints: {
-				768:{
-					slidesPerView: 1,
-				},
-				991:{
-					slidesPerView: 1,
-				}
-			}
-		});
-	}
-
-	/* Skill Bar */
-	if ($('.skills-progress-bar').length) {
-		$('.skills-progress-bar').waypoint(function() {
-			$('.skillbar').each(function() {
-				$(this).find('.count-bar').animate({
-				width:$(this).attr('data-percent')
-				},2000);
-			});
-		},{
-			offset: '50%'
 		});
 	}
 

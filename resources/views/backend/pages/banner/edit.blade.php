@@ -117,28 +117,110 @@
                             @endif
                         </div>
                     </div>
-
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label">Video Features</label>
-                            <div id="features-container">
-                                @foreach(old('video_features', $banner->features ?? []) as $index => $feature)
-                                <div class="input-group mb-2">
-                                    <input type="text" name="video_features[]" class="form-control"
-                                        value="{{ $feature }}" placeholder="Enter feature">
-                                    <button class="btn btn-outline-danger remove-feature" type="button">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                @endforeach
-                            </div>
+
+                            <table class="table table-bordered" id="features-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%">Feature Text</th>
+                                        <th style="width: 60%">Feature Icon</th>
+                                        <th style="width: 10%">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="features-container">
+                                    @php
+                                    $oldFeatures = old('video_features', []);
+                                    $oldIcons = old('video_icons', []);
+                                    $existingFeatures = $banner->features ?? [];
+                                    @endphp
+
+                                    @if(count($oldFeatures) > 0)
+                                    @foreach($oldFeatures as $index => $feature)
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="video_features[]"
+                                                class="form-control @error('video_features.'.$index) is-invalid @enderror"
+                                                value="{{ $feature }}" placeholder="Enter feature">
+                                            @error('video_features.'.$index)
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </td>
+                                        <td>
+                                            <input type="file" name="video_icons[]"
+                                                class="form-control @error('video_icons.'.$index) is-invalid @enderror">
+                                            @if(isset($existingFeatures[$index]['icon']) && !empty($existingFeatures[$index]['icon']))
+                                            <div class="mt-2">
+                                                <small>Current icon: {{ $existingFeatures[$index]['icon'] }}</small>
+                                                <img src="{{ asset('upload/banner/features/' . $existingFeatures[$index]['icon']) }}" width="30" class="ms-2">
+                                            </div>
+                                            @endif
+                                            @error('video_icons.'.$index)
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-outline-danger remove-feature" type="button">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @elseif(count($existingFeatures) > 0)
+                                    @foreach($existingFeatures as $index => $feature)
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="video_features[]"
+                                                class="form-control"
+                                                value="{{ $feature['feature'] }}" placeholder="Enter feature">
+                                        </td>
+                                        <td>
+                                            <input type="file" name="video_icons[]" class="form-control">
+                                            @if(isset($feature['icon']) && !empty($feature['icon']))
+                                            <div class="mt-2">
+                                                <small>Current icon: {{ $feature['icon'] }}</small>
+                                                <img src="{{ asset('upload/banner/features/' . $feature['icon']) }}" width="30" class="ms-2">
+                                                <input type="hidden" name="existing_icons[]" value="{{ $feature['icon'] }}">
+                                            </div>
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-outline-danger remove-feature" type="button">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @else
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="video_features[]" class="form-control"
+                                                placeholder="Enter feature">
+                                        </td>
+                                        <td>
+                                            <input type="file" name="video_icons[]" class="form-control">
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-outline-danger remove-feature" type="button">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    @endif
+                                </tbody>
+                            </table>
+
                             <button type="button" class="btn btn-outline-primary btn-sm" id="add-feature">
                                 <i class="fas fa-plus"></i> Add Feature
                             </button>
+
+                            @error('video_features')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="d-flex align-items-center justify-content-end mb-4">
@@ -166,29 +248,31 @@
 @push('scripts')
 <script>
     $(document).ready(function() {
-        /*Add more feature and remove feature */
-        const container = $('#features-container');
-        const addButton = $('#add-feature');
-        addButton.on('click', function() {
-            const newFeature = `
-            <div class="input-group mb-2">
-                <input type="text" name="video_features[]" class="form-control" 
-                       placeholder="Enter feature">
+        document.getElementById('add-feature').addEventListener('click', function() {
+        const container = document.getElementById('features-container');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>
+                <input type="text" name="video_features[]" class="form-control" placeholder="Enter feature">
+            </td>
+            <td>
+                <input type="file" name="video_icons[]" class="form-control">
+            </td>
+            <td class="text-center">
                 <button class="btn btn-outline-danger remove-feature" type="button">
                     <i class="fas fa-times"></i>
                 </button>
-            </div>
+            </td>
         `;
-            container.append(newFeature);
-        });
-        container.on('click', '.remove-feature', function(e) {
-            const inputGroup = $(this).closest('.input-group');
-            if (container.children().length > 1) {
-                inputGroup.remove();
-            } else {
-                alert('At least one feature is required.');
-            }
-        });
+        container.appendChild(newRow);
+    });
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-feature') || e.target.closest('.remove-feature')) {
+            const button = e.target.classList.contains('remove-feature') ? e.target : e.target.closest('.remove-feature');
+            const row = button.closest('tr');
+            row.remove();
+        }
+    });
         /*Add more feature and remove feature */
         /*Add banner form submit code */
         $(document).off('submit', '#bannerFormUpdate').on('submit', '#bannerFormUpdate', function(event) {
