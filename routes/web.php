@@ -31,6 +31,7 @@ Route::get('focus-areas/road-safety-programs', [FrontHomeController::class, 'roa
 Route::get('focus-areas/preventive-medicine', [FrontHomeController::class, 'preventiveMedicine'])->name('focus.preventive');
 Route::get('focus-areas/medical-education', [FrontHomeController::class, 'medicalEducation'])->name('focus.education');
 Route::get('our-activities', [FrontHomeController::class, 'ourActivities'])->name('our-activities');
+Route::get('our-activities/{slug}', [FrontHomeController::class, 'ourActivitiesDetails'])->name('activities.details');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm']);
@@ -51,7 +52,24 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('manage-blog', BlogController::class)->names('manage-blog');
     Route::resource('manage-doctors', DoctorsController::class)->names('manage-doctors');
     Route::resource('manage-activities', ActivitiesController::class)->names('manage-activities');
-       
+
+    Route::get('manage-activities/add-more-images/{id}', [ActivitiesController::class, 'addMoreImages'])
+    ->name('manage-activities.addMoreImages');
+    
+    Route::post('manage-activities/add-more-images/submit', [ActivitiesController::class, 'addMoreImagesSubmit'])
+    ->name('manage-activities.addMoreImages.submit');
+
+    Route::delete('activities-image/{id}', [ActivitiesController::class, 'destroyImage'])
+    ->name('activities-image.destroy');
+
+    Route::get('manage-activities/add-more-videos/{id}', [ActivitiesController::class, 'addMoreVideos'])
+    ->name('manage-activities.addMoreVideos');
+    Route::post('manage-activities/add-more-videos/submit', [ActivitiesController::class, 'addMoreVideosSubmit'])
+    ->name('manage-activities.addMoreVideos.submit');
+    
+    Route::delete('activities-videos/{id}', [ActivitiesController::class, 'destroyVideo'])
+    ->name('activities-vidos.destroy');
+
     Route::get('/clear-cache', [CacheController::class, 'clearCache'])->name('clear-cache');
     Route::resource('pages', PageController::class);
     Route::resource('menus', MenuController::class);

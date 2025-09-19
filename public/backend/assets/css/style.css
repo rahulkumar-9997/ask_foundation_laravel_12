@@ -8596,7 +8596,7 @@ table .edit-delete-action.data {
   color: inherit;
 }
 .card .card-body {
-  padding: 1.25rem;
+  padding: 10px;
 }
 .card .card-title {
   font-size: 18px;
@@ -8608,7 +8608,7 @@ table .edit-delete-action.data {
   border-color: #E6EAED;
   position: relative;
   background: transparent;
-  padding: 1rem 1.25rem 1rem;
+  padding: 5px 0.25rem 5px
 }
 .card .card-header .card-title {
   margin-bottom: 0rem;

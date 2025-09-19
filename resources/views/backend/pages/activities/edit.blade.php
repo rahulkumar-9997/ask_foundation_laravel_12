@@ -1,7 +1,19 @@
 @extends('backend.layouts.master')
 @section('title','Edit Activities')
 @push('styles')
-<!-- <link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}"> -->
+<style>
+    .bg-light-danger {
+        background-color: rgba(220, 53, 69, 0.1) !important;
+    }
+
+    .opacity-50 {
+        opacity: 0.5;
+    }
+
+    .card-header.bg-indigo {
+        background-color: #6610f2 !important;
+    }
+</style>
 @endpush
 @section('main-content')
 <div class="content">
@@ -63,7 +75,7 @@
                     <div class="col-sm-3 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="main_image">
-                                Main Image <span class="text-danger">*</span>
+                                Main Image
                             </label>
                             <input type="file" class="form-control @error('main_image') is-invalid @enderror" name="main_image" id="main_image" />
                             @error('main_image')
@@ -72,16 +84,12 @@
                             @if($activity->main_image)
                             <div class="mt-2">
                                 <img src="{{ asset('upload/activities/' . $activity->main_image) }}" alt="Main Image" class="img-thumbnail" width="100">
-                                <div class="form-check mt-2">
-                                    <input class="form-check-input" type="checkbox" name="remove_main_image" id="remove_main_image" value="1">
-                                    <label class="form-check-label" for="remove_main_image">
-                                        Remove current image
-                                    </label>
-                                </div>
+                                <div class="form-text">Current main image</div>
                             </div>
                             @endif
                         </div>
                     </div>
+
                     <div class="col-sm-3 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="page_image">
@@ -94,16 +102,12 @@
                             @if($activity->page_image)
                             <div class="mt-2">
                                 <img src="{{ asset('upload/activities/' . $activity->page_image) }}" alt="Page Image" class="img-thumbnail" width="100">
-                                <div class="form-check mt-2">
-                                    <input class="form-check-input" type="checkbox" name="remove_page_image" id="remove_page_image" value="1">
-                                    <label class="form-check-label" for="remove_page_image">
-                                        Remove current image
-                                    </label>
-                                </div>
+                                <div class="form-text">Current page image</div>
                             </div>
                             @endif
                         </div>
                     </div>
+
                     <div class="col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="meta_title">Meta title</label>
@@ -113,6 +117,7 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="meta_description">
@@ -124,36 +129,39 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="more_image">
-                                Activities more image (Select image multiple only 15 img)
+                                Add More Images (Max 15)
                             </label>
                             <input type="file" class="form-control @error('more_image') is-invalid @enderror" name="more_image[]" id="more_image" multiple />
                             @error('more_image')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-
-                            <!-- Display existing additional images -->
-                            @if($activity->images->count() > 0)
-                            <div class="mt-2">
-                                <h6>Existing Additional Images:</h6>
-                                <div class="d-flex flex-wrap">
+                        </div>
+                    </div>
+                    @if($activity->images->count() > 0)
+                    <div class="col-12">
+                        <div class="card mb-4">
+                            <div class="card-header bg-light">
+                                <h6 class="mb-0">Existing Additional Images ({{ $activity->images->count() }})</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
                                     @foreach($activity->images as $image)
-                                    <div class="position-relative me-2 mb-2">
-                                        <img src="{{ asset('upload/activities/' . $image->image) }}" alt="Additional Image" class="img-thumbnail" width="80">
-                                        <div class="form-check position-absolute top-0 end-0">
-                                            <input class="form-check-input" type="checkbox" name="remove_images[]" value="{{ $image->id }}">
-                                            <label class="form-check-label text-white bg-danger rounded-circle px-1">×</label>
-                                        </div>
+                                    <div class="col-md-2 col-sm-2 col-4 mb-3">
+                                        <img src="{{ asset('upload/activities/' . $image->image) }}" class="img-thumbnail" alt="Additional Image" style="height: 150px; object-fit: cover;">
                                     </div>
                                     @endforeach
                                 </div>
                             </div>
-                            @endif
                         </div>
                     </div>
+                    @endif
                 </div>
+
+                <!-- Content Editor -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="summer-description-box mb-3">
@@ -165,103 +173,113 @@
                         </div>
                     </div>
                 </div>
-                <div class="row sticky" id="activitiesVideoSection">
+
+                <!-- Videos Section -->
+                <div class="row">
                     <div class="col-md-12">
-                        <div class="bg-indigo pt-1 pb-1 rounded-2">
-                            <h4 class="text-center text-light" style="margin-bottom: 0px;">
-                                Activities Videos
-                            </h4>
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Activities Videos ({{ $activity->videos->count() }})</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th style="width: 25%">Video Title</th>
+                                            <th style="width: 65%">Video File Or Youtube Video ID</th>
+                                            <th style="width: 10%">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="activitiesVideosContainer">
+                                        <!-- Existing videos -->
+                                        @foreach($activity->videos as $video)
+                                        <tr class="activities-video-row">
+                                            <td>
+                                                <input type="text" name="act_video_title[{{ $video->id }}]" class="form-control form-control-sm" placeholder="Video title" value="{{ old('act_video_title.' . $video->id, $video->title) }}">
+                                                <input type="hidden" name="existing_video_ids[]" value="{{ $video->id }}">
+                                            </td>
+                                            <td>
+                                                <div class="mb-2">
+                                                    <input type="file" name="activities_video_file[{{ $video->id }}]" class="form-control form-control-sm">
+                                                </div>
+                                                <div class="text-center text-muted small">OR</div>
+                                                <input type="text" name="activities_video_link[{{ $video->id }}]" class="form-control form-control-sm mt-2" placeholder="Video URL" value="{{ old('activities_video_link.' . $video->id, $video->video_link) }}">
+
+                                                @if($video->video_path)
+                                                <div class="form-text mt-1">
+                                                    <i class="fas fa-video me-1 text-primary"></i>
+                                                    Current file: {{ basename($video->video_path) }}
+                                                </div>
+                                                @elseif($video->video_link)
+                                                <div class="form-text mt-1">
+                                                    <i class="fas fa-link me-1 text-success"></i>
+                                                    Current Youtube video id: {{ $video->video_link }}
+                                                </div>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="#" class="btn btn-info btn-sm view-video"
+                                                    data-video-path="{{ $video->video_path }}"
+                                                    data-video-link="{{ $video->video_link }}">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                        <tr class="activities-video-row new-video-template d-none">
+                                            <td>
+                                                <input type="text" name="new_act_video_title[]" class="form-control form-control-sm" placeholder="New video title">
+                                            </td>
+                                            <td>
+                                                <div class="mb-2">
+                                                    <input type="file" name="new_activities_video_file[]" class="form-control form-control-sm">
+                                                </div>
+                                                <div class="text-center text-muted small">OR</div>
+                                                <input type="text" name="new_activities_video_link[]" class="form-control form-control-sm mt-2" placeholder="Yourube Video ID">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger btn-sm remove-video-row">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr class="activities-video-row new-video-row">
+                                            <td>
+                                                <input type="text" name="new_act_video_title[]" class="form-control form-control-sm" placeholder="New video title">
+                                            </td>
+                                            <td>
+                                                <div class="mb-2">
+                                                    <input type="file" name="new_activities_video_file[]" class="form-control form-control-sm">
+                                                </div>
+                                                <div class="text-center text-muted small">OR</div>
+                                                <input type="text" name="new_activities_video_link[]" class="form-control form-control-sm mt-2" placeholder="Video ID">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger btn-sm remove-video-row">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="text-end mt-3">
+                                    <button class="btn btn-primary add-more-activities-section btn-sm" type="button">
+                                        <i class="fas fa-plus me-1"></i> Add More Videos
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <table class="table align-middle mb-3">
-                            <thead>
-                                <tr>
-                                    <th style="width: 25%">Video Title</th>
-                                    <th style="width: 25%">Video File Or Video Link</th>
-                                    <th style="width: 10%">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="activitiesVideosContainer">
-                                <!-- Existing videos -->
-                                @foreach($activity->videos as $index => $video)
-                                <tr class="activities-video-row">
-                                    <td style="width: 25%">
-                                        <input type="text" name="act_video_title[{{ $video->id }}]" class="form-control" placeholder="Enter activities video title" value="{{ old('act_video_title.' . $video->id, $video->title) }}">
-                                        <input type="hidden" name="existing_video_ids[]" value="{{ $video->id }}">
-                                    </td>
-                                    <td style="width: 25%; text-align: center;">
-                                        <input type="file" name="activities_video_file[{{ $video->id }}]" class="form-control">
-                                        <span class="text-center text-success">OR</span>
-                                        <input type="text" name="activities_video_link[{{ $video->id }}]" class="form-control" placeholder="Enter activities video link" value="{{ old('activities_video_link.' . $video->id, $video->video_link) }}">
-
-                                        @if($video->video_path)
-                                        <div class="mt-2">
-                                            <small>Current video: {{ basename($video->video_path) }}</small>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remove_video_files[]" value="{{ $video->id }}">
-                                                <label class="form-check-label">
-                                                    Remove current video file
-                                                </label>
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </td>
-                                    <td style="width: 10%">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remove_videos[]" value="{{ $video->id }}">
-                                            <label class="form-check-label">
-                                                Delete
-                                            </label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endforeach
-
-                                <!-- New video row template -->
-                                <tr class="activities-video-row new-video-template d-none">
-                                    <td style="width: 25%">
-                                        <input type="text" name="new_act_video_title[]" class="form-control" placeholder="Enter activities video title">
-                                    </td>
-                                    <td style="width: 25%; text-align: center;">
-                                        <input type="file" name="new_activities_video_file[]" class="form-control">
-                                        <span class="text-center text-success">OR</span>
-                                        <input type="text" name="new_activities_video_link[]" class="form-control" placeholder="Enter activities video link">
-                                    </td>
-                                    <td style="width: 10%">
-                                        <button type="button" class="btn btn-danger btn-sm remove-video-row">Remove</button>
-                                    </td>
-                                </tr>
-
-                                <!-- Empty row for adding new videos -->
-                                <tr class="activities-video-row new-video-row">
-                                    <td style="width: 25%">
-                                        <input type="text" name="new_act_video_title[]" class="form-control" placeholder="Enter activities video title">
-                                    </td>
-                                    <td style="width: 25%; text-align: center;">
-                                        <input type="file" name="new_activities_video_file[]" class="form-control">
-                                        <span class="text-center text-success">OR</span>
-                                        <input type="text" name="new_activities_video_link[]" class="form-control" placeholder="Enter activities video link">
-                                    </td>
-                                    <td style="width: 10%">
-                                        <button type="button" class="btn btn-danger btn-sm remove-video-row">Remove</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="3" class="text-end">
-                                        <button class="btn btn-primary add-more-activities-section btn-sm" type="button">Add More activities Video</button>
-                                    </td>
-                                </tr>
-                            </tfoot>
-                        </table>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col-lg-12">
                         <div class="d-flex align-items-center justify-content-end mb-4">
-                            <a href="{{ route('manage-activities.index') }}" class="btn btn-secondary me-2">Cancel</a>
+                            <a href="{{ route('manage-activities.index') }}" class="btn btn-secondary me-2">
+                                <i class="fas fa-times me-1"></i> Cancel
+                            </a>
                             <button type="submit" class="btn btn-primary" id="submitButton">
-                                <span id="submitText">Update</span>
+                                <i class="fas fa-save me-1"></i> Update Activity
                             </button>
                         </div>
                     </div>
@@ -270,7 +288,19 @@
         </div>
     </div>
 </div>
-
+<div class="modal fade" id="videoPreviewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Video Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div id="video-preview-container"></div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @push('scripts')
 <script src="{{ asset('backend/assets/js/pages/activities.js') }}"></script>

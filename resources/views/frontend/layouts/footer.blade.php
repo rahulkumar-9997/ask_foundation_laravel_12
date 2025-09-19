@@ -45,7 +45,7 @@
                                 <li><a href="{{ route('about-us') }}">About us</a></li>
                                 <li><a href="{{ route('our-doctors') }}">Our Doctors</a></li>
                                 <li><a href="{{ route('blog') }}">Blog</a></li>
-                                <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                                <li><a href="{{ route('our-activities')}}">Activities</a></li>                                
                                 <li><a href="{{ route('donate-us')}}">Donate Us</a></li>
                             </ul>
                         </div>
@@ -62,7 +62,7 @@
                         <div class="footer-links">
                             <h3>support</h3>
                             <ul>
-                                <li><a href="#">Patient Support</a></li>
+                                <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                                 <li><a href="#">Team of Doctors</a></li>
                                 <li><a href="#">privacy policy</a></li>
                                 <li><a href="#">terms & conditions</a></li>

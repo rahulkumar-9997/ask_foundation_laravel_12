@@ -29,5 +29,7 @@
         </div>
     </div>
 </div>
-
 @endsection
+@push('scripts')
+<script src="{{ asset('backend/assets/js/pages/activities.js') }}"></script>
+@endpush

@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\BannerVideos;
 use App\Models\Doctors;
 use App\Models\Blog;
+use App\Models\Activity;
+use COM;
 
 class FrontHomeController extends Controller
 {
@@ -155,6 +157,15 @@ class FrontHomeController extends Controller
     }
 
     public function ourActivities(){
-        return view('frontend.pages.activities.activities-list');
+        $activities = Activity::select('id', 'title', 'slug', 'short_content', 'long_content', 'main_image', 'page_image')
+        ->orderBy('id', 'desc')
+        ->paginate(20);
+        return view('frontend.pages.activities.activities-list', compact('activities'));
+    }
+    public function ourActivitiesDetails($slug){
+        $activity = Activity::with(['images', 'videos'])
+        ->where('slug', $slug)
+        ->firstOrFail();; 
+        return view('frontend.pages.activities.activities-details', compact('activity'));
     }
 }

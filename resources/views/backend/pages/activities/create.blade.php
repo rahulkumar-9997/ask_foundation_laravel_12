@@ -135,7 +135,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 25%">Video Title</th>
-                                    <th style="width: 25%">Video File Or Video Link</th>
+                                    <th style="width: 25%">Video File Or Youtube Video ID</th>
                                 </tr>
                             </thead>
                             <tbody id="activitiesVideosContainer">
@@ -146,7 +146,7 @@
                                     <td style="width: 25%; text-align: center;">
                                         <input type="file" name="activities_video_file[]" class="form-control">
                                         <span class="text-center text-success">OR</span>
-                                        <input type="text" name="activities_video_link[]" class="form-control" placeholder="Enter activities video link">
+                                        <input type="text" name="activities_video_link[]" class="form-control" placeholder="Enter activities youtube video ID">
                                     </td>                                    
                                 </tr>
                             </tbody>

@@ -7,7 +7,7 @@
                 <th>Status</th>
                 <th>Main Image</th>
                 <th>More Images</th>
-                <th>Video</th>
+                <th>Videos</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -32,17 +32,36 @@
                 </td>
                 <td>
                     @if($activity->images->count() > 0)
-                        <span class="badge bg-info">{{ $activity->images->count() }} Images</span>
+                        <span class="badge bg-info image-badge" data-activity-id="{{ $activity->id }}" style="cursor: pointer;">
+                            {{ $activity->images->count() }} Images
+                        </span>
                     @else
                         <span class="badge bg-secondary">No Images</span>   
                     @endif
+                    <button class="btn btn-sm btn-outline-primary ms-1 add-more-images" data-activity-id="{{ $activity->id }}"
+                    data-route="{{ route('manage-activities.addMoreImages', $activity->id) }}"
+                    data-add-more-images="true"
+                    data-title="Add More {{ $activity->title }} Images"
+                    data-size="lg">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
                 </td>
                 <td>
                     @if($activity->videos->count() > 0)
-                        <span class="badge bg-purple">{{ $activity->videos->count() }} Video</span>
+                        <span class="badge bg-purple video-badge" data-activity-id="{{ $activity->id }}" style="cursor: pointer;">
+                            {{ $activity->videos->count() }} Videos
+                        </span>
+                        <button class="btn btn-sm btn-outline-primary ms-1 add-more-videos" data-activity-id="{{ $activity->id }}"
+                        data-route="{{ route('manage-activities.addMoreVideos', $activity->id) }}"
+                        data-add-more-video="true"
+                        data-title="Add More {{ $activity->title }} Videos"
+                        data-size="lg">
+                            <i class="fas fa-trash"></i> Delete Video
+                        </button>
                     @else
-                        <span class="badge bg-secondary">No Video</span>   
+                        <span class="badge bg-secondary">No Videos</span>   
                     @endif
+                    
                 </td>                
                 <td class="action-table-data">
                     <div class="edit-delete-action">
@@ -52,7 +71,9 @@
                         <form action="{{ route('manage-activities.destroy', $activity->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger show_confirm" data-name="Delete Activities">
+                            <button type="submit" class="btn btn-sm btn-danger show_confirm_delete" 
+                                    data-name="Activity" 
+                                    data-activity-title="{{ $activity->title }}">
                                 <i data-feather="trash-2" class="feather-trash-2"></i>
                             </button>
                         </form>
