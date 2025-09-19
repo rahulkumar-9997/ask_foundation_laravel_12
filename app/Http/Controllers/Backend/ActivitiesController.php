@@ -31,11 +31,11 @@ class ActivitiesController extends Controller
             'title' => 'required|string|max:255',
             'short_description' => 'nullable|string',
             'content' => 'required|string',
-            'main_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'page_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'main_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240',
+            'page_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string',
-            'more_image.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'more_image.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240',
             'act_video_title.*' => 'nullable|string|max:255',
             'activities_video_file.*' => 'nullable|file|mimes:mp4,avi,mov,wmv|max:10240',
             'activities_video_link.*' => 'nullable|string|max:255',
@@ -152,11 +152,11 @@ class ActivitiesController extends Controller
             'title' => 'required|string|max:255',
             'short_description' => 'nullable|string',
             'content' => 'required|string',
-            'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'page_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240',
+            'page_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string',
-            'more_image.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'more_image.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240',
             'act_video_title.*' => 'nullable|string|max:255',
             'activities_video_file.*' => 'nullable|file|mimes:mp4,avi,mov,wmv|max:10240',
             'activities_video_link.*' => 'nullable|string|max:255',
@@ -397,14 +397,14 @@ class ActivitiesController extends Controller
         $validator = Validator::make($request->all(), [
             'activities_id' => 'required|exists:activities,id',
             'add_more_activities_image'   => 'required|array|min:1',
-            'add_more_activities_image.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'
+            'add_more_activities_image.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:10240'
         ], [
             'add_more_activities_image.required' => 'Please select at least one image.',
             'add_more_activities_image.array'    => 'Invalid image upload format.',
             'add_more_activities_image.min'      => 'Please select at least one image.',
             'add_more_activities_image.*.image'  => 'Each file must be an image.',
             'add_more_activities_image.*.mimes'  => 'Only jpeg, png, jpg, gif, webp formats are allowed.',
-            'add_more_activities_image.*.max'    => 'Each image must not be greater than 2MB.',
+            'add_more_activities_image.*.max'    => 'Each image must not be greater than 10MB.',
         ]);
 
         if ($validator->fails()) {
