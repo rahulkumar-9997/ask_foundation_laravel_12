@@ -98,7 +98,7 @@ class FrontHomeController extends Controller
             'message' => $validated['message'] ?? null,
         ];
         try {
-            Mail::to('rahulkumarmaurya464@gmail.com')->send(new EnquiryMail($data));
+            Mail::to('info@askfoundation.com')->send(new EnquiryMail($data));
         } catch (\Exception $e) {
             Log::error('Failed to send enquiry email: ' . $e->getMessage());
         }
