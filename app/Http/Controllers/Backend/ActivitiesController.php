@@ -162,12 +162,12 @@ class ActivitiesController extends Controller
             'activities_video_link.*' => 'nullable|string|max:255',
             'new_act_video_title.*' => 'nullable|string|max:255',
             'new_activities_video_file.*' => 'nullable|file|mimes:mp4,avi,mov,wmv|max:10240',
-            'new_activities_video_link.*' => 'nullable|url',
+            'new_activities_video_link.*' => 'nullable|string|max:255',
         ]);
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Validation failed',
+                'message' => $validator->errors()->first(),
                 'errors' => $validator->errors()
             ], 422);
         }
@@ -295,7 +295,7 @@ class ActivitiesController extends Controller
         ]);
     }
 
-    public function destroy($id)
+   public function destroy($id)
     {
         try {
             $activity = Activity::with(['images', 'videos'])->findOrFail($id);            
@@ -314,24 +314,18 @@ class ActivitiesController extends Controller
                 $image->delete();
             }
             foreach ($activity->videos as $video) {
-                if ($video->video_path && file_exists(public_path($video->video_path))) {
-                    unlink(public_path($video->video_path));
+                if ($video->video_path && file_exists($videoDestinationPath . '/' . $video->video_path)) {
+                    unlink($videoDestinationPath . '/' . $video->video_path);
                 }
                 $video->delete(); 
             }
-            $activity->delete();            
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Activity deleted successfully!'
-            ]);
+            return redirect()->route('manage-activities.index')->with('success', 'Activity deleted successfully!');      
             
         } catch (\Exception $e) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Error deleting activity: ' . $e->getMessage()
-            ], 500);
+            return redirect()->route('manage-activities.index')->with('error', 'Error deleting activity: ' . $e->getMessage());
         }
     }
+
 
     public function addMoreImages($id)
     {
@@ -539,23 +533,23 @@ class ActivitiesController extends Controller
             'form' => $form,
         ]);
     }
-
     
     public function destroyVideo($id)
     {
         try {
             $video = ActivitiesVideo::findOrFail($id);
-            if ($video->video_path && file_exists(public_path($video->video_path))) {
-                unlink(public_path($video->video_path));
+
+            $videoPath = public_path('upload/activities/videos/' . $video->video_path);
+            if ($video->video_path && file_exists($videoPath)) {
+                unlink($videoPath);
             }
-            $video->delete();            
-            return redirect()->route('manage-activities.index')->with('success', 'Video deleted successfully');            
+            $video->delete();
+            return redirect()->route('manage-activities.index')->with('success', 'Video deleted successfully');
         } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Error deleting video: ' . $e->getMessage()
-            ], 500);
+            return redirect()->route('manage-activities.index')
+                ->with('error', 'Error deleting video: ' . $e->getMessage());
         }
     }
+
 
 }

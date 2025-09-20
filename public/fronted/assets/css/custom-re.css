@@ -8379,6 +8379,16 @@ header.none-header.main-header {
     font-size: 14px;
     color: #9c7945;
 }
+.activities-image-section .page-gallery-box .photo-gallery img{
+	aspect-ratio: auto;	
+}
+.activities-gallery .col-6{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.activities-image-section .page-gallery-box .photo-gallery {
+	margin-bottom: 5px;
+}
 
 /*activity css */
 @media only screen and (max-width: 767px) {

@@ -74,7 +74,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                                     $embedUrl = $video->video_link ? 'https://www.youtube.com/embed/' . $video->video_link : null;
                                 @endphp
                                 <div class="video-embed-container my-3">
-                                    <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                                    <div class="ratio ratio-1x1 rounded shadow-sm overflow-hidden">
                                         <iframe
                                             src="{{ $embedUrl }}"
                                             frameborder="0"
@@ -96,7 +96,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
         @endif
         @if($activity->images->count() > 0)
         <div class="activities-image-section mb-3">
-            <div class="row gallery-items page-gallery-box activities-gallery">
+            <div class="row gallery-items grid-services  page-gallery-box activities-gallery">
                 @foreach($activity->images as $image)
                     <div class="col-lg-3 col-6">
                         <div class="photo-gallery wow fadeInUp" data-wow-delay="{{ $loop->iteration * 0.2 }}s">
@@ -119,3 +119,6 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
     </div>
 </div>
 @endsection
+@push('scripts')
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+@endpush
