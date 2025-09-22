@@ -27,7 +27,7 @@
                                     @if($doctor->image)
                                     <img src="{{ asset('upload/doctors/' . $doctor->image) }}" alt="{{ $doctor->doctor_name }}">
                                     @else
-                                    <img src="{{ asset('fronted/assets/ask-img/detault.png') }}" alt="{{ $doctor->doctor_name }}">
+                                    <img src="{{ asset('fronted/assets/ask-img/doctor2.svg') }}" alt="{{ $doctor->doctor_name }}">
                                     @endif
                                 </figure>
                             </a>

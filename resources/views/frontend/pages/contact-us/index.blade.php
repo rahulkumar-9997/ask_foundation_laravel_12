@@ -45,7 +45,7 @@
                         </div>
                         <div class="contact-info-content">
                             <h3>location</h3>
-                            <p>Hydrabad</p>
+                            <p>Hyderabad</p>
                         </div>
                     </div>
                 </div>
