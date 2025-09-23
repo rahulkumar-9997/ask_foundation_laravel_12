@@ -11,7 +11,6 @@ use App\Models\BannerVideos;
 use App\Models\Doctors;
 use App\Models\Blog;
 use App\Models\Activity;
-use COM;
 
 class FrontHomeController extends Controller
 {

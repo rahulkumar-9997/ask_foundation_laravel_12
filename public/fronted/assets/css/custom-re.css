@@ -3,9 +3,6 @@
 * Template Name : Lenity - Charity & Donation HTML Template
 * File          : CSS File
 * Version       : 1.0
-* ---------------------------------------------------------------------------------------- */
-/* INDEX
-----------------------------------------------------------------------------------------
 01. Global Variables
 02. General css
 03. Header css
@@ -42,11 +39,6 @@
 34. 404 Error Page css
 35. Responsive css
 -------------------------------------------------------------------------------------- */
-
-/************************************/
-/*** 	 01. Global Variables	  ***/
-/************************************/
-
 :root {
 	--primary-color: #020D19;
 	--secondary-color: #F8F8F8;
@@ -62,10 +54,6 @@
 	--default-font: "Inter", serif;
 	--accent-font: "Onest", serif;
 }
-
-/************************************/
-/*** 	   02. General css		  ***/
-/************************************/
 
 body {
 	font-family: var(--default-font);
@@ -112,7 +100,6 @@ h6 {
 	line-height: 1.2em;
 	font-family: var(--accent-font);
 	color: var(--primary-color);
-	/* color: var(--color-two); */
 }
 
 figure {
@@ -548,7 +535,7 @@ header.main-header .header-sticky.active {
 	font-size: 17px;
 	font-weight: 500;
 	line-height: 1.4em;
-	padding: 26px 15px !important;
+	padding: 17px 15px !important;
 	color: var(--primary-color);
 	text-transform: capitalize;
 	transition: all 0.3s ease-in-out;
@@ -7158,7 +7145,7 @@ header.header-for-mobile.main-header {
 }
 
 .navbar-brand img {
-	width: 240px;
+	width: 180px;
 }
 
 .navbar>.container,

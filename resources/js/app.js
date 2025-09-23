@@ -10,7 +10,6 @@ import '../assets/js/jquery.magnific-popup.min.js';
 import '../assets/js/SmoothScroll.js';
 import '../assets/js/parallaxie.js';
 import '../assets/js/gsap.min.js';
-import '../assets/js/magiccursor.js';
 import '../assets/js/SplitText.js';
 import '../assets/js/ScrollTrigger.min.js';
 import '../assets/js/wow.min.js';
