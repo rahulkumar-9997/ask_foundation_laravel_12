@@ -85,6 +85,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="Field Field--required mb-2">
+                                        <div class="Field-label">PAN Photo</div>
+                                        <div class="Field-content">
+                                            <div class="Field-wrapper">
+                                                <input class="Field-el" type="file" name="pan_image" id="pan_image"
+                                                    placeholder="Enter your PAN Number" aria-label="Enter your PAN Number">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="Field Field--required mb-2">
                                         <div class="Field-label">Email</div>

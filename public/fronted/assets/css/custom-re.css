@@ -7876,16 +7876,17 @@ header.none-header.main-header {
 }
 .UI-form.UI-form .Field-el {
   line-height: 16px;
-  height: 100%;
-  width: 100%;
-  background: #fff;
-  border: 1px solid #e2e2e2;
-  border-radius: 2px;
-  overflow: hidden;
-  font-size: 14px;
-  padding: 0 9px;
-  outline: none;
-  color: inherit;
+    /* height: 100%; */
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+    overflow: hidden;
+    font-size: 14px;
+    /* padding: 0 9px; */
+    outline: none;
+    color: inherit;
+    padding: 12px 15px;
 }
 .UI-form.UI-form .Field-el::placeholder {
   color: rgba(0,0,0,0.3);
@@ -8009,7 +8010,7 @@ header.none-header.main-header {
 #form-footer .btn {
     position: relative;
     width: 180px;
-    min-height: 56px;
+    min-height: 50px;
     font-size: 16px;
     font-weight: bold;
     line-height: 20px;
@@ -8017,9 +8018,11 @@ header.none-header.main-header {
     border-radius: 0;
     text-align: center;
     color: #fff;
+	border-color: unset;
 }
 #form-footer .btn {
-    background-color: rgb(82, 143, 240);
+    /* background-color: rgb(82, 143, 240); */
+	background: linear-gradient(90deg, #f15d5f 28.12%, #662d91);
     color: #fff !important;
 }
 .donate-form{
