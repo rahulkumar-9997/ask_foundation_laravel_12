@@ -31,7 +31,7 @@
                             </div>
                             <div class="donateusimg">
                                 <figure class="image-anime reveal">
-                                    <img src="{{asset('fronted/assets/ask-img/donate-us.jpeg')}}" alt="">
+                                    <img src="{{asset('fronted/assets/ask-img/donate-us.jpeg')}}" alt="donate" loading="lazy">
                                 </figure>
                             </div>
                         </div>

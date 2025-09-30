@@ -8379,9 +8379,59 @@ header.none-header.main-header {
 .activities-image-section .page-gallery-box .photo-gallery {
 	margin-bottom: 5px;
 }
-
+.about-us-page .our-approach-box-content{
+	align-items: center;
+}
+.pd_top_30 {
+    padding-top: 30px !important;
+}
+.vision-mission-card {
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+    border-radius: 8px;
+}
+.bg-magenta1 {
+    /* background: linear-gradient(105.23deg, #f15d5f 19.17%, #662d91 103.35% 103.35%); */
+	background: #f15d5f;
+}
+.bg-magenta2 {
+	background: #4bbd92;
+}
+.bg-magenta3 {
+	background: #662d91;
+}
+.vision-mission-card img {
+    transition: transform 0.3s ease-in-out;
+}
+.vision-mission-card h2 {
+    transition: color 0.3s ease-in-out;
+    font-size: 22px;
+    text-align: center;
+}
+.vision-mission-card p {
+    transition: color 0.3s ease-in-out;
+}
+.vision-mission-card:hover {
+    background: linear-gradient(105.23deg, #f15d5f 19.17%, #662d91 103.35% 103.35%);;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
 /*activity css */
 @media only screen and (max-width: 767px) {
+	.about-us-page p,
+	.vision-mission-card p{
+		text-align: center;
+	}
+	.vision-mission-card img{
+		padding-top: 5px;
+	}
+	
+	.vision-mission-card{
+		padding: 7px;
+	}
+	.vision-mission-card h2{
+		font-size: 20px;
+	}
     .social-media-menu {
         display: block;
     }
