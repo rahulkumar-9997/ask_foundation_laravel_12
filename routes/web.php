@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontHomeController;
-use App\Http\Middleware\TrackVisitor;
+use App\Http\Controllers\Frontend\DonationController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\ForgotPasswordController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -19,9 +19,16 @@ Route::get('blog', [FrontHomeController::class, 'blogList'])->name('blog');
 Route::get('blog/{slug}', [FrontHomeController::class, 'blogDetails'])->name('blog.details');
 Route::get('our-doctors', [FrontHomeController::class, 'ourDoctorsList'])->name('our-doctors');
 Route::get('our-doctors/{slug}', [FrontHomeController::class, 'ourDoctorsDetails'])->name('doctor.details');
-Route::get('donate-us', [FrontHomeController::class, 'donateUs'])->name('donate-us');
-Route::post('donate-us', [FrontHomeController::class, 'donateStore'])->name('donate-confirmation.store');
-Route::get('donate-confirmation/{token}', [FrontHomeController::class, 'confirmation'])->name('donate.confirmation');
+Route::get('donate-us', [DonationController::class, 'donateUs'])->name('donate-us');
+Route::post('donate-us', [DonationController::class, 'donateStore'])->name('donate-confirmation.store');
+Route::get('donate-confirmation/{token}', [DonationController::class, 'confirmation'])->name('donate.confirmation');
+
+Route::post('/payment/callback', [DonationController::class, 'paymentCallback'])
+    ->name('payment.callback');
+
+// success/failure pages
+Route::get('/donate/success', [DonationController::class, 'success'])->name('donate.success');
+Route::get('/donate/failed', [DonationController::class, 'failed'])->name('donate.failed');
 
 Route::get('contact-us', [FrontHomeController::class, 'contactUs'])->name('contact-us');
 Route::post('contact-us-submit', [FrontHomeController::class, 'contactSubmitForm'])->name('contact-us.submit');

@@ -1,6 +1,5 @@
 @extends('frontend.layouts.master')
 @section('title','Donate us | ASK Foundation')
-<!-- @section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs') -->
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -25,7 +24,14 @@
                         <table class="table table-bordered table-striped" style="background: #f3f9ff;box-shadow: 0 4px 12px 0 #c0c0c0;">
                             <tbody>
                                 <tr>
-                                    <th colspan="3" style="text-align: center; font-size: 22px;">Please confirm your details</th>
+                                    <th style="text-align: left; font-size: 16px; width: 50%;">
+                                       <a href="{{ route('donate-us') }}" class="btn btn-sm btn-success">
+                                       Edit
+                                       </a>
+                                    </th>
+                                    <th style="font-size: 20px; width: 50%;">
+                                        Please confirm your details
+                                    </th>
                                 </tr>
                                 <tr>
                                     <th width="30%">Amount</th>
@@ -49,25 +55,12 @@
                                 </tr>
                                 <tr>
                                     <td colspan="3" class="col-md-5">
-                                        <div class="col-sm-12" style="text-align: center;">
-                                            <form method="post" action="./cashfreecheckout">
-                                                <div class="form-group">
-                                                    <input type="hidden" name="order_id" value="1437183">
-                                                    <input type="hidden" name="order_amount" value="4500.00">
-                                                    <input type="hidden" name="customer_id" value="1437183">
-                                                    <input type="hidden" name="customer_name" value="asdsa">
-                                                    <input type="hidden" name="customer_email" value="admin@gmail.com">
-                                                    <input type="hidden" name="customer_mobileno" value="1212121212">
-                                                    <input type="hidden" name="customer_address" value="">
-                                                    <!--<input type="hidden" name="price" value="4500.00" />-->
-                                                    <input type="hidden" name="donor_slug" value="8769d293583d85895f5e729c0a7d2e45">
-                                                    <input type="hidden" name="donation_payment_type_id" value="1">
-                                                    <input type="hidden" name="plan_max_cycles" value="">
-                                                    <input type="hidden" name="created_date" value="2025-09-11 16:19:36">
-                                                </div>
-                                                <input type="submit" name="submit" value="Donate Now" class="btn btn-primary">
-                                            </form>
+                                        <div class="col-sm-12 text-center">
+                                            <button id="rzp-pay-btn" class="btn-default nonate_now_btn">
+                                                Pay Now (₹ {{ $donation['amount'] }})
+                                            </button>
                                         </div>
+                                        <div id="payment-message" class="mt-3 text-center"></div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -79,6 +72,82 @@
     </div>
 </div>
 @endsection
-@push('scripts')
 
+@push('scripts')
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    const paymentMessage = document.getElementById('payment-message');
+    function showMessage(msg, type="info") {
+        let color = "#333";
+        if (type === "success") color = "green";
+        if (type === "error") color = "red";
+        paymentMessage.innerHTML = `<span style="color:${color};font-weight:bold;">${msg}</span>`;
+    }
+
+    const options = {
+        key: "{{ $razorpayKey }}",
+        amount: "{{ $order['amount'] }}", 
+        currency: "{{ $order['currency'] }}",
+        name: "ASK Foundation",
+        description: "Donation Payment",
+        order_id: "{{ $order['id'] }}",
+        prefill: {
+            name: "{{ $donation['salutation'].' '.$donation['name'] }}",
+            email: "{{ $donation['email'] }}",
+            contact: "{{ $donation['mobile'] }}"
+        },
+        handler: function (response){
+            showMessage("Verifying payment, please wait...");
+
+            $.ajax({
+                url: "{{ route('donate.callback') }}",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    razorpay_payment_id: response.razorpay_payment_id,
+                    razorpay_order_id: response.razorpay_order_id,
+                    razorpay_signature: response.razorpay_signature,
+                    token: "{{ $token }}"
+                },
+                success: function(res){
+                    if(res.status === 'success'){
+                        showMessage("Payment successful! Redirecting...", "success");
+                        setTimeout(() => {
+                            window.location.href = res.redirect;
+                        }, 1500);
+                    } else {
+                        showMessage(res.message || 'Payment verification failed.', "error");
+                        setTimeout(() => {
+                            if(res.redirect){
+                                window.location.href = res.redirect;
+                            }
+                        }, 2000);
+                    }
+                },
+                error: function(xhr){
+                    let errorMsg = "Server error while verifying payment.";
+                    if(xhr.responseJSON && xhr.responseJSON.message){
+                        errorMsg = xhr.responseJSON.message;
+                    }
+                    showMessage(errorMsg, "error");
+                    setTimeout(() => {
+                        window.location.href = "{{ route('donate.failed') }}";
+                    }, 2000);
+                }
+            });
+        },
+        modal: {
+            ondismiss: function(){
+                showMessage("Payment process was cancelled by you.", "error");
+            }
+        }
+    };
+
+    const rzp = new Razorpay(options);
+    document.getElementById('rzp-pay-btn').addEventListener('click', function(e){
+        showMessage("Opening secure payment gateway...");
+        rzp.open();
+        e.preventDefault();
+    });
+</script>
 @endpush

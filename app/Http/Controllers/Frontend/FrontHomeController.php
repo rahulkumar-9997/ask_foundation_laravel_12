@@ -14,6 +14,7 @@ use App\Models\Activity;
 
 class FrontHomeController extends Controller
 {
+
     public function home(){
         $data['bannerVideo'] = BannerVideos::select(['title', 'subtitle', 'description', 'button_link', 'video_popup_url', 'desktop_video_url', 'features', 'mobile_video_url'])
         ->orderBy('id', 'desc')
@@ -111,56 +112,14 @@ class FrontHomeController extends Controller
         return view('frontend.pages.about-us.index');
     }
 
-    public function donateUs(){
-        return view('frontend.pages.donate-us.index');
-    }
-
-    public function donateStore(Request $request){
-        $validator = Validator::make($request->all(), [
-            'amount'     => 'required|numeric|min:1',
-            'salutation' => 'required|string',
-            'name'       => 'required|string|min:2|max:255',
-            'pan_number' => 'required|string|size:10',
-            'email'      => 'required|email',
-            'mobile'     => 'required|digits:10',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 'error',
-                'errors' => $validator->errors()
-            ], 422);
-        }
-        $token = Str::random(40);
-        session([
-            'donation' => $request->only([
-                'amount', 'salutation', 'name', 'pan_number', 'email', 'mobile'
-            ]),
-            'donation_token' => $token
-        ]);
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Donation details submitted successfully!',
-            'redirect' => route('donate.confirmation', ['token' => $token])
-        ]);
-    }
-
-    public function confirmation($token){
-        $donation = session('donation');
-        $sessionToken = session('donation_token');
-        if (!$donation || $token !== $sessionToken) {
-            return redirect()->route('donate-us')->with('error', 'Invalid or expired donation session.');
-        }
-        return view('frontend.pages.donate-us.donate-con-display', compact('donation'));
-    }
-
+    
     public function ourActivities(){
         $activities = Activity::select('id', 'title', 'slug', 'short_content', 'long_content', 'main_image', 'page_image')
         ->orderBy('id', 'desc')
         ->paginate(20);
         return view('frontend.pages.activities.activities-list', compact('activities'));
     }
+
     public function ourActivitiesDetails($slug){
         $activity = Activity::with(['images', 'videos'])
         ->where('slug', $slug)
