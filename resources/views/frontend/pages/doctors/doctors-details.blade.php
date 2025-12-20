@@ -8,13 +8,13 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
 @section('title', $metaTitle)
 @section('description', $metaDescription)
 @section('main-content')
-<div class="page-header parallaxie breakpoint-header">
+<div class="page-header parallaxie breakpoint-header doctores-details-header">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="page-header-box">
-                    <h1 class="text-anime-style-2" data-cursor="-opaque"><span>Our</span> Doctors</h1>
-                    <p>{{ $doctor->doctor_name }}</p>
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">{{ $doctor->doctor_name }} </h1>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                     @if(isset($doctorsList) && $doctorsList->count() > 0)
                         <div class="page-single-sidebar">
                             <div class="page-sidebar-catagery-list wow fadeInUp">
-                                <h3>Our Doctors</h3>
+                                <h6>Our Doctors</h6>
                                 <ul>
                                     @foreach($doctorsList as $doctors)
                                         <li>
@@ -54,12 +54,12 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                     <div class="service-single-contemt">
                         <div class="doctort_name_area">
                             @if($doctor->doctor_name)
-                                <h1 class="doctor-name wow fadeInUp">
+                                <h2 class="doctor-name wow fadeInUp">
                                     {{ $doctor->doctor_name }}
                                     @if($doctor->experience)
                                         ({{ $doctor->experience }})
                                     @endif
-                                </h1>
+                                </h2>
                             @endif
                             @if($doctor->department)
                                 <h3 class="doctor_department wow fadeInUp">

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Road Safety Programs | Ask Foundation')
-<!-- @section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs') -->
+@section('title','Road Safety Awareness Programs | ASK Foundation NGO')
+@section('description', 'ASK Foundation runs road safety awareness programs to reduce accidents through education, training, and responsible driving initiatives.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -23,10 +23,10 @@
                 <div class="our-approach-box-content bone-health">
                     <div class="our-approach-content">
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">Road Safety is Everyone’s Responsibility</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">
+                            <h2 class="wow fadeInUp mb-1">Road Safety is Everyone’s Responsibility</h2>
+                            <h3 class="text-anime-style-2" data-cursor="-opaque">
                                 Building safer communities through awareness, education, and responsible driving.
-                            </h2>
+                            </h3>
                         </div>
                         <p class="wow fadeInUp" data-wow-delay="0.2s">
                             Every year, countless families are impacted by road accidents—many of which could have been prevented. Most victims are young individuals in their most productive years, leaving behind devastating emotional and financial consequences for their families. ASK Foundation’s <strong>Road Safety Program</strong> is dedicated to spreading awareness and encouraging safe road practices that save lives.
@@ -53,9 +53,9 @@
         <div class="row section-row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">
+                    <h4 class="text-anime-style-2" data-cursor="-opaque">
                         Our Key Focus Areas
-                    </h2>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/our-key/youth-awareness.svg')}}" alt="Youth Awareness">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Youth Awareness</h3>
+                        <h5>Youth Awareness</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -81,7 +81,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/our-key/community-campaigns.svg')}}" alt="Community Campaigns">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Community Campaigns</h3>
+                        <h5>Community Campaigns</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -96,7 +96,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/our-key/corporate-sessions.svg')}}" alt="Corporate Sessions">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Corporate Sessions</h3>
+                        <h5>Corporate Sessions</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -111,7 +111,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/road-safety/our-key/practical-safety-education.svg')}}" alt="Practical Safety Education">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Practical Safety Education</h3>
+                        <h5>Practical Safety Education</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -202,28 +202,28 @@
                 <div class="how-help-list">
                     <div class="how-help-item bg1 wow fadeInUp">                        
                         <div class="how-help-item-content">
-                            <h3>Host Awareness Programs</h3>
+                            <h5>Host Awareness Programs</h5>
                             <p>Invite ASK Foundation to conduct interactive sessions at your school, college, or workplace.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg2 wow fadeInUp" data-wow-delay="0.2s">
                         
                         <div class="how-help-item-content">
-                            <h3>Volunteer Your Time</h3>
+                            <h5>Volunteer Your Time</h5>
                             <p>Join awareness drives, rallies, and community campaigns to spread the message of safe driving.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg4 wow fadeInUp" data-wow-delay="0.4s">
                         
                         <div class="how-help-item-content">
-                            <h3>Practice Safe Habits</h3>
+                            <h5>Practice Safe Habits</h5>
                             <p>Lead by example—always wear a helmet, use seatbelts, avoid distractions, and follow road rules.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg3 wow fadeInUp" data-wow-delay="0.6s">
                         
                         <div class="how-help-item-content">
-                            <h3>Support Community Campaigns</h3>
+                            <h5>Support Community Campaigns</h5>
                             <p>Partner with us through sponsorships or collaborations to expand the reach of road safety initiatives.</p>
                         </div>
                     </div>

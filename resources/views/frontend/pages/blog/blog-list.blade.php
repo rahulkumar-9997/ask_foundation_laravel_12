@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Blog | ASK Foundation')
-@section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs')
+@section('title','Health Awareness Blog | ASK Foundation Insights & Updates')
+@section('description', 'Read expert articles from ASK Foundation on bone health, preventive medicine, road safety awareness, medical education, and community health programs.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -27,7 +27,7 @@
                                 </ul>
                             </div>
                             <div class="post-item-content">
-                                <h2><a href="{{ route('blog.details', $blog->slug) }}">{{ $blog->title }}</a></h2>
+                                <h6><a href="{{ route('blog.details', $blog->slug) }}">{{ $blog->title }}</a></h6>
                             </div>
                         </div>
                         <div class="post-featured-image">

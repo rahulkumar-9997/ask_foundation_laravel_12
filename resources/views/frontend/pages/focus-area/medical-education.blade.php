@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Medical Education and Skill Building | ASK Foundation')
-<!-- @section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs') -->
+@section('title','Medical Education Initiatives | ASK Foundation NGO')
+@section('description', 'ASK Foundation supports medical education initiatives, training programs, workshops, and awareness campaigns for healthcare professionals.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -23,10 +23,10 @@
                 <div class="our-approach-box-content bone-health">
                     <div class="our-approach-content">
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">Shaping the Future of Healthcare</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">
+                            <h2 class="wow fadeInUp mb-1">Shaping the Future of Healthcare</h2>
+                            <h3 class="text-anime-style-2" data-cursor="-opaque">
                                 Training doctors, empowering students, and building a healthier tomorrow.
-                            </h2>
+                            </h3>
                         </div>
                         <p class="wow fadeInUp" data-wow-delay="0.2s">
                             Healthcare is not just about treating today’s patients—it is also about preparing the next generation of doctors, surgeons, and caregivers. At ASK Foundation, our <strong>Medical Education & Skill Building</strong> initiatives are designed to share knowledge, improve skills, and create opportunities for professionals and students to grow in the medical field.
@@ -53,9 +53,9 @@
         <div class="row section-row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">
+                    <h4 class="text-anime-style-2" data-cursor="-opaque">
                         Our Key Focus Areas
-                    </h2>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/medical-education/our-key/orthopedi-traning.svg')}}" alt="Orthopaedic Training & Workshops">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Orthopaedic Training & Workshops</h3>
+                        <h5>Orthopaedic Training & Workshops</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -81,7 +81,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/medical-education/our-key/skill-devlopment.svg')}}" alt="Skill Development">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Skill Development</h3>
+                        <h5>Skill Development</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -96,7 +96,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/medical-education/our-key/student-awareness.svg')}}" alt="Student Awareness">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Student Awareness</h3>
+                        <h5>Student Awareness</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -111,7 +111,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/medical-education/our-key/collaborations-&-research.svg')}}" alt="Collaborations & Research">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Collaborations & Research</h3>
+                        <h5>Collaborations & Research</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -211,28 +211,28 @@
                 <div class="how-help-list">
                     <div class="how-help-item wow bg4 fadeInUp">                        
                         <div class="how-help-item-content">
-                            <h3>Organize Medical Workshops</h3>
+                            <h5>Organize Medical Workshops</h5>
                             <p>Partner with ASK Foundation to conduct training sessions for doctors, students, or communities, helping spread the latest knowledge in healthcare.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg3 wow fadeInUp" data-wow-delay="0.2s">
                         
                         <div class="how-help-item-content">
-                            <h3>Volunteer in Health Camps</h3>
+                            <h5>Volunteer in Health Camps</h5>
                             <p>Join our medical camps to assist in screenings, guide participants, and create awareness about preventive healthcare in underserved areas.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg2 wow fadeInUp" data-wow-delay="0.4s">
                         
                         <div class="how-help-item-content">
-                            <h3>Collaborate with Institutions</h3>
+                            <h5>Collaborate with Institutions</h5>
                             <p>Work with schools, colleges, and workplaces to introduce health programs, road safety education, and lifestyle awareness sessions.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg1 wow fadeInUp" data-wow-delay="0.6s">
                         
                         <div class="how-help-item-content">
-                            <h3>Support Awareness Campaigns</h3>
+                            <h5>Support Awareness Campaigns</h5>
                             <p>Be part of campaigns that promote nutrition, exercise, and healthy habits, ensuring health education reaches every corner of society.</p>
                         </div>
                     </div>

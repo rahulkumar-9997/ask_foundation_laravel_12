@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','About us | ASK Foundation')
-<!-- @section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs') -->
+@section('title','About ASK Foundation | Healthcare & Awareness NGO in India')
+@section('description', 'Learn about ASK Foundation, our mission, vision, and commitment to improving bone health, preventive care, road safety awareness, and medical education.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
    <div class="container">
@@ -52,7 +52,7 @@
                loading="lazy">
          </div>
          <div class="col-lg-3 col-sm-4 col-8">
-            <h2 class="text-white">Why We Exist ?</h2>
+            <h3 class="text-white">Why We Exist ?</h3>
          </div>
          <div class="col-lg-7 col-sm-6 mt-sm-0 mt-3">
             <p class="text-white pe-sm-1">
@@ -65,7 +65,7 @@
             <img src="{{asset('fronted/assets/ask-img/about-us/what-we-do.svg')}}" alt="what we do" class="img-fluid" loading="lazy">
          </div>
          <div class="col-lg-3 col-sm-4 col-8">
-            <h2 class="text-white">What We Do ?</h2>
+            <h3 class="text-white">What We Do ?</h3>
          </div>
          <div class="col-lg-7 col-sm-7 mt-sm-0 mt-3">
             <p class="text-white pe-sm-1">
@@ -78,7 +78,7 @@
             <img src="{{asset('fronted/assets/ask-img/about-us/our-approach.svg')}}" alt="what we do" class="img-fluid" loading="lazy">
          </div>
          <div class="col-lg-3 col-sm-4 col-8">
-            <h2 class="text-white">Our Approach</h2>
+            <h3 class="text-white">Our Approach</h3>
          </div>
          <div class="col-lg-7 col-sm-7 mt-sm-0 mt-3">
             <p class="text-white pe-sm-1">

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Contact us | ASK Foundation')
-<!-- @section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs') -->
+@section('title','Contact ASK Foundation | Get Support & Information')
+@section('description', 'Get in touch with ASK Foundation for healthcare programs, awareness initiatives, donations, volunteering, and general inquiries.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -44,8 +44,8 @@
                             <img src="{{asset('fronted/assets/ask-img/icon/icon-location.svg')}}" alt="">
                         </div>
                         <div class="contact-info-content">
-                            <h3>location</h3>
-                            <p>Hyderabad</p>
+                            <h3>Location</h3>
+                            <p>20/A  Road no.13,  Phase-2,<br> Film Nagar, Jubilee Hills,<br> Hyderabad - 500033</p>
                         </div>
                     </div>
                 </div>
@@ -57,8 +57,8 @@
     <div class="container-fluid">
         <div class="row no-gutters">
             <div class="col-lg-6 order-lg-1 order-2">
-                <div class="google-map-iframe">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="google-map-iframe">				
+                    <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d60910.94027003806!2d78.37296665919177!3d17.414965918672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e1!4m5!1s0x3bcb96cfeaa61d61%3A0xe5feac7b1423d773!2sPhase-2%2C%2020%2FA%2C%20Rd%20Number%2013%2C%20Phase%20II%2C%20Film%20Nagar%2C%20Hyderabad%2C%20Telangana%20500096!3m2!1d17.413750699999998!2d78.41696759999999!4m5!1s0x3bcb96c8e8ead805%3A0xafce7c95528696ed!2sFilm%20Nagar%2C%20Hyderabad%2C%20Telangana!3m2!1d17.4160258!2d78.4113656!5e0!3m2!1sen!2sin!4v1765363263407!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Our Activities | ASK Foundation')
-@section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs')
+@section('title','Our Activities | Health & Awareness Work by ASK Foundation')
+@section('description', 'Explore ASK Foundation’s activities including health camps, awareness drives, medical education programs, and community outreach initiatives.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">

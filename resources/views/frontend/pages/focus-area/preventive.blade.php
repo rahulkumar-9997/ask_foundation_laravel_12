@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Preventive Medicine and Medical Camps | ASK Foundation')
-<!-- @section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs') -->
+@section('title','Preventive Medicine Awareness Programs | ASK Foundation')
+@section('description', 'Learn about ASK Foundation’s preventive medicine programs aimed at early diagnosis, lifestyle awareness, and long-term community health.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -23,10 +23,10 @@
                 <div class="our-approach-box-content bone-health">
                     <div class="our-approach-content">
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">Prevention is the Best Cure</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">
+                            <h2 class="wow fadeInUp mb-1">Prevention is the Best Cure</h2>
+                            <h3 class="text-anime-style-2" data-cursor="-opaque">
                                 Early detection, awareness, and care for healthier communities.
-                            </h2>
+                            </h3>
                         </div>
                         <p class="wow fadeInUp" data-wow-delay="0.2s">
                             Many serious health conditions can be avoided or controlled when detected early. Unfortunately, lack of awareness and limited access to healthcare often prevent people from seeking timely help. ASK Foundation’s <strong>Preventive Medicine & Medical Camps</strong> initiative focuses on bridging this gap by bringing healthcare and awareness directly to the community.
@@ -67,7 +67,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/our-key/bone-&-Joint-Health.svg')}}" alt="Bone & Joint Health">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Bone & Joint Health</h3>
+                        <h5>Bone & Joint Health</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -82,7 +82,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/our-key/lifestyle-disease-screening.svg')}}" alt="Lifestyle Disease Screening">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Lifestyle Disease Screening</h3>
+                        <h5>Lifestyle Disease Screening</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -97,7 +97,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/our-key/health-awareness-programs.svg')}}" alt="Health Awareness Programs">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Health Awareness Programs</h3>
+                        <h5>Health Awareness Programs</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -112,7 +112,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/preventive-medicine/our-key/support-for-underprivileged-communities.svg')}}" alt="Support for Underprivileged Communities">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Support for Underprivileged Communities</h3>
+                        <h5>Support for Underprivileged Communities</h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -185,7 +185,7 @@
 			<div class="col-lg-6 col-md-6">				
 				<div class="work-details-details">
                     <div class="tour-title wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                        <h3> Where We Work</h3>
+                        <h6> Where We Work</h6>
                     </div>
 					<ul class="ulli">
                         <li>
@@ -241,28 +241,28 @@
                 <div class="how-help-list">
                     <div class="how-help-item bg1 wow fadeInUp">                        
                         <div class="how-help-item-content">
-                            <h3>Volunteer Your Time</h3>
+                            <h5>Volunteer Your Time</h5>
                             <p>Join our free medical camps and help with screenings, awareness sessions, and community support.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg3 wow fadeInUp" data-wow-delay="0.2s">
                         
                         <div class="how-help-item-content">
-                            <h3>Host a Camp</h3>
+                            <h5>Host a Camp</h5>
                             <p>Collaborate with ASK Foundation to organize a preventive healthcare camp at your school, workplace, or community.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg4 wow fadeInUp" data-wow-delay="0.4s">
                         
                         <div class="how-help-item-content">
-                            <h3>Spread Awareness</h3>
+                            <h5>Spread Awareness</h5>
                             <p>Share health information, encourage regular check-ups, and inspire your community to adopt preventive practices.</p>
                         </div>
                     </div>
                     <div class="how-help-item bg2 wow fadeInUp" data-wow-delay="0.6s">
                         
                         <div class="how-help-item-content">
-                            <h3>Contribute Resources</h3>
+                            <h5>Contribute Resources</h5>
                             <p>Support our mission by providing funds, medical supplies, or facilities that help extend care to more people.</p>
                         </div>
                     </div>

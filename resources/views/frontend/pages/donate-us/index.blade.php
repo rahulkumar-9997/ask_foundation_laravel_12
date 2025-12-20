@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Donate us | ASK Foundation')
-<!-- @section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs') -->
+@section('title','Donate to ASK Foundation | Support Health Awareness')
+@section('description', 'Support ASK Foundation by donating to healthcare awareness, bone health initiatives, road safety programs, and preventive medical education.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -31,7 +31,7 @@
                             </div>
                             <div class="donateusimg">
                                 <figure class="image-anime reveal">
-                                    <img src="{{asset('fronted/assets/ask-img/donate-us.jpeg')}}" alt="donate" loading="lazy">
+                                    <img src="{{asset('fronted/assets/ask-img/donate-us.jpeg')}}" alt="">
                                 </figure>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                     Payment Details
                                 </h4>
                                 <div class="title-underline"></div>
-                                <form id="donateForm" class="UI-form" method="POST" action="{{ route('donate-confirmation.store') }}" enctype="multipart/form-data" novalidate>
+                                <form id="donateForm" class="UI-form" method="POST" action="{{ route('donate-confirmation.store') }}" novalidate>
                                     @csrf
                                     <div class="Field Field--required Field--amount Field--currency-1 mb-2">
                                         <div class="Field-label">Amount</div>
@@ -50,7 +50,8 @@
                                                 <span class="Field-addon Field-addon--before">
                                                     <b class="currency-symbol">₹</b>
                                                 </span>
-                                                <input class="Field-el" type="number" name="amount"     id="amount" min="10" placeholder="Enter Amount" aria-label="Enter your Amount" value="{{ old('amount', session('donation.amount')) }}">
+                                                <input class="Field-el" type="number" name="amount" id="amount"
+                                                    placeholder="Enter Amount" aria-label="Enter your Amount">
                                             </div>
                                         </div>
                                     </div>
@@ -61,14 +62,15 @@
                                             <div class="selectoption">
                                                 <div class="input-with-select">
                                                     <select name="salutation" id="salutation" class="form-group mb-0">
-                                                         <option value="Mr"  {{ old('salutation', session('donation.salutation')) == 'Mr' ? 'selected' : '' }}>Mr</option>
-                                                        <option value="Mrs" {{ old('salutation', session('donation.salutation')) == 'Mrs' ? 'selected' : '' }}>Mrs</option>
-                                                        <option value="Ms"  {{ old('salutation', session('donation.salutation')) == 'Ms' ? 'selected' : '' }}>Ms</option>
-                                                        <option value="M/S" {{ old('salutation', session('donation.salutation')) == 'M/S' ? 'selected' : '' }}>M/S</option>
+                                                        <option value="Mr">Mr</option>
+                                                        <option value="Mrs">Mrs</option>
+                                                        <option value="Ms">Ms</option>
+                                                        <option value="M/S">M/S</option>
                                                     </select>
                                                 </div>
                                                 <div class="Field-wrapper">
-                                                    <input class="Field-el" type="text" name="name" id="name"                                    placeholder="Enter your Name" aria-label="Enter your Name"  value="{{ old('name', session('donation.name')) }}">
+                                                    <input class="Field-el" type="text" name="name" id="name"
+                                                        placeholder="Enter your Name" aria-label="Enter your Name">
                                                 </div>
                                             </div>
                                         </div>
@@ -78,15 +80,7 @@
                                         <div class="Field-label">PAN Number</div>
                                         <div class="Field-content">
                                             <div class="Field-wrapper">
-                                                <input class="Field-el" type="text" name="pan_number" id="pan_number" placeholder="Enter your PAN Number" aria-label="Enter your PAN Number" value="{{ old('pan_number', session('donation.pan_number')) }}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="Field Field--required mb-2">
-                                        <div class="Field-label">PAN Photo</div>
-                                        <div class="Field-content">
-                                            <div class="Field-wrapper">
-                                                <input class="Field-el" type="file" name="pan_image" id="pan_image"
+                                                <input class="Field-el" type="text" name="pan_number" id="pan_number"
                                                     placeholder="Enter your PAN Number" aria-label="Enter your PAN Number">
                                             </div>
                                         </div>
@@ -96,7 +90,8 @@
                                         <div class="Field-label">Email</div>
                                         <div class="Field-content">
                                             <div class="Field-wrapper">
-                                                <input class="Field-el" type="email" name="email" id="email" placeholder="Enter your Email" aria-label="Enter your Email"  value="{{ old('email', session('donation.email')) }}">
+                                                <input class="Field-el" type="email" name="email" id="email"
+                                                    placeholder="Enter your Email" aria-label="Enter your Email">
                                             </div>
                                         </div>
                                     </div>
@@ -105,7 +100,8 @@
                                         <div class="Field-label">Mobile</div>
                                         <div class="Field-content">
                                             <div class="Field-wrapper">
-                                                <input class="Field-el" type="tel" name="mobile" id="mobile" placeholder="Enter your Mobile" maxlength="10" aria-label="Enter your Mobile"  value="{{ old('mobile', session('donation.mobile')) }}">
+                                                <input class="Field-el" type="tel" name="mobile" id="mobile"
+                                                    placeholder="Enter your Mobile" maxlength="10" aria-label="Enter your Mobile">
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +110,7 @@
                                         <img id="fin-logo" alt="pay-methods"
                                             src="https://cdn.razorpay.com/static/assets/pay_methods_branding.png" width="180">
                                         <button type="submit" class="btn btn--gradient" tabindex="0">
-                                            Donate <span id="donate-amount-text">₹ {{ session('donation.amount') }}</span>
+                                            Donate <span id="donate-amount-text">₹ 0.00</span>
                                         </button>
                                     </div>
                                 </form>

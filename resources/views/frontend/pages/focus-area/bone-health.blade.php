@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Bone Health and Orthopedics | Ask Foundation')
-<!-- @section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs') -->
+@section('title','Bone Health & Orthopedics Programs | ASK Foundation')
+@section('description', 'Explore ASK Foundation’s bone health and orthopedic awareness programs focused on osteoporosis prevention, mobility improvement, and education.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -23,10 +23,10 @@
                 <div class="our-approach-box-content bone-health">
                     <div class="our-approach-content">
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">Strong Bones, Strong Future</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">
+                            <h2 class="wow fadeInUp mb-1">Strong Bones, Strong Future</h2>
+                            <h3 class="text-anime-style-2" data-cursor="-opaque">
                                 Building awareness for healthier bones, joints, and active lives.
-                            </h2>
+                            </h3>
                         </div>
                         <p class="wow fadeInUp" data-wow-delay="0.2s">
                             Bones are the foundation of movement and independence. Yet, bone health is often ignored until it becomes a problem. Through the Bone Health & Orthopaedics initiative, ASK Foundation works to raise awareness, support early diagnosis, and provide guidance that helps people stay strong and active at every stage of life.
@@ -53,9 +53,9 @@
         <div class="row section-row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">
+                    <h4 class="text-anime-style-2" data-cursor="-opaque">
                         Our Key Focus Areas
-                    </h2>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/bone-health-awareness.svg')}}" alt="Bone Health Awareness">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Bone Health Awareness </h3>
+                        <h5>Bone Health Awareness </h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -81,7 +81,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/orthopaedic-care.svg')}}" alt="Orthopaedic Care">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Orthopaedic Care </h3>
+                        <h5>Orthopaedic Care </h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -96,7 +96,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/joint-replacement-guidance.svg')}}" alt="Joint Replacement Guidance">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Joint Replacement Guidance </h3>
+                        <h5>Joint Replacement Guidance </h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -111,7 +111,7 @@
                         <img src="{{asset('fronted/assets/ask-img/focus-area/community-health-drives.svg')}}" alt="Community Health Drives">
                     </div>
                     <div class="how-help-item-content">
-                        <h3>Community Health Drives </h3>
+                        <h5>Community Health Drives </h5>
                     </div>
                     <div class="highlight-con">
                         <p>
@@ -196,28 +196,28 @@
                 <div class="how-help-list">
                     <div class="how-help-item wow fadeInUp bg1">                        
                         <div class="how-help-item-content">
-                            <h3>Learn & Share</h3>
+                            <h5>Learn & Share</h5>
                             <p>Attend awareness programs and spread knowledge about bone health with your family, friends, and community.</p>
                         </div>
                     </div>
                     <div class="how-help-item wow fadeInUp bg2" data-wow-delay="0.2s">
                         
                         <div class="how-help-item-content">
-                            <h3>Volunteer Your Time</h3>
+                            <h5>Volunteer Your Time</h5>
                             <p>Join as a volunteer at bone health camps and events to support screenings, awareness drives, and education programs.</p>
                         </div>
                     </div>
                     <div class="how-help-item wow fadeInUp bg3" data-wow-delay="0.4s">
                         
                         <div class="how-help-item-content">
-                            <h3>Partner with Us</h3>
+                            <h5>Partner with Us</h5>
                             <p>Collaborate with ASK Foundation to host programs at schools, colleges, workplaces, or community centers.</p>
                         </div>
                     </div>
                     <div class="how-help-item wow fadeInUp bg4" data-wow-delay="0.6s">
                         
                         <div class="how-help-item-content">
-                            <h3>Support Access to Care</h3>
+                            <h5>Support Access to Care</h5>
                             <p>Contribute resources or donations to help underprivileged patients receive timely diagnosis and treatment.</p>
                         </div>
                     </div>

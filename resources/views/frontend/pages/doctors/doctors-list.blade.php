@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('title','Our Doctors | ASK Foundation')
-@section('description', 'List of Our Doctors - Ask Foundation Healthcare Services and Support Programs')
+@section('title','Our Doctors | Expert Medical Team at ASK Foundation')
+@section('description', 'Meet the experienced doctors and medical experts at ASK Foundation dedicated to bone health, preventive medicine, education, and community care.')
 @section('main-content')
 <div class="page-header parallaxie breakpoint-header">
     <div class="container">
@@ -33,8 +33,8 @@
                             </a>
                         </div>
                         <div class="team-content">
-                            <h3><a href="{{ route('doctor.details', $doctor->slug) }}">{{ $doctor->doctor_name }}</a></h3>
-                            <h4>{{ $doctor->department }}</h4>
+                            <h2><a href="{{ route('doctor.details', $doctor->slug) }}">{{ $doctor->doctor_name }}</a></h2>
+                            <h3>{{ $doctor->department }}</h3>
                             @if($doctor->experience || $doctor->work_location)
                             <p>
                                 @if($doctor->experience)

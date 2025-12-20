@@ -42,7 +42,7 @@
 :root {
 	--primary-color: #020D19;
 	--secondary-color: #F8F8F8;
-	--text-color: #828282;
+	--text-color: #333;
 	--accent-color: #f15d5f;
 	--white-color: #FFFFFF;
 	--divider-color: #020D1914;
@@ -404,7 +404,7 @@ body {
 	margin-bottom: 40px;
 }
 
-.section-title h3 {
+.section-title h6 {
 	position: relative;
 	display: inline-block;
 	font-size: 20px;
@@ -1380,7 +1380,7 @@ header.main-header .header-sticky.active {
 	width: calc(100% - 97px);
 }
 
-.what-we-item-content h3 {
+.what-we-item-content h5 {
 	font-size: 20px;
 	font-weight: 600;
 	text-transform: capitalize;
@@ -1479,6 +1479,8 @@ header.main-header .header-sticky.active {
 	background-position: center center;
 	background-size: 100% auto;
 	padding: 60px 0 60px;
+	border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .causes-item {
@@ -1671,7 +1673,7 @@ header.main-header .header-sticky.active {
 	z-index: 1;
 }
 
-.our-program .section-title h3,
+.our-program .section-title h6,
 .our-program .section-title h2,
 .our-program .section-title p {
 	color: var(--white-color);
@@ -2505,12 +2507,12 @@ header.main-header .header-sticky.active {
 	text-transform: capitalize;
 }
 
-.post-item-content h2 {
+.post-item-content h6 {
 	font-size: 20px;
 	line-height: 1.3em;
 }
 
-.post-item-content h2 a {
+.post-item-content h6 a {
 	color: inherit;
 }
 
@@ -2821,10 +2823,25 @@ header.main-header .header-sticky.active {
 	line-height: 1.2em;
 	color: var(--white-color);
 	margin-bottom: 0px;
-	cursor: none;
+}
+.page-header.doctores-details-header h5 {
+	display: inline-block;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.2em;
+	color: var(--white-color);
+	margin-bottom: 0px;
 }
 
+.page-header.doctores-details-header h5 span {
+	font-weight: 700;
+	color: var(--accent-color);
+}
 .page-header-box h1 span {
+	font-weight: 700;
+	color: var(--accent-color);
+}
+.page-header-box h5 span {
 	font-weight: 700;
 	color: var(--accent-color);
 }
@@ -3074,7 +3091,7 @@ header.main-header .header-sticky.active {
 	z-index: 1;
 }
 
-.how-help-item-content h3 {
+.how-help-item-content h5 {
 	font-size: 20px;
 	font-weight: 600;
 	text-transform: capitalize;
@@ -3234,14 +3251,14 @@ header.main-header .header-sticky.active {
 	margin-bottom: 15px;
 }
 
-.team-content h3 {
+.team-content h2 {
 	font-size: 20px;
 	text-transform: capitalize;
 	margin-bottom: 5px;
 	color: var(--accent-color);
 }
 
-.team-content h3 a {
+.team-content h2 a {
 	color: inherit;
 }
 
@@ -3435,7 +3452,7 @@ header.main-header .header-sticky.active {
 	overflow: hidden;
 }
 
-.page-sidebar-catagery-list h3 {
+.page-sidebar-catagery-list h6 {
 	font-size: 20px;
 	font-weight: 600;
 	text-transform: capitalize;
@@ -5772,7 +5789,7 @@ header.main-header .header-sticky.active {
 		margin-bottom: 30px;
 	}
 
-	.page-sidebar-catagery-list h3 {
+	.page-sidebar-catagery-list h6 {
 		padding: 15px 20px;
 	}
 
@@ -6677,7 +6694,7 @@ header.main-header .header-sticky.active {
 		margin-bottom: 15px;
 	}
 
-	.post-item-content h2 {
+	.post-item-content h6 {
 		font-size: 18px;
 	}
 
@@ -6710,6 +6727,10 @@ header.main-header .header-sticky.active {
 	}
 
 	.page-header-box h1 {
+		font-size: 24px;
+	}
+
+	.page-header-box.doctores-details-header h5 {
 		font-size: 24px;
 	}
 
@@ -6774,7 +6795,7 @@ header.main-header .header-sticky.active {
 		max-width: 45px;
 	}
 
-	.how-help-item-content h3 {
+	.how-help-item-content h5 {
 		font-size: 20px;
 		margin-bottom: 5px;
 	}
@@ -6806,7 +6827,7 @@ header.main-header .header-sticky.active {
 		aspect-ratio: 1 / 0.98;
 	}
 
-	.team-content h3 {
+	.team-content h2 {
 		font-size: 18px;
 	}
 
@@ -6850,7 +6871,7 @@ header.main-header .header-sticky.active {
 		border-width: 4px;
 	}
 
-	.page-sidebar-catagery-list h3 {
+	.page-sidebar-catagery-list h6 {
 		font-size: 18px;
 	}
 
@@ -7527,7 +7548,7 @@ header.none-header.main-header {
 }
 
 .about-ask-foundation-description {
-	color: #4b5563;
+	color: var(--text-color);
 	line-height: 1.625;
 	margin: 0;
 }
@@ -7537,7 +7558,7 @@ header.none-header.main-header {
 .the-number-tellstory-section{
 	/* background: linear-gradient(135deg, #f15d5f45, #16a34a57, #43c8f36b, #662d918c); */
 	/* background: linear-gradient( 135deg, #f15d5f45 0%, #16a34a57 33%, #43c8f36b 66%, #662d918c 100% ); */
-	background: linear-gradient(105.23deg, #f15d5f87 19.17%, #662d91 103.35% 103.35%);
+	background: linear-gradient(105.23deg, #f15d5f 19.17%, #662d91 103.35% 103.35%);
 	
 }
 .number-tell-story-card {
@@ -7582,7 +7603,7 @@ header.none-header.main-header {
 
 
 .number-tell-story-description {
-	color: #4b5563;
+	color: var(--text-color);
 	/* gray-600 */
 }
 .number-tell-story-card:hover {
@@ -7596,7 +7617,7 @@ header.none-header.main-header {
 	color: #FFFFFF;
     margin-bottom: 5px;
 }
-.team-content h4{
+.team-content h3{
 	font-size: 18px;
     text-transform: capitalize;
     margin-bottom: 5px;
@@ -7728,7 +7749,7 @@ header.none-header.main-header {
 	font-size: 30px;
     margin-bottom: 0;
 	margin-top: 20px;
-    cursor: none;
+    /* cursor: none; */
 	font-family: var(--accent-font);
     color: var(--primary-color);
 }
@@ -7752,7 +7773,7 @@ header.none-header.main-header {
     z-index: 1;
 	height: 100%;
 }
-.banner-feature h3{
+.banner-feature h2{
 	color: var(--primary-color);
     font-size: 22px;
     line-height: 28px;
@@ -8032,6 +8053,14 @@ header.none-header.main-header {
 	border: 1px solid #e2e2e2;
     padding: 9px;
 }
+.bone-health h3{
+	font-size: 22px;
+    padding-left: 0px;
+    font-weight: 600;
+    line-height: 1.2em;
+    color: var(--color-two);
+    margin-bottom: 10px;
+}
 .bone-health p{
 	text-align: justify;
 }
@@ -8056,8 +8085,10 @@ header.none-header.main-header {
     opacity: 0.08;
     z-index: -1;
 }
-.focus-area-oth .section-title h2{
+.focus-area-oth .section-title h4{
 	color: #fff;
+	font-size: 25px;
+    margin-bottom: 0;
 }
 .focus-area-oth .how-help-item{
 	width: 100%;
@@ -8175,7 +8206,7 @@ header.none-header.main-header {
 .work-details-details {
 	color: #fff;
 }
-.work-details-details h3{
+.work-details-details h6{
     font-size: 25px;
     margin-bottom: 20px;
     font-weight: 700;
@@ -8211,7 +8242,7 @@ header.none-header.main-header {
     margin-bottom: 15px;
 }
 .how-help-list .how-help-item,
-.how-help-list .how-help-item-content h3{
+.how-help-list .how-help-item-content h5{
 	color: #fff;
 }
 .how-help-list .how-help-item:hover{
@@ -8234,7 +8265,7 @@ header.none-header.main-header {
 	background-color: #662d91;
 }
 .section-title .empowerh3{
-	font-size: 26px;
+	font-size: 25px;
 	padding-left: 0px;
 	font-weight: 700;
     line-height: 1.2em;
@@ -8245,7 +8276,7 @@ header.none-header.main-header {
 .section-title .empowerh4{
 	font-size: 22px;
 	padding-left: 0px;
-	font-weight: 500;
+	font-weight: 600;
     line-height: 1.2em;
 	color: var(--color-two);
 	margin-bottom: 10px;
@@ -8255,6 +8286,7 @@ header.none-header.main-header {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-size: 22px;
+	font-weight: 600;
 }
 .section-title .sai-laxam{
 	color: var(--primary-color);
@@ -8403,7 +8435,7 @@ header.none-header.main-header {
 .vision-mission-card img {
     transition: transform 0.3s ease-in-out;
 }
-.vision-mission-card h2 {
+.vision-mission-card h3 {
     transition: color 0.3s ease-in-out;
     font-size: 22px;
     text-align: center;
@@ -8429,7 +8461,7 @@ header.none-header.main-header {
 	.vision-mission-card{
 		padding: 7px;
 	}
-	.vision-mission-card h2{
+	.vision-mission-card h3{
 		font-size: 20px;
 	}
     .social-media-menu {
