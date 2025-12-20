@@ -36,14 +36,14 @@ $(document).ready(function () {
             }
         });
     });
-     $(window).on('load', function () {
-        var $container = $('.grid-services');
-        $container.imagesLoaded(function () {
-            $container.isotope({
-                filter: '*'
-            });
-        });
-    });
+    //  $(window).on('load', function () {
+    //     var $container = $('.grid-services');
+    //     $container.imagesLoaded(function () {
+    //         $container.isotope({
+    //             filter: '*'
+    //         });
+    //     });
+    // });
 });
 
 function showNotificationAll(message, type = 'success') {

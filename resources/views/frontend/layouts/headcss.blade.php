@@ -20,7 +20,7 @@ rel="stylesheet">
 <link href="{{asset('fronted/assets/css/all.min.css')}}" rel="stylesheet" media="screen">
 <link href="{{asset('fronted/assets/css/animate.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('fronted/assets/css/magnific-popup.css')}}">
-<link rel="stylesheet" href="{{asset('fronted/assets/css/mousecursor.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('fronted/assets/css/mousecursor.css')}}"> -->
 <link href="{{asset('fronted/assets/css/custom-re.css')}}?v=1.0" rel="stylesheet" media="screen">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMP43KX951"></script>
 <script>
