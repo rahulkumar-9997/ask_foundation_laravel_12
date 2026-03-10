@@ -16,6 +16,7 @@ use App\Models\Activity;
 class FrontHomeController extends Controller
 {
     public function home(){
+        //dd(Cache::get('home_banner_video')->toArray());
         $data['bannerVideo'] = Cache::remember('home_banner_video', 3600, function () {
             return BannerVideos::select([
                 'title',
@@ -54,13 +55,24 @@ class FrontHomeController extends Controller
     }
 
     public function blogList(){
-        $blogs = Blog::orderBy('id', 'desc')->where('status', 'published')->paginate(20);
+        $page = request()->get('page', 1);
+        $cacheKey = "blog_list_page_{$page}";
+        $blogs = Cache::remember($cacheKey, 600, function() {
+            return Blog::orderBy('id', 'desc')
+                ->where('status', 'published')
+                ->paginate(20);
+        });
+        // Cache::forget('blog_list_page_1');
         return view('frontend.pages.blog.blog-list', compact('blogs'));
     }
 
     public function blogDetails($slug){
-        $blog = Blog::with(['images', 'paragraphs'])->where('slug', $slug)
-        ->firstOrFail();
+        $cacheKey = "blog_detail_{$slug}";
+        $blog = Cache::remember($cacheKey, 3600, function() use ($slug) {
+            return Blog::with(['images', 'paragraphs'])->where('slug', $slug)
+                ->firstOrFail();
+        });
+        // Cache::forget("blog_detail_{$blog->slug}");
         //return response()->json($blog);
         return view('frontend.pages.blog.blog-details', compact('blog'));
     }
