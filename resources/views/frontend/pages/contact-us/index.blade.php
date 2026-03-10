@@ -26,7 +26,7 @@
                             <img src="{{asset('fronted/assets/ask-img/icon/icon-phone-primary.svg')}}" alt="">
                         </div>
                         <div class="contact-info-content">
-                            <h3>contact us</h3>
+                            <h3>Call us</h3>
                             <p><a href="tel:+919010844055">+91 9010844055</a></p>
                         </div>
                     </div>
@@ -36,7 +36,9 @@
                         </div>
                         <div class="contact-info-content">
                             <h3>e-mail us</h3>
-                            <p><a href="mailto:info@askfoundation.com">info@askfoundation.com</a></p>
+                            <p><a href="mailto:askthefoundation25@gmail.com
+">askthefoundation25@gmail.com
+</a></p>
                         </div>
                     </div>
                     <div class="contact-info-item wow fadeInUp" data-wow-delay="0.4s">
@@ -65,8 +67,8 @@
             <div class="col-lg-6 order-lg-2 order-1">
                 <div class="contact-form-box">
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">contact us</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Get in to touch</h2>
+                        <h3 class="wow fadeInUp">Fill this Form</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">To get in touch</h2>
                     </div>
                     <div class="contact-form">
                         <form id="contactForm" action="{{ route('contact-us.submit') }}" method="POST" class="wow fadeInUp" data-wow-delay="0.2s">

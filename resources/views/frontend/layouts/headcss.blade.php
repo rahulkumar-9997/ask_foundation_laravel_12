@@ -10,18 +10,20 @@
 <link rel="canonical" href="{{ url()->current() }}" />
 <link rel="shortcut icon" type="image/x-icon" href="{{asset('fronted/assets/ask-img/fav.png')}}">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link
-href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Onest:wght@100..900&amp;display=swap"
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Onest:wght@100..900&amp;display=swap"
 rel="stylesheet">
-<!-- @vite(['resources/css/app.css']) -->
-<link href="{{asset('fronted/assets/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
-<link href="{{asset('fronted/assets/css/slicknav.min.css')}}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('fronted/assets/css/swiper-bundle.min.css')}}">
-<link href="{{asset('fronted/assets/css/all.min.css')}}" rel="stylesheet" media="screen">
-<link href="{{asset('fronted/assets/css/animate.css')}}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('fronted/assets/css/magnific-popup.css')}}">
-<!-- <link rel="stylesheet" href="{{asset('fronted/assets/css/mousecursor.css')}}"> -->
-<link href="{{asset('fronted/assets/css/custom-re.css')}}?v=1.0" rel="stylesheet" media="screen">
+<link rel="preload" href="{{asset('fronted/assets/css/bootstrap.min.css')}}?v={{ env('ASSET_VERSION', '1.1.1') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link href="{{asset('fronted/assets/css/slicknav.min.css')}}?v={{ env('ASSET_VERSION', '1.1.1') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('fronted/assets/css/swiper-bundle.min.css')}}?v={{ env('ASSET_VERSION', '1.1.1') }}">
+<link href="{{asset('fronted/assets/css/all.min.css')}}?v={{ env('ASSET_VERSION', '1.1.1') }}" rel="stylesheet" media="screen">
+<link href="{{asset('fronted/assets/css/animate.css')}}?v={{ env('ASSET_VERSION', '1.1.1') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('fronted/assets/css/magnific-popup.css')}}?v={{ env('ASSET_VERSION', '1.1.1') }}">
+<link rel="preload" href="{{asset('fronted/assets/css/custom-re.css')}}?v={{ env('ASSET_VERSION', '1.1.1') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet" href="{{asset('fronted/assets/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('fronted/assets/css/custom-re.css')}}">
+</noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMP43KX951"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

@@ -14,7 +14,9 @@
                                 <h3><a href="tel:+919010844055">+91 9010844055</a></h3>
                             </div>
                             <div class="footer-contact-item">
-                                <h3><a href="mailto:info@askfoundation.com">info@askfoundation.com</a></h3>
+                                <h3><a href="mailto:askthefoundation25@gmail.com
+">askthefoundation25@gmail.com
+</a></h3>
                             </div>
                         </div>
                         <div class="footer-social-links">
@@ -47,6 +49,7 @@
                                 <li><a href="{{ route('blog') }}">Blog</a></li>
                                 <li><a href="{{ route('our-activities')}}">Activities</a></li>                                
                                 <li><a href="{{ route('donate-us')}}">Donate Us</a></li>
+								<li><a href="https://www.drsailaxman.com/" target="_blank">Dr Sai Laxman</a></li>
                             </ul>
                         </div>
                         <div class="footer-links footer-service-links">
@@ -63,7 +66,7 @@
                             <h3>support</h3>
                             <ul>
                                 <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
-                                <li><a href="#">Team of Doctors</a></li>
+                                
                                 <li><a href="#">privacy policy</a></li>
                                 <li><a href="#">terms & conditions</a></li>
                             </ul>
@@ -89,7 +92,7 @@
     <div id="liveToast" class="toast align-items-center mx-auto" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
-                Hello, world! This is a toast message.
+                
             </div>
             <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>

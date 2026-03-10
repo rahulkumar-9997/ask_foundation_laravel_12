@@ -9,14 +9,17 @@
          id="myVideo"
          preload="none"
          class="desktopvideo"
-         data-src="{{ asset('upload/banner/' . $data['bannerVideo']->desktop_video_url) }}">
-         <source type="video/mp4">
+         width="1920"
+         height="844"
+         >
+         <source data-src="{{ asset('upload/banner/' . $data['bannerVideo']->desktop_video_url) }}" type="video/mp4">
       </video>
-      <video autoplay muted loop playsinline id="myVideo" class="mobilevideo"
-         data-src="{{ asset('upload/banner/' . $data['bannerVideo']->mobile_video_url) }}"
+      <video autoplay muted loop playsinline id="myVideo" class="mobilevideo"         
          preload="none"
-         poster="{{ asset('fronted/assets/images/hero-bg.jpg') }}">
-         <source type="video/mp4">
+         poster="{{ asset('fronted/assets/images/hero-bg.jpg') }}"
+         width="721"
+         height="317">
+         <source data-src="{{ asset('upload/banner/' . $data['bannerVideo']->mobile_video_url) }}" type="video/mp4">
       </video>
       <div class="video-overlay formobile-overlay"></div>
    </div>
@@ -809,49 +812,42 @@ $features = $data['bannerVideo']->features ?? [];
       }
    });
    */
-   document.addEventListener("DOMContentLoaded", function() {
-      let width = window.innerWidth;
-      let video;
-      /*mobile (<= 767px) => mobile video*/
-      if (width <= 767) {
-         video = document.querySelector(".mobilevideo");
-      }
-      /*iPad (768–1024px) => desktop video*/
-      else if (width >= 768 && width <= 1024) {
-         video = document.querySelector(".desktopvideo");
-      }
-      /* desktop (> 1024px) => desktop video*/
-      else {
-         video = document.querySelector(".desktopvideo");
-      }
-      if (video) {
-         let observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-               if (entry.isIntersecting) {
-                  let source = document.createElement("source");
-                  source.src = video.getAttribute("data-src");
-                  source.type = "video/mp4";
-                  video.appendChild(source);
-                  video.load();
+  document.addEventListener("DOMContentLoaded", function () {
+   const width = window.innerWidth;
+   let video;
+   if (width <= 767) {
+      video = document.querySelector(".mobilevideo");
+   } else {
+      video = document.querySelector(".desktopvideo");
+   }
+   if (!video) return;
+   const source = video.querySelector("source");
+   const loadVideo = () => {
+      if (source && source.dataset.src) {
+         source.src = source.dataset.src;
+         video.load();
 
-                  video.play().then(() => {
-                     let placeholder = video.parentElement.querySelector(".video-placeholder");
-                     if (placeholder) {
-                        placeholder.classList.add("hide");
-                     }
-                  }).catch(() => {
-                     console.log("Autoplay blocked");
-                  });
-
-                  obs.unobserve(video);
-               }
-            });
-         }, {
-            threshold: 0.2
+         video.play().catch(() => {
+            console.log("Autoplay prevented by browser");
          });
-
-         observer.observe(video);
       }
-   });
+   };
+   if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               loadVideo();
+               obs.unobserve(video);
+            }
+         });
+      }, {
+         threshold: 0.25
+      });
+      observer.observe(video);
+   } else {
+      loadVideo();
+   }
+
+});
 </script>
 @endpush

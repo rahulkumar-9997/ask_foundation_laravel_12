@@ -43,9 +43,13 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('blog') }}">Blogs</a>
                             </li>
+							<li class="nav-item">
+                                <a class="nav-link" href="{{ route('donate-us') }}">Donate</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('contact-us') }}">Contact Us</a>
                             </li>
+							
                         </ul>
                         <div class="social-media-menu">
                             <div class="drawer-menu-contact">

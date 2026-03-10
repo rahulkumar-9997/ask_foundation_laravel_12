@@ -9,7 +9,7 @@
             <div class="page-header-box">
                <h1 class="text-anime-style-2" data-cursor="-opaque">
                   <span>About</span>
-                  Us
+                  Ask Foundation
                </h1>
             </div>
          </div>
@@ -24,7 +24,7 @@
                <div class="our-approach-content">
                   <div class="section-title">
                      <h2 class="text-anime-style-2" data-cursor="-opaque">
-                        Who We Are ?
+                        History of Ask Foundation
                      </h2>
                   </div>
                   <p class="wow fadeInUp" data-wow-delay="0.2s">

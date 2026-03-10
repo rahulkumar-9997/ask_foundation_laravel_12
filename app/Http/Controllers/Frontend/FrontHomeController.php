@@ -7,22 +7,37 @@ use App\Mail\EnquiryMail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cache;
 use App\Models\BannerVideos;
 use App\Models\Doctors;
 use App\Models\Blog;
 use App\Models\Activity;
-use COM;
 
 class FrontHomeController extends Controller
 {
     public function home(){
-        $data['bannerVideo'] = BannerVideos::select(['title', 'subtitle', 'description', 'button_link', 'video_popup_url', 'desktop_video_url', 'features', 'mobile_video_url'])
-        ->orderBy('id', 'desc')
-        ->first();
-        $data['blog'] = Blog::where('status', 'Published')->orderBy('created_at', 'desc')
-        ->inRandomOrder()
-        ->limit(3)
-        ->get();
+        $data['bannerVideo'] = Cache::remember('home_banner_video', 3600, function () {
+            return BannerVideos::select([
+                'title',
+                'subtitle',
+                'description',
+                'button_link',
+                'video_popup_url',
+                'desktop_video_url',
+                'features',
+                'mobile_video_url'
+            ])
+            ->orderBy('id', 'desc')
+            ->first();
+        });
+        $data['blog'] = Cache::remember('home_blog_posts', 3600, function () {
+            return Blog::where('status', 'Published')
+                ->inRandomOrder()
+                ->limit(3)
+                ->get();
+        });
+        // Cache::forget('home_banner_video');
+        // Cache::forget('home_blog_posts');
         //return response()->json($data['blog']);
         return view('frontend.index', compact('data'));
     }
