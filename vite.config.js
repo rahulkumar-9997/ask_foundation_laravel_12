@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 export default defineConfig({
-  plugins: [
-    laravel({
-      input: ['resources/css/app.css', 'resources/js/app.js'],
-      refresh: true,
-    }),
-  ],
+  plugins: [laravel({
+    input: ['resources/css/app.css', 'resources/js/app.js'],
+    refresh: true,
+  }), cloudflare()],
   build: {
     rollupOptions: {
       output: {
